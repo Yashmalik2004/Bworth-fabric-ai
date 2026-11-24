@@ -1,0 +1,94 @@
+{
+  "n_images": 94,
+  "accuracy": 0.6170212765957447,
+  "macro_f1": 0.5878683051224132,
+  "weighted_f1": 0.6166285134403177,
+  "top3_accuracy": 0.8936170212765957,
+  "mean_abs_error_cotton_pct_points": 7.819148936170213,
+  "within_5_pct_points": 0.7021276595744681,
+  "within_10_pct_points": 0.7659574468085106,
+  "per_class": {
+    "30cotton": {
+      "precision": 0.5,
+      "recall": 0.4444444444444444,
+      "f1": 0.47058823529411764,
+      "support": 9
+    },
+    "40cotton": {
+      "precision": 0.75,
+      "recall": 0.6666666666666666,
+      "f1": 0.7058823529411765,
+      "support": 9
+    },
+    "50cotton": {
+      "precision": 0.6363636363636364,
+      "recall": 0.875,
+      "f1": 0.7368421052631579,
+      "support": 8
+    },
+    "53cotton": {
+      "precision": 0.6,
+      "recall": 0.42857142857142855,
+      "f1": 0.5,
+      "support": 7
+    },
+    "58cotton": {
+      "precision": 0.8333333333333334,
+      "recall": 0.7142857142857143,
+      "f1": 0.7692307692307693,
+      "support": 7
+    },
+    "60cotton": {
+      "precision": 0.5,
+      "recall": 0.6666666666666666,
+      "f1": 0.5714285714285714,
+      "support": 3
+    },
+    "63cotton": {
+      "precision": 0.16666666666666666,
+      "recall": 0.5,
+      "f1": 0.25,
+      "support": 2
+    },
+    "65cotton": {
+      "precision": 0.6,
+      "recall": 0.5,
+      "f1": 0.5454545454545454,
+      "support": 6
+    },
+    "66cotton": {
+      "precision": 0.75,
+      "recall": 0.6666666666666666,
+      "f1": 0.7058823529411765,
+      "support": 9
+    },
+    "80cotton": {
+      "precision": 0.75,
+      "recall": 0.6666666666666666,
+      "f1": 0.7058823529411765,
+      "support": 9
+    },
+    "95cotton": {
+      "precision": 0.6666666666666666,
+      "recall": 0.8888888888888888,
+      "f1": 0.7619047619047619,
+      "support": 9
+    },
+    "98cotton": {
+      "precision": 0.5555555555555556,
+      "recall": 0.5555555555555556,
+      "f1": 0.5555555555555556,
+      "support": 9
+    },
+    "99cotton": {
+      "precision": 0.5,
+      "recall": 0.2857142857142857,
+      "f1": 0.36363636363636365,
+      "support": 7
+    }
+  },
+  "split": "test",
+  "split_strategy": "random",
+  "checkpoint": "C:\\Users\\YASH\\Desktop\\projects\\Bworth-Ai fabric intelligence\\models\\composition\\resnet50_random_split.pth",
+  "best_epoch": 20
+}

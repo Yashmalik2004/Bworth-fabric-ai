@@ -1,0 +1,21 @@
+Test-set classification report (group split, 93 images, best epoch 13)
+
+              precision    recall  f1-score   support
+
+  30% cotton      0.000     0.000     0.000         9
+  40% cotton      0.143     0.111     0.125         9
+  50% cotton      0.467     0.875     0.609         8
+  53% cotton      0.100     0.143     0.118         7
+  58% cotton      0.556     0.714     0.625         7
+  60% cotton      0.000     0.000     0.000         2
+  63% cotton      0.000     0.000     0.000         2
+  65% cotton      0.000     0.000     0.000         6
+  66% cotton      0.500     0.222     0.308         9
+  80% cotton      0.421     0.889     0.571         9
+  95% cotton      0.750     0.333     0.462         9
+  98% cotton      0.250     0.111     0.154         9
+  99% cotton      0.182     0.286     0.222         7
+
+    accuracy                          0.323        93
+   macro avg      0.259     0.283     0.246        93
+weighted avg      0.303     0.323     0.282        93

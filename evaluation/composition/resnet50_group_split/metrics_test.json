@@ -1,0 +1,94 @@
+{
+  "n_images": 93,
+  "accuracy": 0.3225806451612903,
+  "macro_f1": 0.24562080213270457,
+  "weighted_f1": 0.28171182403506473,
+  "top3_accuracy": 0.4946236559139785,
+  "mean_abs_error_cotton_pct_points": 14.118279569892474,
+  "within_5_pct_points": 0.4731182795698925,
+  "within_10_pct_points": 0.5053763440860215,
+  "per_class": {
+    "30cotton": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 9
+    },
+    "40cotton": {
+      "precision": 0.14285714285714285,
+      "recall": 0.1111111111111111,
+      "f1": 0.125,
+      "support": 9
+    },
+    "50cotton": {
+      "precision": 0.4666666666666667,
+      "recall": 0.875,
+      "f1": 0.6086956521739131,
+      "support": 8
+    },
+    "53cotton": {
+      "precision": 0.1,
+      "recall": 0.14285714285714285,
+      "f1": 0.11764705882352941,
+      "support": 7
+    },
+    "58cotton": {
+      "precision": 0.5555555555555556,
+      "recall": 0.7142857142857143,
+      "f1": 0.625,
+      "support": 7
+    },
+    "60cotton": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 2
+    },
+    "63cotton": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 2
+    },
+    "65cotton": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 6
+    },
+    "66cotton": {
+      "precision": 0.5,
+      "recall": 0.2222222222222222,
+      "f1": 0.3076923076923077,
+      "support": 9
+    },
+    "80cotton": {
+      "precision": 0.42105263157894735,
+      "recall": 0.8888888888888888,
+      "f1": 0.5714285714285714,
+      "support": 9
+    },
+    "95cotton": {
+      "precision": 0.75,
+      "recall": 0.3333333333333333,
+      "f1": 0.46153846153846156,
+      "support": 9
+    },
+    "98cotton": {
+      "precision": 0.25,
+      "recall": 0.1111111111111111,
+      "f1": 0.15384615384615385,
+      "support": 9
+    },
+    "99cotton": {
+      "precision": 0.18181818181818182,
+      "recall": 0.2857142857142857,
+      "f1": 0.2222222222222222,
+      "support": 7
+    }
+  },
+  "split": "test",
+  "split_strategy": "group",
+  "checkpoint": "C:\\Users\\YASH\\Desktop\\projects\\Bworth-Ai fabric intelligence\\models\\composition\\best_model.pth",
+  "best_epoch": 13
+}

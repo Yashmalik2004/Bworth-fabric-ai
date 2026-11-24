@@ -1,5 +1,67 @@
+# Python virtual environments
 venv/
+.venv/
+env/
+
+# Python caches and bytecode
 __pycache__/
-*.pyc
-.env
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 .ipynb_checkpoints/
+*.py[cod]
+*$py.class
+
+# Secrets and local configuration
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+credentials.*
+
+# Git metadata and editor artifacts
+.git/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files and logs
+*.tmp
+*.temp
+*.bak
+*.log
+logs/
+tmp/
+temp/
+
+# Generated outputs and build artifacts
+build/
+dist/
+*.egg-info/
+output/
+processed/
+.cache/
+
+# Datasets are local or externally sourced assets
+datasets/
+data/
+
+# Model checkpoints and machine learning artifacts
+models/**/*.pth
+models/**/*.pt
+models/**/*.ckpt
+models/**/*.safetensors
+models/**/*.onnx
+checkpoints/
+runs/
+
+# OS metadata
+.DS_Store
+Thumbs.db

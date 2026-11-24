@@ -1,0 +1,461 @@
+config,label,group,fold,n,band_correct,fine_correct,band_predictions
+fine13_standard,30cotton,30cotton_g00,4,11,0,0.0,"{'medium_cotton': np.int64(10), 'high_cotton': np.int64(1)}"
+fine13_standard,30cotton,30cotton_g01,1,32,9,2.0,"{'high_cotton': np.int64(13), 'medium_cotton': np.int64(10), 'low_cotton': np.int64(9)}"
+fine13_standard,30cotton,30cotton_g02,2,6,5,0.0,"{'low_cotton': np.int64(5), 'medium_cotton': np.int64(1)}"
+fine13_standard,30cotton,30cotton_g03,3,7,2,0.0,"{'medium_cotton': np.int64(5), 'low_cotton': np.int64(2)}"
+fine13_standard,30cotton,30cotton_g04,0,3,0,1.0,{'medium_cotton': np.int64(3)}
+fine13_standard,30cotton,30cotton_g05,0,2,0,0.0,{'medium_cotton': np.int64(2)}
+fine13_standard,40cotton,40cotton_g00,4,21,0,0.0,"{'medium_cotton': np.int64(20), 'high_cotton': np.int64(1)}"
+fine13_standard,40cotton,40cotton_g01+40cotton_g03+40cotton_g04,1,13,0,0.0,"{'medium_cotton': np.int64(12), 'very_high_cotton': np.int64(1)}"
+fine13_standard,40cotton,40cotton_g02,2,19,10,3.0,"{'low_cotton': np.int64(10), 'medium_cotton': np.int64(9)}"
+fine13_standard,40cotton,40cotton_g05,0,1,0,0.0,{'medium_cotton': np.int64(1)}
+fine13_standard,40cotton,40cotton_g06,3,9,5,5.0,"{'low_cotton': np.int64(5), 'high_cotton': np.int64(2), 'medium_cotton': np.int64(1), 'very_high_cotton': np.int64(1)}"
+fine13_standard,50cotton,50cotton_g00,4,6,5,4.0,"{'medium_cotton': np.int64(5), 'very_high_cotton': np.int64(1)}"
+fine13_standard,50cotton,50cotton_g01+50cotton_g08,3,3,1,0.0,"{'high_cotton': np.int64(2), 'medium_cotton': np.int64(1)}"
+fine13_standard,50cotton,50cotton_g02,1,4,3,0.0,"{'medium_cotton': np.int64(3), 'low_cotton': np.int64(1)}"
+fine13_standard,50cotton,50cotton_g03,3,6,6,3.0,{'medium_cotton': np.int64(6)}
+fine13_standard,50cotton,50cotton_g04,2,9,1,0.0,"{'very_high_cotton': np.int64(8), 'medium_cotton': np.int64(1)}"
+fine13_standard,50cotton,50cotton_g05,1,6,6,3.0,{'medium_cotton': np.int64(6)}
+fine13_standard,50cotton,50cotton_g06,0,8,8,8.0,{'medium_cotton': np.int64(8)}
+fine13_standard,50cotton,50cotton_g07,4,1,1,1.0,{'medium_cotton': np.int64(1)}
+fine13_standard,50cotton,50cotton_g09,1,1,1,1.0,{'medium_cotton': np.int64(1)}
+fine13_standard,50cotton,50cotton_g10,3,2,2,2.0,{'medium_cotton': np.int64(2)}
+fine13_standard,50cotton,50cotton_g11,0,3,3,2.0,{'medium_cotton': np.int64(3)}
+fine13_standard,50cotton,50cotton_g12,4,4,4,4.0,{'medium_cotton': np.int64(4)}
+fine13_standard,50cotton,50cotton_g13,4,1,1,1.0,{'medium_cotton': np.int64(1)}
+fine13_standard,50cotton,50cotton_g14,2,2,2,1.0,{'medium_cotton': np.int64(2)}
+fine13_standard,53cotton,53cotton_g00,2,12,2,0.0,"{'low_cotton': np.int64(6), 'high_cotton': np.int64(4), 'medium_cotton': np.int64(2)}"
+fine13_standard,53cotton,53cotton_g01,3,2,2,1.0,{'medium_cotton': np.int64(2)}
+fine13_standard,53cotton,53cotton_g02+53cotton_g11,0,12,12,0.0,{'medium_cotton': np.int64(12)}
+fine13_standard,53cotton,53cotton_g03+53cotton_g07,4,8,5,0.0,"{'medium_cotton': np.int64(5), 'low_cotton': np.int64(3)}"
+fine13_standard,53cotton,53cotton_g04,3,2,1,0.0,"{'medium_cotton': np.int64(1), 'very_high_cotton': np.int64(1)}"
+fine13_standard,53cotton,53cotton_g05,1,6,6,0.0,{'medium_cotton': np.int64(6)}
+fine13_standard,53cotton,53cotton_g06,1,1,1,1.0,{'medium_cotton': np.int64(1)}
+fine13_standard,53cotton,53cotton_g08,1,1,0,0.0,{'very_high_cotton': np.int64(1)}
+fine13_standard,53cotton,53cotton_g09,3,1,0,0.0,{'low_cotton': np.int64(1)}
+fine13_standard,53cotton,53cotton_g10,3,2,1,1.0,"{'medium_cotton': np.int64(1), 'low_cotton': np.int64(1)}"
+fine13_standard,58cotton,58cotton_g00,0,4,4,2.0,{'medium_cotton': np.int64(4)}
+fine13_standard,58cotton,58cotton_g01+58cotton_g03,3,21,16,0.0,"{'medium_cotton': np.int64(16), 'low_cotton': np.int64(5)}"
+fine13_standard,58cotton,58cotton_g02+58cotton_g04,1,18,7,2.0,"{'medium_cotton': np.int64(7), 'very_high_cotton': np.int64(6), 'low_cotton': np.int64(5)}"
+fine13_standard,58cotton,58cotton_g05+58cotton_g06,4,3,3,0.0,{'medium_cotton': np.int64(3)}
+fine13_standard,58cotton,58cotton_g07,2,1,1,1.0,{'medium_cotton': np.int64(1)}
+fine13_standard,58cotton,58cotton_g08,2,2,0,0.0,{'very_high_cotton': np.int64(2)}
+fine13_standard,60cotton,60cotton_g00,0,10,10,0.0,{'medium_cotton': np.int64(10)}
+fine13_standard,60cotton,60cotton_g01,2,4,3,0.0,"{'medium_cotton': np.int64(3), 'very_high_cotton': np.int64(1)}"
+fine13_standard,60cotton,60cotton_g02,1,1,1,0.0,{'medium_cotton': np.int64(1)}
+fine13_standard,60cotton,60cotton_g03,4,1,1,0.0,{'medium_cotton': np.int64(1)}
+fine13_standard,60cotton,60cotton_g04,3,2,1,0.0,"{'very_high_cotton': np.int64(1), 'medium_cotton': np.int64(1)}"
+fine13_standard,60cotton,60cotton_g05,4,1,1,0.0,{'medium_cotton': np.int64(1)}
+fine13_standard,63cotton,63cotton_g00+63cotton_g01,0,13,13,0.0,{'medium_cotton': np.int64(13)}
+fine13_standard,63cotton,63cotton_g02,1,1,0,0.0,{'low_cotton': np.int64(1)}
+fine13_standard,63cotton,63cotton_g03,4,1,1,0.0,{'medium_cotton': np.int64(1)}
+fine13_standard,63cotton,63cotton_g04,2,1,1,0.0,{'medium_cotton': np.int64(1)}
+fine13_standard,63cotton,63cotton_g05,3,1,1,0.0,{'medium_cotton': np.int64(1)}
+fine13_standard,65cotton,65cotton_g00,2,25,17,0.0,"{'medium_cotton': np.int64(17), 'low_cotton': np.int64(7), 'high_cotton': np.int64(1)}"
+fine13_standard,65cotton,65cotton_g01+65cotton_g02,4,5,3,1.0,"{'medium_cotton': np.int64(3), 'high_cotton': np.int64(2)}"
+fine13_standard,65cotton,65cotton_g03,0,1,1,0.0,{'medium_cotton': np.int64(1)}
+fine13_standard,65cotton,65cotton_g04,3,3,3,0.0,{'medium_cotton': np.int64(3)}
+fine13_standard,65cotton,65cotton_g05+65cotton_g06,1,3,0,0.0,{'high_cotton': np.int64(3)}
+fine13_standard,65cotton,65cotton_g07,0,1,1,0.0,{'medium_cotton': np.int64(1)}
+fine13_standard,66cotton,66cotton_g00+66cotton_g05,3,14,11,4.0,"{'medium_cotton': np.int64(11), 'high_cotton': np.int64(3)}"
+fine13_standard,66cotton,66cotton_g01+66cotton_g06,2,5,5,0.0,{'medium_cotton': np.int64(5)}
+fine13_standard,66cotton,66cotton_g02,0,41,41,2.0,{'medium_cotton': np.int64(41)}
+fine13_standard,66cotton,66cotton_g03+66cotton_g04,4,3,3,0.0,{'medium_cotton': np.int64(3)}
+fine13_standard,80cotton,80cotton_g00,4,5,0,0.0,"{'medium_cotton': np.int64(3), 'low_cotton': np.int64(1), 'very_high_cotton': np.int64(1)}"
+fine13_standard,80cotton,80cotton_g01,0,3,0,2.0,{'medium_cotton': np.int64(3)}
+fine13_standard,80cotton,80cotton_g02+80cotton_g03+80cotton_g08,2,12,4,6.0,"{'medium_cotton': np.int64(7), 'high_cotton': np.int64(4), 'low_cotton': np.int64(1)}"
+fine13_standard,80cotton,80cotton_g04,4,2,0,2.0,{'medium_cotton': np.int64(2)}
+fine13_standard,80cotton,80cotton_g05,1,4,1,1.0,"{'medium_cotton': np.int64(2), 'low_cotton': np.int64(1), 'high_cotton': np.int64(1)}"
+fine13_standard,80cotton,80cotton_g06,4,3,0,2.0,{'medium_cotton': np.int64(3)}
+fine13_standard,80cotton,80cotton_g07,0,4,0,1.0,{'medium_cotton': np.int64(4)}
+fine13_standard,80cotton,80cotton_g09,4,2,0,1.0,{'medium_cotton': np.int64(2)}
+fine13_standard,80cotton,80cotton_g10+80cotton_g13,0,3,0,0.0,{'medium_cotton': np.int64(3)}
+fine13_standard,80cotton,80cotton_g11,3,12,1,0.0,"{'medium_cotton': np.int64(9), 'low_cotton': np.int64(2), 'high_cotton': np.int64(1)}"
+fine13_standard,80cotton,80cotton_g12,1,2,0,1.0,{'medium_cotton': np.int64(2)}
+fine13_standard,80cotton,80cotton_g14+80cotton_g16,1,2,2,1.0,{'high_cotton': np.int64(2)}
+fine13_standard,80cotton,80cotton_g15+80cotton_g17,0,2,0,2.0,{'medium_cotton': np.int64(2)}
+fine13_standard,80cotton,80cotton_g18,1,4,0,0.0,{'medium_cotton': np.int64(4)}
+fine13_standard,80cotton,80cotton_g19,4,1,1,1.0,{'high_cotton': np.int64(1)}
+fine13_standard,95cotton,95cotton_g00,2,8,1,1.0,"{'medium_cotton': np.int64(5), 'low_cotton': np.int64(2), 'high_cotton': np.int64(1)}"
+fine13_standard,95cotton,95cotton_g01,0,3,0,1.0,{'medium_cotton': np.int64(3)}
+fine13_standard,95cotton,95cotton_g02+95cotton_g11,0,5,0,1.0,{'medium_cotton': np.int64(5)}
+fine13_standard,95cotton,95cotton_g03,4,19,1,4.0,"{'medium_cotton': np.int64(18), 'high_cotton': np.int64(1)}"
+fine13_standard,95cotton,95cotton_g04,3,3,0,1.0,"{'medium_cotton': np.int64(2), 'very_high_cotton': np.int64(1)}"
+fine13_standard,95cotton,95cotton_g05,3,5,2,2.0,"{'medium_cotton': np.int64(2), 'high_cotton': np.int64(2), 'very_high_cotton': np.int64(1)}"
+fine13_standard,95cotton,95cotton_g06,3,1,0,0.0,{'medium_cotton': np.int64(1)}
+fine13_standard,95cotton,95cotton_g07,1,1,0,0.0,{'medium_cotton': np.int64(1)}
+fine13_standard,95cotton,95cotton_g08,0,1,0,0.0,{'medium_cotton': np.int64(1)}
+fine13_standard,95cotton,95cotton_g09,0,1,0,0.0,{'medium_cotton': np.int64(1)}
+fine13_standard,95cotton,95cotton_g10,1,9,2,2.0,"{'low_cotton': np.int64(5), 'high_cotton': np.int64(2), 'very_high_cotton': np.int64(1), 'medium_cotton': np.int64(1)}"
+fine13_standard,95cotton,95cotton_g12,2,2,1,1.0,"{'high_cotton': np.int64(1), 'medium_cotton': np.int64(1)}"
+fine13_standard,95cotton,95cotton_g13,3,1,0,0.0,{'medium_cotton': np.int64(1)}
+fine13_standard,98cotton,98cotton_g00,1,11,1,0.0,"{'medium_cotton': np.int64(10), 'very_high_cotton': np.int64(1)}"
+fine13_standard,98cotton,98cotton_g01,3,7,5,2.0,"{'very_high_cotton': np.int64(5), 'medium_cotton': np.int64(2)}"
+fine13_standard,98cotton,98cotton_g02,4,18,5,2.0,"{'medium_cotton': np.int64(13), 'very_high_cotton': np.int64(5)}"
+fine13_standard,98cotton,98cotton_g03,2,3,2,1.0,"{'very_high_cotton': np.int64(2), 'medium_cotton': np.int64(1)}"
+fine13_standard,98cotton,98cotton_g04,0,7,0,2.0,{'medium_cotton': np.int64(7)}
+fine13_standard,98cotton,98cotton_g05,2,3,1,0.0,"{'medium_cotton': np.int64(2), 'very_high_cotton': np.int64(1)}"
+fine13_standard,98cotton,98cotton_g06,2,2,0,0.0,{'medium_cotton': np.int64(2)}
+fine13_standard,98cotton,98cotton_g07+99cotton_g07,0,1,0,0.0,{'medium_cotton': np.int64(1)}
+fine13_standard,98cotton,98cotton_g08,2,1,1,0.0,{'very_high_cotton': np.int64(1)}
+fine13_standard,98cotton,98cotton_g09,3,2,2,0.0,{'very_high_cotton': np.int64(2)}
+fine13_standard,98cotton,98cotton_g10,2,1,0,0.0,{'medium_cotton': np.int64(1)}
+fine13_standard,98cotton,98cotton_g11,0,1,0,0.0,{'medium_cotton': np.int64(1)}
+fine13_standard,98cotton,98cotton_g12,3,1,1,0.0,{'very_high_cotton': np.int64(1)}
+fine13_standard,99cotton,98cotton_g07+99cotton_g07,0,2,0,0.0,{'medium_cotton': np.int64(2)}
+fine13_standard,99cotton,99cotton_g00,3,21,11,5.0,"{'very_high_cotton': np.int64(11), 'medium_cotton': np.int64(10)}"
+fine13_standard,99cotton,99cotton_g01,0,3,2,3.0,"{'very_high_cotton': np.int64(2), 'medium_cotton': np.int64(1)}"
+fine13_standard,99cotton,99cotton_g02,4,4,0,0.0,{'medium_cotton': np.int64(4)}
+fine13_standard,99cotton,99cotton_g03,2,4,2,3.0,"{'very_high_cotton': np.int64(2), 'medium_cotton': np.int64(2)}"
+fine13_standard,99cotton,99cotton_g04,2,2,0,0.0,{'medium_cotton': np.int64(2)}
+fine13_standard,99cotton,99cotton_g05,1,3,1,2.0,"{'medium_cotton': np.int64(2), 'very_high_cotton': np.int64(1)}"
+fine13_standard,99cotton,99cotton_g06,1,2,0,0.0,{'high_cotton': np.int64(2)}
+fine13_standard,99cotton,99cotton_g08,4,2,0,0.0,{'medium_cotton': np.int64(2)}
+fine13_standard,99cotton,99cotton_g09,0,1,0,0.0,{'medium_cotton': np.int64(1)}
+fine13_standard,99cotton,99cotton_g10,1,2,1,0.0,"{'very_high_cotton': np.int64(1), 'medium_cotton': np.int64(1)}"
+fine13_standard,99cotton,99cotton_g11,4,1,0,0.0,{'medium_cotton': np.int64(1)}
+fine13_strong,30cotton,30cotton_g00,4,11,3,0.0,"{'medium_cotton': np.int64(8), 'low_cotton': np.int64(3)}"
+fine13_strong,30cotton,30cotton_g01,1,32,9,1.0,"{'medium_cotton': np.int64(21), 'low_cotton': np.int64(9), 'high_cotton': np.int64(2)}"
+fine13_strong,30cotton,30cotton_g02,2,6,2,0.0,"{'medium_cotton': np.int64(4), 'low_cotton': np.int64(2)}"
+fine13_strong,30cotton,30cotton_g03,3,7,0,2.0,"{'medium_cotton': np.int64(6), 'high_cotton': np.int64(1)}"
+fine13_strong,30cotton,30cotton_g04,0,3,0,0.0,{'medium_cotton': np.int64(3)}
+fine13_strong,30cotton,30cotton_g05,0,2,0,0.0,{'medium_cotton': np.int64(2)}
+fine13_strong,40cotton,40cotton_g00,4,21,1,0.0,"{'medium_cotton': np.int64(19), 'high_cotton': np.int64(1), 'low_cotton': np.int64(1)}"
+fine13_strong,40cotton,40cotton_g01+40cotton_g03+40cotton_g04,1,13,1,0.0,"{'medium_cotton': np.int64(11), 'low_cotton': np.int64(1), 'very_high_cotton': np.int64(1)}"
+fine13_strong,40cotton,40cotton_g02,2,19,3,0.0,"{'medium_cotton': np.int64(14), 'low_cotton': np.int64(3), 'high_cotton': np.int64(2)}"
+fine13_strong,40cotton,40cotton_g05,0,1,0,0.0,{'medium_cotton': np.int64(1)}
+fine13_strong,40cotton,40cotton_g06,3,9,4,5.0,"{'medium_cotton': np.int64(5), 'low_cotton': np.int64(4)}"
+fine13_strong,50cotton,50cotton_g00,4,6,4,2.0,"{'medium_cotton': np.int64(4), 'very_high_cotton': np.int64(2)}"
+fine13_strong,50cotton,50cotton_g01+50cotton_g08,3,3,2,0.0,"{'medium_cotton': np.int64(2), 'high_cotton': np.int64(1)}"
+fine13_strong,50cotton,50cotton_g02,1,4,4,0.0,{'medium_cotton': np.int64(4)}
+fine13_strong,50cotton,50cotton_g03,3,6,4,2.0,"{'medium_cotton': np.int64(4), 'very_high_cotton': np.int64(2)}"
+fine13_strong,50cotton,50cotton_g04,2,9,4,0.0,"{'very_high_cotton': np.int64(5), 'medium_cotton': np.int64(4)}"
+fine13_strong,50cotton,50cotton_g05,1,6,3,2.0,"{'medium_cotton': np.int64(3), 'high_cotton': np.int64(1), 'low_cotton': np.int64(1), 'very_high_cotton': np.int64(1)}"
+fine13_strong,50cotton,50cotton_g06,0,8,8,7.0,{'medium_cotton': np.int64(8)}
+fine13_strong,50cotton,50cotton_g07,4,1,1,1.0,{'medium_cotton': np.int64(1)}
+fine13_strong,50cotton,50cotton_g09,1,1,1,1.0,{'medium_cotton': np.int64(1)}
+fine13_strong,50cotton,50cotton_g10,3,2,2,0.0,{'medium_cotton': np.int64(2)}
+fine13_strong,50cotton,50cotton_g11,0,3,3,1.0,{'medium_cotton': np.int64(3)}
+fine13_strong,50cotton,50cotton_g12,4,4,4,3.0,{'medium_cotton': np.int64(4)}
+fine13_strong,50cotton,50cotton_g13,4,1,1,0.0,{'medium_cotton': np.int64(1)}
+fine13_strong,50cotton,50cotton_g14,2,2,2,2.0,{'medium_cotton': np.int64(2)}
+fine13_strong,53cotton,53cotton_g00,2,12,2,1.0,"{'low_cotton': np.int64(7), 'high_cotton': np.int64(3), 'medium_cotton': np.int64(2)}"
+fine13_strong,53cotton,53cotton_g01,3,2,2,0.0,{'medium_cotton': np.int64(2)}
+fine13_strong,53cotton,53cotton_g02+53cotton_g11,0,12,12,0.0,{'medium_cotton': np.int64(12)}
+fine13_strong,53cotton,53cotton_g03+53cotton_g07,4,8,4,4.0,"{'medium_cotton': np.int64(4), 'low_cotton': np.int64(4)}"
+fine13_strong,53cotton,53cotton_g04,3,2,2,0.0,{'medium_cotton': np.int64(2)}
+fine13_strong,53cotton,53cotton_g05,1,6,6,2.0,{'medium_cotton': np.int64(6)}
+fine13_strong,53cotton,53cotton_g06,1,1,1,0.0,{'medium_cotton': np.int64(1)}
+fine13_strong,53cotton,53cotton_g08,1,1,0,0.0,{'very_high_cotton': np.int64(1)}
+fine13_strong,53cotton,53cotton_g09,3,1,1,0.0,{'medium_cotton': np.int64(1)}
+fine13_strong,53cotton,53cotton_g10,3,2,2,0.0,{'medium_cotton': np.int64(2)}
+fine13_strong,58cotton,58cotton_g00,0,4,4,1.0,{'medium_cotton': np.int64(4)}
+fine13_strong,58cotton,58cotton_g01+58cotton_g03,3,21,16,0.0,"{'medium_cotton': np.int64(16), 'low_cotton': np.int64(5)}"
+fine13_strong,58cotton,58cotton_g02+58cotton_g04,1,18,11,6.0,"{'medium_cotton': np.int64(11), 'very_high_cotton': np.int64(6), 'low_cotton': np.int64(1)}"
+fine13_strong,58cotton,58cotton_g05+58cotton_g06,4,3,2,0.0,"{'medium_cotton': np.int64(2), 'high_cotton': np.int64(1)}"
+fine13_strong,58cotton,58cotton_g07,2,1,1,1.0,{'medium_cotton': np.int64(1)}
+fine13_strong,58cotton,58cotton_g08,2,2,2,2.0,{'medium_cotton': np.int64(2)}
+fine13_strong,60cotton,60cotton_g00,0,10,10,5.0,{'medium_cotton': np.int64(10)}
+fine13_strong,60cotton,60cotton_g01,2,4,2,0.0,"{'very_high_cotton': np.int64(2), 'medium_cotton': np.int64(2)}"
+fine13_strong,60cotton,60cotton_g02,1,1,1,0.0,{'medium_cotton': np.int64(1)}
+fine13_strong,60cotton,60cotton_g03,4,1,1,0.0,{'medium_cotton': np.int64(1)}
+fine13_strong,60cotton,60cotton_g04,3,2,1,0.0,"{'very_high_cotton': np.int64(1), 'medium_cotton': np.int64(1)}"
+fine13_strong,60cotton,60cotton_g05,4,1,1,0.0,{'medium_cotton': np.int64(1)}
+fine13_strong,63cotton,63cotton_g00+63cotton_g01,0,13,8,0.0,"{'medium_cotton': np.int64(8), 'very_high_cotton': np.int64(5)}"
+fine13_strong,63cotton,63cotton_g02,1,1,1,0.0,{'medium_cotton': np.int64(1)}
+fine13_strong,63cotton,63cotton_g03,4,1,1,0.0,{'medium_cotton': np.int64(1)}
+fine13_strong,63cotton,63cotton_g04,2,1,1,0.0,{'medium_cotton': np.int64(1)}
+fine13_strong,63cotton,63cotton_g05,3,1,0,0.0,{'high_cotton': np.int64(1)}
+fine13_strong,65cotton,65cotton_g00,2,25,20,0.0,"{'medium_cotton': np.int64(20), 'low_cotton': np.int64(4), 'high_cotton': np.int64(1)}"
+fine13_strong,65cotton,65cotton_g01+65cotton_g02,4,5,4,1.0,"{'medium_cotton': np.int64(4), 'high_cotton': np.int64(1)}"
+fine13_strong,65cotton,65cotton_g03,0,1,0,0.0,{'very_high_cotton': np.int64(1)}
+fine13_strong,65cotton,65cotton_g04,3,3,3,1.0,{'medium_cotton': np.int64(3)}
+fine13_strong,65cotton,65cotton_g05+65cotton_g06,1,3,0,0.0,{'high_cotton': np.int64(3)}
+fine13_strong,65cotton,65cotton_g07,0,1,1,0.0,{'medium_cotton': np.int64(1)}
+fine13_strong,66cotton,66cotton_g00+66cotton_g05,3,14,13,5.0,"{'medium_cotton': np.int64(13), 'high_cotton': np.int64(1)}"
+fine13_strong,66cotton,66cotton_g01+66cotton_g06,2,5,5,0.0,{'medium_cotton': np.int64(5)}
+fine13_strong,66cotton,66cotton_g02,0,41,40,1.0,"{'medium_cotton': np.int64(40), 'high_cotton': np.int64(1)}"
+fine13_strong,66cotton,66cotton_g03+66cotton_g04,4,3,0,0.0,{'very_high_cotton': np.int64(3)}
+fine13_strong,80cotton,80cotton_g00,4,5,0,0.0,{'medium_cotton': np.int64(5)}
+fine13_strong,80cotton,80cotton_g01,0,3,1,3.0,"{'medium_cotton': np.int64(2), 'high_cotton': np.int64(1)}"
+fine13_strong,80cotton,80cotton_g02+80cotton_g03+80cotton_g08,2,12,3,3.0,"{'medium_cotton': np.int64(6), 'high_cotton': np.int64(3), 'very_high_cotton': np.int64(2), 'low_cotton': np.int64(1)}"
+fine13_strong,80cotton,80cotton_g04,4,2,2,0.0,{'high_cotton': np.int64(2)}
+fine13_strong,80cotton,80cotton_g05,1,4,1,3.0,"{'medium_cotton': np.int64(2), 'low_cotton': np.int64(1), 'high_cotton': np.int64(1)}"
+fine13_strong,80cotton,80cotton_g06,4,3,0,1.0,{'medium_cotton': np.int64(3)}
+fine13_strong,80cotton,80cotton_g07,0,4,1,1.0,"{'medium_cotton': np.int64(3), 'high_cotton': np.int64(1)}"
+fine13_strong,80cotton,80cotton_g09,4,2,0,0.0,{'medium_cotton': np.int64(2)}
+fine13_strong,80cotton,80cotton_g10+80cotton_g13,0,3,0,1.0,{'medium_cotton': np.int64(3)}
+fine13_strong,80cotton,80cotton_g11,3,12,0,0.0,{'medium_cotton': np.int64(12)}
+fine13_strong,80cotton,80cotton_g12,1,2,0,0.0,"{'medium_cotton': np.int64(1), 'low_cotton': np.int64(1)}"
+fine13_strong,80cotton,80cotton_g14+80cotton_g16,1,2,1,1.0,"{'medium_cotton': np.int64(1), 'high_cotton': np.int64(1)}"
+fine13_strong,80cotton,80cotton_g15+80cotton_g17,0,2,1,2.0,"{'high_cotton': np.int64(1), 'medium_cotton': np.int64(1)}"
+fine13_strong,80cotton,80cotton_g18,1,4,0,0.0,"{'very_high_cotton': np.int64(3), 'medium_cotton': np.int64(1)}"
+fine13_strong,80cotton,80cotton_g19,4,1,1,0.0,{'high_cotton': np.int64(1)}
+fine13_strong,95cotton,95cotton_g00,2,8,1,1.0,"{'medium_cotton': np.int64(5), 'low_cotton': np.int64(2), 'high_cotton': np.int64(1)}"
+fine13_strong,95cotton,95cotton_g01,0,3,0,1.0,{'medium_cotton': np.int64(3)}
+fine13_strong,95cotton,95cotton_g02+95cotton_g11,0,5,0,3.0,{'medium_cotton': np.int64(5)}
+fine13_strong,95cotton,95cotton_g03,4,19,4,14.0,"{'medium_cotton': np.int64(11), 'low_cotton': np.int64(4), 'high_cotton': np.int64(4)}"
+fine13_strong,95cotton,95cotton_g04,3,3,0,0.0,"{'medium_cotton': np.int64(2), 'very_high_cotton': np.int64(1)}"
+fine13_strong,95cotton,95cotton_g05,3,5,0,0.0,"{'medium_cotton': np.int64(4), 'very_high_cotton': np.int64(1)}"
+fine13_strong,95cotton,95cotton_g06,3,1,1,1.0,{'high_cotton': np.int64(1)}
+fine13_strong,95cotton,95cotton_g07,1,1,1,0.0,{'high_cotton': np.int64(1)}
+fine13_strong,95cotton,95cotton_g08,0,1,0,0.0,{'medium_cotton': np.int64(1)}
+fine13_strong,95cotton,95cotton_g09,0,1,0,0.0,{'medium_cotton': np.int64(1)}
+fine13_strong,95cotton,95cotton_g10,1,9,1,1.0,"{'low_cotton': np.int64(6), 'medium_cotton': np.int64(2), 'high_cotton': np.int64(1)}"
+fine13_strong,95cotton,95cotton_g12,2,2,1,2.0,"{'high_cotton': np.int64(1), 'medium_cotton': np.int64(1)}"
+fine13_strong,95cotton,95cotton_g13,3,1,0,0.0,{'medium_cotton': np.int64(1)}
+fine13_strong,98cotton,98cotton_g00,1,11,9,1.0,"{'very_high_cotton': np.int64(9), 'medium_cotton': np.int64(2)}"
+fine13_strong,98cotton,98cotton_g01,3,7,0,1.0,{'medium_cotton': np.int64(7)}
+fine13_strong,98cotton,98cotton_g02,4,18,11,5.0,"{'very_high_cotton': np.int64(11), 'medium_cotton': np.int64(4), 'high_cotton': np.int64(3)}"
+fine13_strong,98cotton,98cotton_g03,2,3,0,0.0,{'medium_cotton': np.int64(3)}
+fine13_strong,98cotton,98cotton_g04,0,7,2,2.0,"{'medium_cotton': np.int64(5), 'very_high_cotton': np.int64(2)}"
+fine13_strong,98cotton,98cotton_g05,2,3,1,1.0,"{'medium_cotton': np.int64(2), 'very_high_cotton': np.int64(1)}"
+fine13_strong,98cotton,98cotton_g06,2,2,0,0.0,{'medium_cotton': np.int64(2)}
+fine13_strong,98cotton,98cotton_g07+99cotton_g07,0,1,0,0.0,{'high_cotton': np.int64(1)}
+fine13_strong,98cotton,98cotton_g08,2,1,1,0.0,{'very_high_cotton': np.int64(1)}
+fine13_strong,98cotton,98cotton_g09,3,2,2,0.0,{'very_high_cotton': np.int64(2)}
+fine13_strong,98cotton,98cotton_g10,2,1,0,0.0,{'medium_cotton': np.int64(1)}
+fine13_strong,98cotton,98cotton_g11,0,1,0,0.0,{'medium_cotton': np.int64(1)}
+fine13_strong,98cotton,98cotton_g12,3,1,0,0.0,{'medium_cotton': np.int64(1)}
+fine13_strong,99cotton,98cotton_g07+99cotton_g07,0,2,0,0.0,"{'high_cotton': np.int64(1), 'medium_cotton': np.int64(1)}"
+fine13_strong,99cotton,99cotton_g00,3,21,11,6.0,"{'very_high_cotton': np.int64(11), 'medium_cotton': np.int64(10)}"
+fine13_strong,99cotton,99cotton_g01,0,3,2,3.0,"{'very_high_cotton': np.int64(2), 'medium_cotton': np.int64(1)}"
+fine13_strong,99cotton,99cotton_g02,4,4,0,1.0,"{'medium_cotton': np.int64(3), 'high_cotton': np.int64(1)}"
+fine13_strong,99cotton,99cotton_g03,2,4,2,2.0,"{'very_high_cotton': np.int64(2), 'medium_cotton': np.int64(2)}"
+fine13_strong,99cotton,99cotton_g04,2,2,0,0.0,{'medium_cotton': np.int64(2)}
+fine13_strong,99cotton,99cotton_g05,1,3,1,3.0,"{'medium_cotton': np.int64(2), 'very_high_cotton': np.int64(1)}"
+fine13_strong,99cotton,99cotton_g06,1,2,0,0.0,"{'high_cotton': np.int64(1), 'medium_cotton': np.int64(1)}"
+fine13_strong,99cotton,99cotton_g08,4,2,2,2.0,{'very_high_cotton': np.int64(2)}
+fine13_strong,99cotton,99cotton_g09,0,1,0,0.0,{'medium_cotton': np.int64(1)}
+fine13_strong,99cotton,99cotton_g10,1,2,2,0.0,{'very_high_cotton': np.int64(2)}
+fine13_strong,99cotton,99cotton_g11,4,1,0,0.0,{'medium_cotton': np.int64(1)}
+band4_standard,30cotton,30cotton_g00,4,11,2,,"{'high_cotton': np.int64(5), 'medium_cotton': np.int64(4), 'low_cotton': np.int64(2)}"
+band4_standard,30cotton,30cotton_g01,1,32,21,,"{'low_cotton': np.int64(21), 'high_cotton': np.int64(9), 'medium_cotton': np.int64(2)}"
+band4_standard,30cotton,30cotton_g02,2,6,5,,"{'low_cotton': np.int64(5), 'high_cotton': np.int64(1)}"
+band4_standard,30cotton,30cotton_g03,3,7,0,,"{'high_cotton': np.int64(5), 'very_high_cotton': np.int64(1), 'medium_cotton': np.int64(1)}"
+band4_standard,30cotton,30cotton_g04,0,3,0,,"{'medium_cotton': np.int64(2), 'very_high_cotton': np.int64(1)}"
+band4_standard,30cotton,30cotton_g05,0,2,0,,{'medium_cotton': np.int64(2)}
+band4_standard,40cotton,40cotton_g00,4,21,8,,"{'medium_cotton': np.int64(11), 'low_cotton': np.int64(8), 'high_cotton': np.int64(2)}"
+band4_standard,40cotton,40cotton_g01+40cotton_g03+40cotton_g04,1,13,2,,"{'very_high_cotton': np.int64(7), 'medium_cotton': np.int64(3), 'low_cotton': np.int64(2), 'high_cotton': np.int64(1)}"
+band4_standard,40cotton,40cotton_g02,2,19,1,,"{'medium_cotton': np.int64(10), 'high_cotton': np.int64(8), 'low_cotton': np.int64(1)}"
+band4_standard,40cotton,40cotton_g05,0,1,1,,{'low_cotton': np.int64(1)}
+band4_standard,40cotton,40cotton_g06,3,9,7,,"{'low_cotton': np.int64(7), 'high_cotton': np.int64(2)}"
+band4_standard,50cotton,50cotton_g00,4,6,2,,"{'very_high_cotton': np.int64(4), 'medium_cotton': np.int64(2)}"
+band4_standard,50cotton,50cotton_g01+50cotton_g08,3,3,1,,"{'medium_cotton': np.int64(1), 'high_cotton': np.int64(1), 'very_high_cotton': np.int64(1)}"
+band4_standard,50cotton,50cotton_g02,1,4,0,,"{'low_cotton': np.int64(3), 'high_cotton': np.int64(1)}"
+band4_standard,50cotton,50cotton_g03,3,6,5,,"{'medium_cotton': np.int64(5), 'very_high_cotton': np.int64(1)}"
+band4_standard,50cotton,50cotton_g04,2,9,4,,"{'very_high_cotton': np.int64(5), 'medium_cotton': np.int64(4)}"
+band4_standard,50cotton,50cotton_g05,1,6,1,,"{'very_high_cotton': np.int64(3), 'medium_cotton': np.int64(1), 'high_cotton': np.int64(1), 'low_cotton': np.int64(1)}"
+band4_standard,50cotton,50cotton_g06,0,8,2,,"{'very_high_cotton': np.int64(6), 'medium_cotton': np.int64(2)}"
+band4_standard,50cotton,50cotton_g07,4,1,1,,{'medium_cotton': np.int64(1)}
+band4_standard,50cotton,50cotton_g09,1,1,1,,{'medium_cotton': np.int64(1)}
+band4_standard,50cotton,50cotton_g10,3,2,2,,{'medium_cotton': np.int64(2)}
+band4_standard,50cotton,50cotton_g11,0,3,3,,{'medium_cotton': np.int64(3)}
+band4_standard,50cotton,50cotton_g12,4,4,4,,{'medium_cotton': np.int64(4)}
+band4_standard,50cotton,50cotton_g13,4,1,1,,{'medium_cotton': np.int64(1)}
+band4_standard,50cotton,50cotton_g14,2,2,1,,"{'very_high_cotton': np.int64(1), 'medium_cotton': np.int64(1)}"
+band4_standard,53cotton,53cotton_g00,2,12,3,,"{'high_cotton': np.int64(7), 'medium_cotton': np.int64(3), 'low_cotton': np.int64(2)}"
+band4_standard,53cotton,53cotton_g01,3,2,2,,{'medium_cotton': np.int64(2)}
+band4_standard,53cotton,53cotton_g02+53cotton_g11,0,12,0,,{'very_high_cotton': np.int64(12)}
+band4_standard,53cotton,53cotton_g03+53cotton_g07,4,8,1,,"{'low_cotton': np.int64(7), 'medium_cotton': np.int64(1)}"
+band4_standard,53cotton,53cotton_g04,3,2,2,,{'medium_cotton': np.int64(2)}
+band4_standard,53cotton,53cotton_g05,1,6,1,,"{'high_cotton': np.int64(4), 'medium_cotton': np.int64(1), 'low_cotton': np.int64(1)}"
+band4_standard,53cotton,53cotton_g06,1,1,0,,{'very_high_cotton': np.int64(1)}
+band4_standard,53cotton,53cotton_g08,1,1,0,,{'very_high_cotton': np.int64(1)}
+band4_standard,53cotton,53cotton_g09,3,1,1,,{'medium_cotton': np.int64(1)}
+band4_standard,53cotton,53cotton_g10,3,2,0,,{'low_cotton': np.int64(2)}
+band4_standard,58cotton,58cotton_g00,0,4,0,,{'very_high_cotton': np.int64(4)}
+band4_standard,58cotton,58cotton_g01+58cotton_g03,3,21,10,,"{'medium_cotton': np.int64(10), 'low_cotton': np.int64(9), 'high_cotton': np.int64(2)}"
+band4_standard,58cotton,58cotton_g02+58cotton_g04,1,18,0,,"{'very_high_cotton': np.int64(13), 'low_cotton': np.int64(5)}"
+band4_standard,58cotton,58cotton_g05+58cotton_g06,4,3,2,,"{'medium_cotton': np.int64(2), 'high_cotton': np.int64(1)}"
+band4_standard,58cotton,58cotton_g07,2,1,1,,{'medium_cotton': np.int64(1)}
+band4_standard,58cotton,58cotton_g08,2,2,0,,{'very_high_cotton': np.int64(2)}
+band4_standard,60cotton,60cotton_g00,0,10,0,,"{'very_high_cotton': np.int64(9), 'high_cotton': np.int64(1)}"
+band4_standard,60cotton,60cotton_g01,2,4,2,,"{'medium_cotton': np.int64(2), 'very_high_cotton': np.int64(2)}"
+band4_standard,60cotton,60cotton_g02,1,1,0,,{'low_cotton': np.int64(1)}
+band4_standard,60cotton,60cotton_g03,4,1,0,,{'low_cotton': np.int64(1)}
+band4_standard,60cotton,60cotton_g04,3,2,0,,{'very_high_cotton': np.int64(2)}
+band4_standard,60cotton,60cotton_g05,4,1,0,,{'high_cotton': np.int64(1)}
+band4_standard,63cotton,63cotton_g00+63cotton_g01,0,13,1,,"{'very_high_cotton': np.int64(12), 'medium_cotton': np.int64(1)}"
+band4_standard,63cotton,63cotton_g02,1,1,0,,{'low_cotton': np.int64(1)}
+band4_standard,63cotton,63cotton_g03,4,1,0,,{'high_cotton': np.int64(1)}
+band4_standard,63cotton,63cotton_g04,2,1,1,,{'medium_cotton': np.int64(1)}
+band4_standard,63cotton,63cotton_g05,3,1,0,,{'low_cotton': np.int64(1)}
+band4_standard,65cotton,65cotton_g00,2,25,16,,"{'medium_cotton': np.int64(16), 'low_cotton': np.int64(6), 'high_cotton': np.int64(3)}"
+band4_standard,65cotton,65cotton_g01+65cotton_g02,4,5,2,,"{'high_cotton': np.int64(3), 'medium_cotton': np.int64(2)}"
+band4_standard,65cotton,65cotton_g03,0,1,1,,{'medium_cotton': np.int64(1)}
+band4_standard,65cotton,65cotton_g04,3,3,3,,{'medium_cotton': np.int64(3)}
+band4_standard,65cotton,65cotton_g05+65cotton_g06,1,3,1,,"{'high_cotton': np.int64(2), 'medium_cotton': np.int64(1)}"
+band4_standard,65cotton,65cotton_g07,0,1,0,,{'very_high_cotton': np.int64(1)}
+band4_standard,66cotton,66cotton_g00+66cotton_g05,3,14,7,,"{'medium_cotton': np.int64(7), 'low_cotton': np.int64(6), 'very_high_cotton': np.int64(1)}"
+band4_standard,66cotton,66cotton_g01+66cotton_g06,2,5,4,,"{'medium_cotton': np.int64(4), 'low_cotton': np.int64(1)}"
+band4_standard,66cotton,66cotton_g02,0,41,19,,"{'medium_cotton': np.int64(19), 'low_cotton': np.int64(12), 'high_cotton': np.int64(8), 'very_high_cotton': np.int64(2)}"
+band4_standard,66cotton,66cotton_g03+66cotton_g04,4,3,1,,"{'very_high_cotton': np.int64(2), 'medium_cotton': np.int64(1)}"
+band4_standard,80cotton,80cotton_g00,4,5,0,,"{'medium_cotton': np.int64(2), 'low_cotton': np.int64(2), 'very_high_cotton': np.int64(1)}"
+band4_standard,80cotton,80cotton_g01,0,3,3,,{'high_cotton': np.int64(3)}
+band4_standard,80cotton,80cotton_g02+80cotton_g03+80cotton_g08,2,12,5,,"{'high_cotton': np.int64(5), 'medium_cotton': np.int64(3), 'very_high_cotton': np.int64(3), 'low_cotton': np.int64(1)}"
+band4_standard,80cotton,80cotton_g04,4,2,2,,{'high_cotton': np.int64(2)}
+band4_standard,80cotton,80cotton_g05,1,4,2,,"{'high_cotton': np.int64(2), 'low_cotton': np.int64(1), 'very_high_cotton': np.int64(1)}"
+band4_standard,80cotton,80cotton_g06,4,3,3,,{'high_cotton': np.int64(3)}
+band4_standard,80cotton,80cotton_g07,0,4,2,,"{'high_cotton': np.int64(2), 'very_high_cotton': np.int64(2)}"
+band4_standard,80cotton,80cotton_g09,4,2,2,,{'high_cotton': np.int64(2)}
+band4_standard,80cotton,80cotton_g10+80cotton_g13,0,3,0,,{'medium_cotton': np.int64(3)}
+band4_standard,80cotton,80cotton_g11,3,12,0,,"{'low_cotton': np.int64(7), 'medium_cotton': np.int64(5)}"
+band4_standard,80cotton,80cotton_g12,1,2,0,,{'low_cotton': np.int64(2)}
+band4_standard,80cotton,80cotton_g14+80cotton_g16,1,2,2,,{'high_cotton': np.int64(2)}
+band4_standard,80cotton,80cotton_g15+80cotton_g17,0,2,1,,"{'high_cotton': np.int64(1), 'very_high_cotton': np.int64(1)}"
+band4_standard,80cotton,80cotton_g18,1,4,0,,{'very_high_cotton': np.int64(4)}
+band4_standard,80cotton,80cotton_g19,4,1,1,,{'high_cotton': np.int64(1)}
+band4_standard,95cotton,95cotton_g00,2,8,1,,"{'low_cotton': np.int64(4), 'medium_cotton': np.int64(3), 'high_cotton': np.int64(1)}"
+band4_standard,95cotton,95cotton_g01,0,3,3,,{'high_cotton': np.int64(3)}
+band4_standard,95cotton,95cotton_g02+95cotton_g11,0,5,0,,"{'very_high_cotton': np.int64(2), 'medium_cotton': np.int64(2), 'low_cotton': np.int64(1)}"
+band4_standard,95cotton,95cotton_g03,4,19,8,,"{'low_cotton': np.int64(10), 'high_cotton': np.int64(8), 'medium_cotton': np.int64(1)}"
+band4_standard,95cotton,95cotton_g04,3,3,0,,{'very_high_cotton': np.int64(3)}
+band4_standard,95cotton,95cotton_g05,3,5,2,,"{'very_high_cotton': np.int64(3), 'high_cotton': np.int64(2)}"
+band4_standard,95cotton,95cotton_g06,3,1,0,,{'medium_cotton': np.int64(1)}
+band4_standard,95cotton,95cotton_g07,1,1,0,,{'very_high_cotton': np.int64(1)}
+band4_standard,95cotton,95cotton_g08,0,1,0,,{'medium_cotton': np.int64(1)}
+band4_standard,95cotton,95cotton_g09,0,1,1,,{'high_cotton': np.int64(1)}
+band4_standard,95cotton,95cotton_g10,1,9,0,,{'low_cotton': np.int64(9)}
+band4_standard,95cotton,95cotton_g12,2,2,2,,{'high_cotton': np.int64(2)}
+band4_standard,95cotton,95cotton_g13,3,1,0,,{'very_high_cotton': np.int64(1)}
+band4_standard,98cotton,98cotton_g00,1,11,11,,{'very_high_cotton': np.int64(11)}
+band4_standard,98cotton,98cotton_g01,3,7,4,,"{'very_high_cotton': np.int64(4), 'medium_cotton': np.int64(2), 'high_cotton': np.int64(1)}"
+band4_standard,98cotton,98cotton_g02,4,18,13,,"{'very_high_cotton': np.int64(13), 'high_cotton': np.int64(4), 'medium_cotton': np.int64(1)}"
+band4_standard,98cotton,98cotton_g03,2,3,2,,"{'very_high_cotton': np.int64(2), 'medium_cotton': np.int64(1)}"
+band4_standard,98cotton,98cotton_g04,0,7,7,,{'very_high_cotton': np.int64(7)}
+band4_standard,98cotton,98cotton_g05,2,3,2,,"{'very_high_cotton': np.int64(2), 'high_cotton': np.int64(1)}"
+band4_standard,98cotton,98cotton_g06,2,2,1,,"{'medium_cotton': np.int64(1), 'very_high_cotton': np.int64(1)}"
+band4_standard,98cotton,98cotton_g07+99cotton_g07,0,1,0,,{'high_cotton': np.int64(1)}
+band4_standard,98cotton,98cotton_g08,2,1,1,,{'very_high_cotton': np.int64(1)}
+band4_standard,98cotton,98cotton_g09,3,2,2,,{'very_high_cotton': np.int64(2)}
+band4_standard,98cotton,98cotton_g10,2,1,0,,{'low_cotton': np.int64(1)}
+band4_standard,98cotton,98cotton_g11,0,1,1,,{'very_high_cotton': np.int64(1)}
+band4_standard,98cotton,98cotton_g12,3,1,1,,{'very_high_cotton': np.int64(1)}
+band4_standard,99cotton,98cotton_g07+99cotton_g07,0,2,0,,{'high_cotton': np.int64(2)}
+band4_standard,99cotton,99cotton_g00,3,21,19,,"{'very_high_cotton': np.int64(19), 'medium_cotton': np.int64(2)}"
+band4_standard,99cotton,99cotton_g01,0,3,3,,{'very_high_cotton': np.int64(3)}
+band4_standard,99cotton,99cotton_g02,4,4,1,,"{'medium_cotton': np.int64(3), 'very_high_cotton': np.int64(1)}"
+band4_standard,99cotton,99cotton_g03,2,4,4,,{'very_high_cotton': np.int64(4)}
+band4_standard,99cotton,99cotton_g04,2,2,1,,"{'medium_cotton': np.int64(1), 'very_high_cotton': np.int64(1)}"
+band4_standard,99cotton,99cotton_g05,1,3,3,,{'very_high_cotton': np.int64(3)}
+band4_standard,99cotton,99cotton_g06,1,2,2,,{'very_high_cotton': np.int64(2)}
+band4_standard,99cotton,99cotton_g08,4,2,2,,{'very_high_cotton': np.int64(2)}
+band4_standard,99cotton,99cotton_g09,0,1,0,,{'medium_cotton': np.int64(1)}
+band4_standard,99cotton,99cotton_g10,1,2,2,,{'very_high_cotton': np.int64(2)}
+band4_standard,99cotton,99cotton_g11,4,1,0,,{'medium_cotton': np.int64(1)}
+band4_strong,30cotton,30cotton_g00,4,11,10,,"{'low_cotton': np.int64(10), 'high_cotton': np.int64(1)}"
+band4_strong,30cotton,30cotton_g01,1,32,24,,"{'low_cotton': np.int64(24), 'high_cotton': np.int64(6), 'medium_cotton': np.int64(2)}"
+band4_strong,30cotton,30cotton_g02,2,6,1,,"{'high_cotton': np.int64(4), 'medium_cotton': np.int64(1), 'low_cotton': np.int64(1)}"
+band4_strong,30cotton,30cotton_g03,3,7,5,,"{'low_cotton': np.int64(5), 'very_high_cotton': np.int64(1), 'high_cotton': np.int64(1)}"
+band4_strong,30cotton,30cotton_g04,0,3,2,,"{'low_cotton': np.int64(2), 'very_high_cotton': np.int64(1)}"
+band4_strong,30cotton,30cotton_g05,0,2,1,,"{'low_cotton': np.int64(1), 'high_cotton': np.int64(1)}"
+band4_strong,40cotton,40cotton_g00,4,21,14,,"{'low_cotton': np.int64(14), 'high_cotton': np.int64(6), 'very_high_cotton': np.int64(1)}"
+band4_strong,40cotton,40cotton_g01+40cotton_g03+40cotton_g04,1,13,7,,"{'low_cotton': np.int64(7), 'medium_cotton': np.int64(6)}"
+band4_strong,40cotton,40cotton_g02,2,19,4,,"{'high_cotton': np.int64(9), 'medium_cotton': np.int64(6), 'low_cotton': np.int64(4)}"
+band4_strong,40cotton,40cotton_g05,0,1,0,,{'medium_cotton': np.int64(1)}
+band4_strong,40cotton,40cotton_g06,3,9,8,,"{'low_cotton': np.int64(8), 'high_cotton': np.int64(1)}"
+band4_strong,50cotton,50cotton_g00,4,6,1,,"{'high_cotton': np.int64(3), 'very_high_cotton': np.int64(2), 'medium_cotton': np.int64(1)}"
+band4_strong,50cotton,50cotton_g01+50cotton_g08,3,3,1,,"{'medium_cotton': np.int64(1), 'high_cotton': np.int64(1), 'very_high_cotton': np.int64(1)}"
+band4_strong,50cotton,50cotton_g02,1,4,3,,"{'medium_cotton': np.int64(3), 'low_cotton': np.int64(1)}"
+band4_strong,50cotton,50cotton_g03,3,6,1,,"{'very_high_cotton': np.int64(3), 'high_cotton': np.int64(2), 'medium_cotton': np.int64(1)}"
+band4_strong,50cotton,50cotton_g04,2,9,0,,{'very_high_cotton': np.int64(9)}
+band4_strong,50cotton,50cotton_g05,1,6,3,,"{'medium_cotton': np.int64(3), 'high_cotton': np.int64(2), 'very_high_cotton': np.int64(1)}"
+band4_strong,50cotton,50cotton_g06,0,8,6,,"{'medium_cotton': np.int64(6), 'very_high_cotton': np.int64(2)}"
+band4_strong,50cotton,50cotton_g07,4,1,1,,{'medium_cotton': np.int64(1)}
+band4_strong,50cotton,50cotton_g09,1,1,1,,{'medium_cotton': np.int64(1)}
+band4_strong,50cotton,50cotton_g10,3,2,0,,"{'very_high_cotton': np.int64(1), 'high_cotton': np.int64(1)}"
+band4_strong,50cotton,50cotton_g11,0,3,3,,{'medium_cotton': np.int64(3)}
+band4_strong,50cotton,50cotton_g12,4,4,4,,{'medium_cotton': np.int64(4)}
+band4_strong,50cotton,50cotton_g13,4,1,1,,{'medium_cotton': np.int64(1)}
+band4_strong,50cotton,50cotton_g14,2,2,2,,{'medium_cotton': np.int64(2)}
+band4_strong,53cotton,53cotton_g00,2,12,2,,"{'low_cotton': np.int64(5), 'high_cotton': np.int64(5), 'medium_cotton': np.int64(2)}"
+band4_strong,53cotton,53cotton_g01,3,2,2,,{'medium_cotton': np.int64(2)}
+band4_strong,53cotton,53cotton_g02+53cotton_g11,0,12,0,,"{'very_high_cotton': np.int64(11), 'high_cotton': np.int64(1)}"
+band4_strong,53cotton,53cotton_g03+53cotton_g07,4,8,1,,"{'low_cotton': np.int64(5), 'high_cotton': np.int64(2), 'medium_cotton': np.int64(1)}"
+band4_strong,53cotton,53cotton_g04,3,2,0,,{'very_high_cotton': np.int64(2)}
+band4_strong,53cotton,53cotton_g05,1,6,4,,"{'medium_cotton': np.int64(4), 'very_high_cotton': np.int64(2)}"
+band4_strong,53cotton,53cotton_g06,1,1,0,,{'very_high_cotton': np.int64(1)}
+band4_strong,53cotton,53cotton_g08,1,1,0,,{'very_high_cotton': np.int64(1)}
+band4_strong,53cotton,53cotton_g09,3,1,0,,{'very_high_cotton': np.int64(1)}
+band4_strong,53cotton,53cotton_g10,3,2,0,,{'low_cotton': np.int64(2)}
+band4_strong,58cotton,58cotton_g00,0,4,1,,"{'high_cotton': np.int64(2), 'very_high_cotton': np.int64(1), 'medium_cotton': np.int64(1)}"
+band4_strong,58cotton,58cotton_g01+58cotton_g03,3,21,2,,"{'low_cotton': np.int64(16), 'high_cotton': np.int64(3), 'medium_cotton': np.int64(2)}"
+band4_strong,58cotton,58cotton_g02+58cotton_g04,1,18,8,,"{'very_high_cotton': np.int64(10), 'medium_cotton': np.int64(8)}"
+band4_strong,58cotton,58cotton_g05+58cotton_g06,4,3,1,,"{'high_cotton': np.int64(2), 'medium_cotton': np.int64(1)}"
+band4_strong,58cotton,58cotton_g07,2,1,1,,{'medium_cotton': np.int64(1)}
+band4_strong,58cotton,58cotton_g08,2,2,0,,{'very_high_cotton': np.int64(2)}
+band4_strong,60cotton,60cotton_g00,0,10,0,,"{'very_high_cotton': np.int64(9), 'high_cotton': np.int64(1)}"
+band4_strong,60cotton,60cotton_g01,2,4,1,,"{'very_high_cotton': np.int64(3), 'medium_cotton': np.int64(1)}"
+band4_strong,60cotton,60cotton_g02,1,1,0,,{'very_high_cotton': np.int64(1)}
+band4_strong,60cotton,60cotton_g03,4,1,1,,{'medium_cotton': np.int64(1)}
+band4_strong,60cotton,60cotton_g04,3,2,0,,{'very_high_cotton': np.int64(2)}
+band4_strong,60cotton,60cotton_g05,4,1,0,,{'very_high_cotton': np.int64(1)}
+band4_strong,63cotton,63cotton_g00+63cotton_g01,0,13,1,,"{'very_high_cotton': np.int64(11), 'medium_cotton': np.int64(1), 'high_cotton': np.int64(1)}"
+band4_strong,63cotton,63cotton_g02,1,1,0,,{'low_cotton': np.int64(1)}
+band4_strong,63cotton,63cotton_g03,4,1,1,,{'medium_cotton': np.int64(1)}
+band4_strong,63cotton,63cotton_g04,2,1,0,,{'very_high_cotton': np.int64(1)}
+band4_strong,63cotton,63cotton_g05,3,1,0,,{'high_cotton': np.int64(1)}
+band4_strong,65cotton,65cotton_g00,2,25,14,,"{'medium_cotton': np.int64(14), 'high_cotton': np.int64(6), 'low_cotton': np.int64(5)}"
+band4_strong,65cotton,65cotton_g01+65cotton_g02,4,5,1,,"{'high_cotton': np.int64(4), 'medium_cotton': np.int64(1)}"
+band4_strong,65cotton,65cotton_g03,0,1,1,,{'medium_cotton': np.int64(1)}
+band4_strong,65cotton,65cotton_g04,3,3,1,,"{'low_cotton': np.int64(2), 'medium_cotton': np.int64(1)}"
+band4_strong,65cotton,65cotton_g05+65cotton_g06,1,3,0,,{'high_cotton': np.int64(3)}
+band4_strong,65cotton,65cotton_g07,0,1,0,,{'low_cotton': np.int64(1)}
+band4_strong,66cotton,66cotton_g00+66cotton_g05,3,14,2,,"{'low_cotton': np.int64(11), 'medium_cotton': np.int64(2), 'high_cotton': np.int64(1)}"
+band4_strong,66cotton,66cotton_g01+66cotton_g06,2,5,5,,{'medium_cotton': np.int64(5)}
+band4_strong,66cotton,66cotton_g02,0,41,17,,"{'low_cotton': np.int64(21), 'medium_cotton': np.int64(17), 'very_high_cotton': np.int64(3)}"
+band4_strong,66cotton,66cotton_g03+66cotton_g04,4,3,0,,{'very_high_cotton': np.int64(3)}
+band4_strong,80cotton,80cotton_g00,4,5,3,,"{'high_cotton': np.int64(3), 'medium_cotton': np.int64(1), 'low_cotton': np.int64(1)}"
+band4_strong,80cotton,80cotton_g01,0,3,2,,"{'high_cotton': np.int64(2), 'medium_cotton': np.int64(1)}"
+band4_strong,80cotton,80cotton_g02+80cotton_g03+80cotton_g08,2,12,5,,"{'high_cotton': np.int64(5), 'very_high_cotton': np.int64(3), 'low_cotton': np.int64(2), 'medium_cotton': np.int64(2)}"
+band4_strong,80cotton,80cotton_g04,4,2,2,,{'high_cotton': np.int64(2)}
+band4_strong,80cotton,80cotton_g05,1,4,3,,"{'high_cotton': np.int64(3), 'low_cotton': np.int64(1)}"
+band4_strong,80cotton,80cotton_g06,4,3,3,,{'high_cotton': np.int64(3)}
+band4_strong,80cotton,80cotton_g07,0,4,4,,{'high_cotton': np.int64(4)}
+band4_strong,80cotton,80cotton_g09,4,2,0,,{'medium_cotton': np.int64(2)}
+band4_strong,80cotton,80cotton_g10+80cotton_g13,0,3,0,,{'medium_cotton': np.int64(3)}
+band4_strong,80cotton,80cotton_g11,3,12,1,,"{'low_cotton': np.int64(8), 'medium_cotton': np.int64(3), 'high_cotton': np.int64(1)}"
+band4_strong,80cotton,80cotton_g12,1,2,1,,"{'high_cotton': np.int64(1), 'low_cotton': np.int64(1)}"
+band4_strong,80cotton,80cotton_g14+80cotton_g16,1,2,2,,{'high_cotton': np.int64(2)}
+band4_strong,80cotton,80cotton_g15+80cotton_g17,0,2,2,,{'high_cotton': np.int64(2)}
+band4_strong,80cotton,80cotton_g18,1,4,0,,{'medium_cotton': np.int64(4)}
+band4_strong,80cotton,80cotton_g19,4,1,1,,{'high_cotton': np.int64(1)}
+band4_strong,95cotton,95cotton_g00,2,8,6,,"{'high_cotton': np.int64(6), 'low_cotton': np.int64(1), 'medium_cotton': np.int64(1)}"
+band4_strong,95cotton,95cotton_g01,0,3,3,,{'high_cotton': np.int64(3)}
+band4_strong,95cotton,95cotton_g02+95cotton_g11,0,5,2,,"{'very_high_cotton': np.int64(2), 'high_cotton': np.int64(2), 'medium_cotton': np.int64(1)}"
+band4_strong,95cotton,95cotton_g03,4,19,6,,"{'low_cotton': np.int64(13), 'high_cotton': np.int64(6)}"
+band4_strong,95cotton,95cotton_g04,3,3,0,,{'very_high_cotton': np.int64(3)}
+band4_strong,95cotton,95cotton_g05,3,5,0,,{'very_high_cotton': np.int64(5)}
+band4_strong,95cotton,95cotton_g06,3,1,1,,{'high_cotton': np.int64(1)}
+band4_strong,95cotton,95cotton_g07,1,1,1,,{'high_cotton': np.int64(1)}
+band4_strong,95cotton,95cotton_g08,0,1,0,,{'very_high_cotton': np.int64(1)}
+band4_strong,95cotton,95cotton_g09,0,1,0,,{'medium_cotton': np.int64(1)}
+band4_strong,95cotton,95cotton_g10,1,9,2,,"{'low_cotton': np.int64(6), 'high_cotton': np.int64(2), 'very_high_cotton': np.int64(1)}"
+band4_strong,95cotton,95cotton_g12,2,2,2,,{'high_cotton': np.int64(2)}
+band4_strong,95cotton,95cotton_g13,3,1,0,,{'very_high_cotton': np.int64(1)}
+band4_strong,98cotton,98cotton_g00,1,11,9,,"{'very_high_cotton': np.int64(9), 'medium_cotton': np.int64(2)}"
+band4_strong,98cotton,98cotton_g01,3,7,6,,"{'very_high_cotton': np.int64(6), 'medium_cotton': np.int64(1)}"
+band4_strong,98cotton,98cotton_g02,4,18,16,,"{'very_high_cotton': np.int64(16), 'high_cotton': np.int64(2)}"
+band4_strong,98cotton,98cotton_g03,2,3,3,,{'very_high_cotton': np.int64(3)}
+band4_strong,98cotton,98cotton_g04,0,7,6,,"{'very_high_cotton': np.int64(6), 'high_cotton': np.int64(1)}"
+band4_strong,98cotton,98cotton_g05,2,3,3,,{'very_high_cotton': np.int64(3)}
+band4_strong,98cotton,98cotton_g06,2,2,2,,{'very_high_cotton': np.int64(2)}
+band4_strong,98cotton,98cotton_g07+99cotton_g07,0,1,0,,{'high_cotton': np.int64(1)}
+band4_strong,98cotton,98cotton_g08,2,1,1,,{'very_high_cotton': np.int64(1)}
+band4_strong,98cotton,98cotton_g09,3,2,2,,{'very_high_cotton': np.int64(2)}
+band4_strong,98cotton,98cotton_g10,2,1,0,,{'low_cotton': np.int64(1)}
+band4_strong,98cotton,98cotton_g11,0,1,1,,{'very_high_cotton': np.int64(1)}
+band4_strong,98cotton,98cotton_g12,3,1,0,,{'high_cotton': np.int64(1)}
+band4_strong,99cotton,98cotton_g07+99cotton_g07,0,2,0,,{'high_cotton': np.int64(2)}
+band4_strong,99cotton,99cotton_g00,3,21,17,,"{'very_high_cotton': np.int64(17), 'high_cotton': np.int64(3), 'medium_cotton': np.int64(1)}"
+band4_strong,99cotton,99cotton_g01,0,3,3,,{'very_high_cotton': np.int64(3)}
+band4_strong,99cotton,99cotton_g02,4,4,3,,"{'very_high_cotton': np.int64(3), 'medium_cotton': np.int64(1)}"
+band4_strong,99cotton,99cotton_g03,2,4,4,,{'very_high_cotton': np.int64(4)}
+band4_strong,99cotton,99cotton_g04,2,2,0,,"{'high_cotton': np.int64(1), 'medium_cotton': np.int64(1)}"
+band4_strong,99cotton,99cotton_g05,1,3,3,,{'very_high_cotton': np.int64(3)}
+band4_strong,99cotton,99cotton_g06,1,2,2,,{'very_high_cotton': np.int64(2)}
+band4_strong,99cotton,99cotton_g08,4,2,0,,{'medium_cotton': np.int64(2)}
+band4_strong,99cotton,99cotton_g09,0,1,1,,{'very_high_cotton': np.int64(1)}
+band4_strong,99cotton,99cotton_g10,1,2,2,,{'very_high_cotton': np.int64(2)}
+band4_strong,99cotton,99cotton_g11,4,1,0,,{'medium_cotton': np.int64(1)}

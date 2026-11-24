@@ -1,0 +1,5 @@
+{
+  "best_epoch": 5,
+  "val_acc": 0.1796875,
+  "train_acc_at_best": 0.6041666666666666
+}

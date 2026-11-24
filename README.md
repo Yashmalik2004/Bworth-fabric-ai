@@ -155,6 +155,31 @@ inverse-frequency class weights (`class_weighted_loss=True`).
 * Fits a 4 GB laptop GPU (RTX 3050): ~10 s/epoch. On Windows keep `num_workers` at 2 or lower on 16 GB RAM,
   because each worker re-imports PyTorch (`RuntimeError: bad allocation` otherwise).
 
+## Phase 2 — four-class cotton bands (experimental)
+
+Full write-up: [`evaluation/composition/PHASE2_REPORT.md`](evaluation/composition/PHASE2_REPORT.md).
+
+Bands: Low (30–40 %), Medium (50–66 %), High (80–95 %), Very high (98–99 %). The same cleaned images are used,
+with manually corrected swatch groups (`configs/swatch_group_overrides.json`) and a new split
+(`splits_group_v2.csv`), plus 5-fold cross-validation grouped by swatch. 13-class models are scored in the 4 bands
+by summing their probabilities within each band.
+
+| 5-fold CV, unseen swatches, 4-band scoring | Balanced acc. | Macro F1 |
+|---|---|---|
+| 13-class, standard colour aug (baseline recipe) | 35.7 ± 10.1 % | 0.338 |
+| 13-class, strong colour aug | 37.3 ± 4.4 % | 0.368 |
+| 4-band, standard colour aug | 45.1 ± 2.7 % | 0.399 |
+| **4-band, strong colour aug** (`models/composition/band4_strong.pth`) | **53.9 ± 5.8 %** | **0.462** |
+
+Chance balanced accuracy is 25 %. The app offers both the 13-class baseline (default) and the 4-band model
+(labelled experimental).
+
+```bash
+python -m training.composition.experiment_splits          # v2 split + CV folds (v1 untouched)
+python -m training.composition.train --label-scheme band4 --color-aug strong     --splits-path processed/composition/splits_group_v2.csv --run-name band4_strong_v2     --checkpoint-path models/composition/band4_strong.pth
+python -m training.composition.cross_validate run          # resumable; ~20 trainings
+```
+
 ## Known limitations
 
 * **Weak generalisation to new fabrics** (32 % test accuracy on unseen swatches). Validation loss rises from

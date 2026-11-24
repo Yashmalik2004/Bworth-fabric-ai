@@ -18,7 +18,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from configs.config import DEFAULT_CHECKPOINT, IMAGES_DIR, cotton_label  # noqa: E402
+from configs.config import APP_MODELS, APP_SAMPLE_SPLITS, EVALUATION_DIR, FINE_TO_BAND, IMAGES_DIR, display_label  # noqa: E402
 from inference.composition.predict import (  # noqa: E402
     CheckpointNotFoundError,
     CompositionPredictor,
@@ -45,11 +45,13 @@ st.markdown(
       .bw-sub {{ color: #52514e; margin-top: .25rem; font-size: 1rem; }}
       .bw-card {{ border: 1px solid #e6e5e0; border-radius: 12px; padding: 1.25rem 1.5rem; background: #fcfcfb; }}
       .bw-kicker {{ text-transform: uppercase; letter-spacing: .06em; font-size: .75rem; color: #52514e; margin-bottom: .25rem; }}
-      .bw-result {{ font-size: 2.6rem; font-weight: 700; color: {ACCENT}; line-height: 1.1; }}
+      .bw-result {{ font-size: 2.4rem; font-weight: 700; color: {ACCENT}; line-height: 1.1; }}
       .bw-score {{ font-size: 1rem; color: #0b0b0b; margin-top: .5rem; }}
       .bw-note {{ font-size: .85rem; color: #52514e; }}
       .bw-pill {{ display: inline-block; padding: .15rem .6rem; border-radius: 999px; font-size: .78rem;
                   background: #fff4e5; color: #8a5300; border: 1px solid #f3d19c; }}
+      .bw-badge {{ display: inline-block; padding: .1rem .55rem; border-radius: 6px; font-size: .72rem;
+                   font-weight: 700; letter-spacing: .05em; border: 1px solid #52514e; color: #0b0b0b; }}
     </style>
     """,
     unsafe_allow_html=True,
@@ -71,7 +73,7 @@ def load_json(path: str, mtime: float) -> dict | None:
 
 
 @st.cache_data
-def load_test_samples(splits_path: str) -> pd.DataFrame:
+def load_test_samples(splits_path: str, mtime: float) -> pd.DataFrame:
     p = Path(splits_path)
     if not p.is_absolute():
         p = PROJECT_ROOT / p
@@ -82,7 +84,12 @@ def load_test_samples(splits_path: str) -> pd.DataFrame:
 
 
 def _mtime(p: Path) -> float:
+    p = Path(p)
     return p.stat().st_mtime if p.exists() else 0.0
+
+
+def pct(x: float) -> str:
+    return f"{x * 100:.1f}%"
 
 
 # --------------------------------------------------------------------------- #
@@ -95,77 +102,87 @@ with h1:
 with h2:
     st.markdown('<p class="bw-title">Fabric Intelligence · Cotton Composition</p>', unsafe_allow_html=True)
     st.markdown(
-        '<p class="bw-sub">Estimate the cotton-percentage category of a fabric from a photo — '
+        '<p class="bw-sub">Estimate the cotton content of a fabric from a photo — '
         "an experimental AI demo for the BWorth textile-recycling programme.</p>",
         unsafe_allow_html=True,
     )
 
 st.warning(
     "**Experimental AI estimate.** Predictions come from an image classifier trained on a small public "
-    "dataset (CottonFabricImageBD, 13 cotton-percentage categories). They are not a laboratory or chemical "
-    "measurement of fibre composition, and the score is the model's top class probability, not a "
-    "calibrated confidence.",
+    "dataset (CottonFabricImageBD). They are not a laboratory or chemical measurement of fibre composition, "
+    "and the score is the model's top class probability, not a calibrated confidence.",
     icon="⚠️",
 )
 
 # --------------------------------------------------------------------------- #
-# Model loading
+# Model selection (sidebar)
 # --------------------------------------------------------------------------- #
-ckpt_path = DEFAULT_CHECKPOINT
-predictor: CompositionPredictor | None = None
-load_error: str | None = None
-try:
-    predictor = get_predictor(str(ckpt_path), _mtime(ckpt_path))
-except CheckpointNotFoundError:
-    load_error = "missing"
-except InvalidCheckpointError as exc:
-    load_error = str(exc)
+available = {k: m for k, m in APP_MODELS.items() if _mtime(m["checkpoint"]) and Path(m["checkpoint"]).stat().st_size}
+cv_summary = load_json(str(EVALUATION_DIR / "cv" / "cv_summary.json"), _mtime(EVALUATION_DIR / "cv" / "cv_summary.json"))
 
-if predictor is None:
+with st.sidebar:
+    st.subheader("Model")
+    if not available:
+        model_key = None
+    else:
+        model_key = st.radio(
+            "Choose the model",
+            options=list(available),
+            format_func=lambda k: f"{available[k]['title']}  ·  {available[k]['badge'].lower()}",
+            index=0,
+            help="The 13-class baseline is the default. The 4-class model is an experiment.",
+        )
+
+if model_key is None:
     st.error("No trained model is available, so predictions are disabled.", icon="🚫")
-    if load_error and load_error != "missing":
-        st.caption(f"Details: {load_error}")
     st.markdown("Train the model from the project root, then reload this page:")
-    st.code(
-        "python -m training.composition.validate_dataset\n"
-        "python -m training.composition.train",
-        language="bash",
-    )
+    st.code("python -m training.composition.validate_dataset\npython -m training.composition.train", language="bash")
+    st.stop()
+
+spec = available[model_key]
+try:
+    predictor = get_predictor(str(spec["checkpoint"]), _mtime(spec["checkpoint"]))
+except (CheckpointNotFoundError, InvalidCheckpointError) as exc:
+    st.error(f"The selected model could not be loaded: {exc}", icon="🚫")
     st.stop()
 
 info = predictor.info
-cfg = predictor.checkpoint.get("config", {})
-eval_dir = PROJECT_ROOT / "evaluation" / "composition" / cfg.get("run_name", "")
-test_metrics = load_json(str(eval_dir / "metrics_test.json"), _mtime(eval_dir / "metrics_test.json"))
+is_band = info["label_scheme"] == "band4"
+metrics = load_json(str(spec["metrics"]), _mtime(spec["metrics"]))
+cv_entry = (cv_summary or {}).get("configs", {}).get(spec["cv_config"])
 
-# --------------------------------------------------------------------------- #
-# Sidebar: model card
-# --------------------------------------------------------------------------- #
 with st.sidebar:
-    st.subheader("Model")
+    st.markdown(f'<span class="bw-badge">{spec["badge"]}</span>', unsafe_allow_html=True)
+    st.caption(spec["description"])
     st.markdown(
         f"- **Architecture:** ResNet-50 (ImageNet transfer learning)\n"
-        f"- **Classes:** {info['num_classes']} cotton-percentage categories\n"
-        f"- **Input:** {info['image_size']}×{info['image_size']} px\n"
-        f"- **Best epoch:** {info['best_epoch']}\n"
-        f"- **Device:** {info['device']}"
+        f"- **Output:** {info['num_classes']} {'cotton bands' if is_band else 'cotton-percentage categories'}\n"
+        f"- **Colour augmentation:** {info['color_aug']}\n"
+        f"- **Input:** {info['image_size']}×{info['image_size']} px · **Device:** {info['device']}"
     )
-    st.subheader("Held-out test performance")
-    if test_metrics:
+    st.subheader("Unseen-swatch performance")
+    if metrics:
+        own = "13 classes" if not is_band else "4 bands"
         c1, c2 = st.columns(2)
-        c1.metric("Accuracy", f"{test_metrics['accuracy'] * 100:.1f}%")
-        c2.metric("Top-3 acc.", f"{test_metrics['top3_accuracy'] * 100:.1f}%")
-        c1.metric("Macro F1", f"{test_metrics['macro_f1']:.3f}")
-        c2.metric("Mean error", f"{test_metrics['mean_abs_error_cotton_pct_points']:.1f} pts")
-        st.caption(
-            f"{test_metrics['n_images']} test images from fabric swatches not seen in training "
-            f"({test_metrics['split_strategy']} split). Expect lower accuracy on real-world photos "
-            "that differ from the dataset."
-        )
+        c1.metric(f"Accuracy ({own})", pct(metrics["accuracy"]))
+        c2.metric("Balanced acc.", pct(metrics["balanced_accuracy"]))
+        if "band4" in metrics:
+            c1.metric("Scored in 4 bands", pct(metrics["band4"]["accuracy"]))
+            c2.metric("4-band bal. acc.", pct(metrics["band4"]["balanced_accuracy"]))
+        st.caption(f"Held-out test split v2: {metrics['n_images']} images of fabric swatches not used in training.")
     else:
-        st.caption("No test metrics found. Run `python -m training.composition.evaluate`.")
+        st.caption("No test metrics found for this model.")
+    if cv_entry and "band4_balanced_accuracy_mean" in cv_entry:
+        st.metric(
+            "5-fold CV, 4-band balanced acc.",
+            f"{pct(cv_entry['band4_balanced_accuracy_mean'])} ± {cv_entry['band4_balanced_accuracy_std'] * 100:.1f}",
+        )
+        st.caption("Same training recipe retrained on 5 swatch-grouped folds (mean ± std across folds).")
+    st.caption("Expect lower accuracy on real-world photos that differ from the dataset.")
     st.subheader("Categories")
-    st.caption(", ".join(cotton_label(c) for c in predictor.classes))
+    st.caption(" · ".join(display_label(c) for c in predictor.classes))
+
+st.info(f"Model in use: **{spec['title']}** ({spec['badge'].lower()}) — {spec['description']}", icon="🧠")
 
 # --------------------------------------------------------------------------- #
 # Input
@@ -176,7 +193,7 @@ with left:
     st.markdown("#### 1 · Provide a fabric image")
     tab_up, tab_cam, tab_sample = st.tabs(["Upload", "Camera", "Held-out test sample"])
     source = None
-    true_label = None
+    true_fine = None
     with tab_up:
         up = st.file_uploader("Upload a close-up photo of the fabric", type=["jpg", "jpeg", "png", "webp", "bmp"])
         if up is not None:
@@ -187,22 +204,21 @@ with left:
         if cam is not None:
             source = ("camera", cam.getvalue())
     with tab_sample:
-        samples = load_test_samples(cfg.get("splits_path", ""))
+        samples = load_test_samples(str(APP_SAMPLE_SPLITS), _mtime(APP_SAMPLE_SPLITS))
         if samples.empty:
-            st.caption("Test split file not found.")
+            st.caption("Test split file not found (run `python -m training.composition.experiment_splits`).")
         else:
-            st.caption("Images from the held-out test split — never used for training or model selection.")
+            st.caption("Images from the held-out v2 test split — never used to train either model.")
             idx = st.selectbox(
                 "Sample",
                 options=list(range(len(samples))),
-                format_func=lambda i: f"#{i + 1:03d} · true: {cotton_label(samples.label[i])}",
+                format_func=lambda i: f"#{i + 1:03d} · true: {display_label(samples.label[i])}",
                 index=None,
                 placeholder="Choose a test image…",
             )
             if idx is not None:
-                p = PROJECT_ROOT / samples.path[idx]
-                source = ("sample", p.read_bytes())
-                true_label = samples.label[idx]
+                source = ("sample", (PROJECT_ROOT / samples.path[idx]).read_bytes())
+                true_fine = samples.label[idx]
 
     image = None
     if source is not None:
@@ -222,17 +238,18 @@ with right:
         st.info("Upload a photo, take one with the camera, or pick a held-out test sample to begin.")
     else:
         run = st.button("Analyse fabric", type="primary", width="stretch")
-        key = hash(source[1])
+        key = (hash(source[1]), model_key)
         if run:
             with st.spinner("Analysing texture…"):
-                st.session_state["result"] = (key, predictor.predict(image), true_label)
+                st.session_state["result"] = (key, predictor.predict(image), true_fine)
         stored = st.session_state.get("result")
         if stored and stored[0] == key:
-            _, result, t_label = stored
+            _, result, t_fine = stored
+            kicker = "Predicted cotton band" if is_band else "Predicted cotton category"
             st.markdown(
                 f"""
                 <div class="bw-card">
-                  <div class="bw-kicker">Predicted category</div>
+                  <div class="bw-kicker">{kicker} · {spec['title']}</div>
                   <div class="bw-result">{result.predicted_label}</div>
                   <div class="bw-score">Prediction score: <b>{result.score * 100:.1f}%</b>
                     <span class="bw-note">(top class probability, uncalibrated)</span></div>
@@ -240,37 +257,40 @@ with right:
                 """,
                 unsafe_allow_html=True,
             )
-            if t_label is not None:
-                ok = t_label == result.predicted_class
+            if t_fine is not None:
+                t_class = FINE_TO_BAND[t_fine] if is_band else t_fine
+                ok = t_class == result.predicted_class
+                extra = f" ({display_label(t_fine)})" if is_band else ""
                 (st.success if ok else st.error)(
-                    f"Dataset label: **{cotton_label(t_label)}** — prediction is {'correct' if ok else 'incorrect'}."
+                    f"Dataset label: **{display_label(t_class)}**{extra} — prediction is "
+                    f"{'correct' if ok else 'incorrect'}."
                 )
-            if result.score < 0.4:
+            if result.score < (0.5 if is_band else 0.4):
                 st.markdown(
                     '<span class="bw-pill">Low score — the model is uncertain between several categories</span>',
                     unsafe_allow_html=True,
                 )
 
             st.markdown("##### Probability across all categories")
+            order = [display_label(c) for c in predictor.classes]
             prob_df = pd.DataFrame(
                 {
-                    "Category": [cotton_label(c) for c in result.probabilities],
-                    "Probability": list(result.probabilities.values()),
-                    "Predicted": [c == result.predicted_class for c in result.probabilities],
+                    "Category": order,
+                    "Probability": [result.probabilities[c] for c in predictor.classes],
+                    "Predicted": [c == result.predicted_class for c in predictor.classes],
                 }
             )
-            order = [cotton_label(c) for c in predictor.classes]
             chart = (
                 alt.Chart(prob_df)
-                .mark_bar(cornerRadiusEnd=4, height=16)
+                .mark_bar(cornerRadiusEnd=4, height=16 if not is_band else 28)
                 .encode(
-                    y=alt.Y("Category:N", sort=order, title=None),
+                    y=alt.Y("Category:N", sort=order, title=None, axis=alt.Axis(labelLimit=220)),
                     x=alt.X("Probability:Q", axis=alt.Axis(format="%", grid=True), scale=alt.Scale(domain=[0, 1]),
                             title=None),
                     color=alt.condition(alt.datum.Predicted, alt.value(ACCENT), alt.value(MUTED_BAR)),
                     tooltip=[alt.Tooltip("Category:N"), alt.Tooltip("Probability:Q", format=".1%")],
                 )
-                .properties(height=13 * 26)
+                .properties(height=len(order) * (26 if not is_band else 44))
             )
             st.altair_chart(chart, width="stretch")
             with st.expander("Show as table"):
@@ -281,6 +301,7 @@ with right:
                     width="stretch",
                 )
             st.caption(
-                "Categories are the cotton percentages present in the training dataset; the model cannot output "
-                "values outside them and does not estimate the other fibres in the blend."
+                ("Bands group the cotton percentages present in the training dataset. "
+                 if is_band else "Categories are the cotton percentages present in the training dataset; ")
+                + "the model cannot estimate values outside them and says nothing about the other fibres in the blend."
             )

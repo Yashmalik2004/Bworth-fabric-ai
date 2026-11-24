@@ -1,0 +1,40 @@
+label,group,n,correct,predictions,accuracy
+30cotton,30cotton_g02,6,0,"{'40cotton': 2, '60cotton': 2, '58cotton': 1, '80cotton': 1}",0.0
+30cotton,30cotton_g04,3,0,"{'80cotton': 1, '53cotton': 2}",0.0
+40cotton,40cotton_g06,9,1,"{'53cotton': 6, '80cotton': 2, '40cotton': 1}",0.1111111111111111
+50cotton,50cotton_g10,2,2,{'50cotton': 2},1.0
+50cotton,50cotton_g12,4,3,"{'50cotton': 3, '99cotton': 1}",0.75
+50cotton,50cotton_g14,2,2,{'50cotton': 2},1.0
+53cotton,53cotton_g01,2,0,"{'66cotton': 1, '50cotton': 1}",0.0
+53cotton,53cotton_g09,1,0,{'40cotton': 1},0.0
+53cotton,53cotton_g10,2,0,{'40cotton': 2},0.0
+53cotton,53cotton_g11,2,1,"{'53cotton': 1, '63cotton': 1}",0.5
+58cotton,58cotton_g02,5,5,{'58cotton': 5},1.0
+58cotton,58cotton_g08,2,0,{'99cotton': 2},0.0
+60cotton,60cotton_g02,1,0,{'99cotton': 1},0.0
+60cotton,60cotton_g05,1,0,{'99cotton': 1},0.0
+63cotton,63cotton_g02,1,0,{'58cotton': 1},0.0
+63cotton,63cotton_g05,1,0,{'58cotton': 1},0.0
+65cotton,65cotton_g02,3,0,{'80cotton': 3},0.0
+65cotton,65cotton_g05,2,0,{'80cotton': 2},0.0
+65cotton,65cotton_g07,1,0,{'63cotton': 1},0.0
+66cotton,66cotton_g01,4,0,"{'50cotton': 2, '53cotton': 1, '65cotton': 1}",0.0
+66cotton,66cotton_g04,1,0,{'65cotton': 1},0.0
+66cotton,66cotton_g05,3,2,"{'66cotton': 2, '40cotton': 1}",0.6666666666666666
+66cotton,66cotton_g06,1,0,{'65cotton': 1},0.0
+80cotton,80cotton_g01,3,3,{'80cotton': 3},1.0
+80cotton,80cotton_g08,3,3,{'80cotton': 3},1.0
+80cotton,80cotton_g13,1,1,{'80cotton': 1},1.0
+80cotton,80cotton_g14,1,0,{'95cotton': 1},0.0
+80cotton,80cotton_g17,1,1,{'80cotton': 1},1.0
+95cotton,95cotton_g01,3,1,"{'63cotton': 1, '95cotton': 1, '50cotton': 1}",0.3333333333333333
+95cotton,95cotton_g11,3,1,"{'95cotton': 1, '50cotton': 1, '98cotton': 1}",0.3333333333333333
+95cotton,95cotton_g12,2,1,"{'80cotton': 1, '95cotton': 1}",0.5
+95cotton,95cotton_g13,1,0,{'50cotton': 1},0.0
+98cotton,98cotton_g03,3,1,"{'99cotton': 2, '98cotton': 1}",0.3333333333333333
+98cotton,98cotton_g05,3,0,"{'99cotton': 1, '60cotton': 1, '50cotton': 1}",0.0
+98cotton,98cotton_g09,2,0,"{'50cotton': 1, '99cotton': 1}",0.0
+98cotton,98cotton_g10,1,0,{'66cotton': 1},0.0
+99cotton,99cotton_g05,3,2,"{'58cotton': 1, '99cotton': 2}",0.6666666666666666
+99cotton,99cotton_g07,2,0,"{'80cotton': 1, '65cotton': 1}",0.0
+99cotton,99cotton_g10,2,0,{'98cotton': 2},0.0

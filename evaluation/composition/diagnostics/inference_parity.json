@@ -1,0 +1,21 @@
+{
+  "n_images": 26,
+  "direct_vs_predictor_max_abs_diff": 0.0,
+  "direct_vs_predictor_same_argmax": true,
+  "predictor_gpu_vs_cpu_max_abs_diff": 0.010201692581176758,
+  "predictor_gpu_vs_cpu_same_argmax": true,
+  "batched_fp32_vs_predictor_max_abs_diff": 0.0003444254398345947,
+  "evaluate_amp_vs_fp32_test_max_abs_diff": 0.005094707012176514,
+  "evaluate_amp_vs_fp32_test_argmax_disagreements": 0,
+  "test_accuracy_fp32": 0.3225806451612903,
+  "test_accuracy_evaluate_py_amp": 0.3225806451612903,
+  "streamlit_app_samples": [
+    "datasets/compositions/CottonFabricImageBD/Original/30cotton/original_1002.jpg",
+    "datasets/compositions/CottonFabricImageBD/Original/53cotton/original_1093.jpg",
+    "datasets/compositions/CottonFabricImageBD/Original/80cotton/original_1024.jpg",
+    "datasets/compositions/CottonFabricImageBD/Original/99cotton/original_1100.jpg"
+  ],
+  "streamlit_vs_predictor_max_abs_diff": 4.980752468108918e-05,
+  "streamlit_vs_predictor_note": "app table rounds to 0.01 %, so diffs <= 5e-5 mean identical",
+  "streamlit_vs_predictor_same_argmax": true
+}

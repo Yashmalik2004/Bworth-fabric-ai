@@ -61,6 +61,7 @@ models/**/*.safetensors
 models/**/*.onnx
 checkpoints/
 runs/
+evaluation/composition/diagnostics/sheets/
 
 # OS metadata
 .DS_Store

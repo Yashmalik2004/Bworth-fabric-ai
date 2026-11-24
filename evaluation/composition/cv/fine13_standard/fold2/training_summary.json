@@ -1,0 +1,51 @@
+{
+  "run_name": "cv/fine13_standard/fold2",
+  "best_epoch": 5,
+  "best_val_acc": 0.1796875,
+  "best_val_loss": 2.7204933166503906,
+  "train_acc_at_best_epoch": 0.6041666666666666,
+  "epochs_run": 13,
+  "checkpoint": "C:\\Users\\YASH\\Desktop\\projects\\Bworth-Ai fabric intelligence\\processed\\composition\\cv\\tmp_fold_model.pth",
+  "device": "cuda:0 (NVIDIA GeForce RTX 3050 Laptop GPU, 4.0 GB)",
+  "amp": true,
+  "config": {
+    "data_dir": "C:\\Users\\YASH\\Desktop\\projects\\Bworth-Ai fabric intelligence\\datasets\\compositions\\CottonFabricImageBD\\Original",
+    "split_strategy": "group",
+    "val_fraction": 0.15,
+    "test_fraction": 0.15,
+    "seed": 42,
+    "group_distance_threshold": 0.35,
+    "group_min_groups_per_class": 3,
+    "image_size": 320,
+    "resize_size": 366,
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "label_scheme": "fine13",
+    "color_aug": "standard",
+    "architecture": "resnet50",
+    "pretrained": true,
+    "dropout": 0.3,
+    "epochs": 30,
+    "batch_size": 16,
+    "lr_head": 0.001,
+    "lr_backbone": 0.0001,
+    "weight_decay": 0.0001,
+    "label_smoothing": 0.1,
+    "class_weighted_loss": true,
+    "amp": true,
+    "num_workers": 1,
+    "early_stopping_patience": 8,
+    "run_name": "cv/fine13_standard/fold2",
+    "checkpoint_path": "C:\\Users\\YASH\\Desktop\\projects\\Bworth-Ai fabric intelligence\\processed\\composition\\cv\\tmp_fold_model.pth",
+    "output_dir": "C:\\Users\\YASH\\Desktop\\projects\\Bworth-Ai fabric intelligence\\evaluation\\composition",
+    "splits_path": "C:\\Users\\YASH\\Desktop\\projects\\Bworth-Ai fabric intelligence\\processed\\composition\\cv\\fold2.csv"
+  }
+}

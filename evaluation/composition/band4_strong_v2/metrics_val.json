@@ -1,0 +1,65 @@
+{
+  "n_images": 75,
+  "accuracy": 0.6,
+  "balanced_accuracy": 0.5909226190476191,
+  "macro_f1": 0.5701194253481403,
+  "weighted_f1": 0.602882425524414,
+  "top3_accuracy": 0.9733333333333334,
+  "per_class": {
+    "low_cotton": {
+      "precision": 0.3333333333333333,
+      "recall": 0.3333333333333333,
+      "f1": 0.3333333333333333,
+      "support": 9
+    },
+    "medium_cotton": {
+      "precision": 0.7307692307692307,
+      "recall": 0.5428571428571428,
+      "f1": 0.6229508196721312,
+      "support": 35
+    },
+    "high_cotton": {
+      "precision": 0.4583333333333333,
+      "recall": 0.6875,
+      "f1": 0.55,
+      "support": 16
+    },
+    "very_high_cotton": {
+      "precision": 0.75,
+      "recall": 0.8,
+      "f1": 0.7741935483870968,
+      "support": 15
+    }
+  },
+  "confusion_matrix": [
+    [
+      3,
+      1,
+      4,
+      1
+    ],
+    [
+      6,
+      19,
+      8,
+      2
+    ],
+    [
+      0,
+      4,
+      11,
+      1
+    ],
+    [
+      0,
+      2,
+      1,
+      12
+    ]
+  ],
+  "split": "val",
+  "label_scheme": "band4",
+  "split_file": "C:\\Users\\YASH\\Desktop\\projects\\Bworth-Ai fabric intelligence\\processed\\composition\\splits_group_v2.csv",
+  "checkpoint": "C:\\Users\\YASH\\Desktop\\projects\\Bworth-Ai fabric intelligence\\models\\composition\\band4_strong.pth",
+  "best_epoch": 15
+}

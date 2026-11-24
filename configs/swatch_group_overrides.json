@@ -1,0 +1,26 @@
+{
+  "description": "Manual swatch-group corrections, from visual review of per-class galleries of the automatic clusters in processed/composition/splits_group.csv. Each entry merges automatic groups that show the same physical fabric. Merging is the leakage-safe direction, so 'probable' matches are merged too. Generic grey denim/twill groups in 50/53/58/60/98/99 % could not be resolved visually and are left as clustered.",
+  "reviewed": "2026-11-24",
+  "merges": [
+    {"groups": ["50cotton_g01", "50cotton_g08"], "confidence": "definite", "note": "black/orange striped fabric"},
+    {"groups": ["58cotton_g01", "58cotton_g03"], "confidence": "definite", "note": "same pink and tan swatches"},
+    {"groups": ["58cotton_g02", "58cotton_g04"], "confidence": "definite", "note": "blue denim and mauve swatches"},
+    {"groups": ["58cotton_g05", "58cotton_g06"], "confidence": "definite", "note": "bright royal-blue fabric"},
+    {"groups": ["65cotton_g01", "65cotton_g02"], "confidence": "definite", "note": "green/blue/pink plaid"},
+    {"groups": ["65cotton_g05", "65cotton_g06"], "confidence": "definite", "note": "white with blue grid"},
+    {"groups": ["66cotton_g03", "66cotton_g04"], "confidence": "definite", "note": "chevron knit"},
+    {"groups": ["66cotton_g01", "66cotton_g06"], "confidence": "definite", "note": "purple knit"},
+    {"groups": ["80cotton_g03", "80cotton_g08"], "confidence": "definite", "note": "black with pink/red/white stripes (found in diagnostic audit)"},
+    {"groups": ["80cotton_g10", "80cotton_g13"], "confidence": "definite", "note": "grey with purple crosses"},
+    {"groups": ["80cotton_g02", "80cotton_g03"], "confidence": "probable", "note": "grey/black striped, same fabric family as g03"},
+    {"groups": ["80cotton_g15", "80cotton_g17"], "confidence": "probable", "note": "grey with brown lines"},
+    {"groups": ["80cotton_g14", "80cotton_g16"], "confidence": "probable", "note": "pale pink herringbone"},
+    {"groups": ["53cotton_g02", "53cotton_g11"], "confidence": "probable", "note": "navy/cream twill"},
+    {"groups": ["53cotton_g03", "53cotton_g07"], "confidence": "probable", "note": "teal mesh"},
+    {"groups": ["66cotton_g00", "66cotton_g05"], "confidence": "probable", "note": "grey linen weave"},
+    {"groups": ["95cotton_g02", "95cotton_g11"], "confidence": "probable", "note": "light blue fabric"},
+    {"groups": ["63cotton_g00", "63cotton_g01"], "confidence": "probable", "note": "grey denim twill"},
+    {"groups": ["40cotton_g01", "40cotton_g03", "40cotton_g04"], "confidence": "probable", "note": "plain/mesh grey"},
+    {"groups": ["98cotton_g07", "99cotton_g07"], "confidence": "probable", "note": "pink/white striped knit filed under both 98 % and 99 % (same 4-class band)"}
+  ]
+}

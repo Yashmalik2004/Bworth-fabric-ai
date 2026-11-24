@@ -1,0 +1,12 @@
+Test-set classification report (band4, split file splits_group_v2.csv, 84 images, best epoch 15)
+
+                           precision    recall  f1-score   support
+
+      Low cotton (30-40%)      0.619     0.722     0.667        18
+   Medium cotton (50-66%)      0.524     0.333     0.407        33
+     High cotton (80-95%)      0.333     0.500     0.400        16
+Very high cotton (98-99%)      0.611     0.647     0.629        17
+
+                 accuracy                          0.512        84
+                macro avg      0.522     0.551     0.526        84
+             weighted avg      0.526     0.512     0.506        84

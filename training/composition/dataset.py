@@ -35,7 +35,13 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from configs.config import IMAGE_EXTENSIONS, CompositionConfig, class_sort_key  # noqa: E402
+from configs.config import (  # noqa: E402
+    BAND_DEFINITIONS,
+    FINE_TO_BAND,
+    IMAGE_EXTENSIONS,
+    CompositionConfig,
+    class_sort_key,
+)
 from utils.image_utils import load_rgb_image  # noqa: E402
 
 SPLITS = ("train", "val", "test")
@@ -287,12 +293,37 @@ def prepare_splits(cfg: CompositionConfig, rebuild: bool = False, verbose: bool 
     return df
 
 
+# --------------------------------------------------------------------------- #
+# Label schemes
+# --------------------------------------------------------------------------- #
+def scheme_classes(scheme: str, fine_classes: list[str]) -> list[str]:
+    """Ordered class names for a label scheme."""
+    if scheme == "fine13":
+        return list(fine_classes)
+    if scheme == "band4":
+        missing = set(fine_classes) - set(FINE_TO_BAND)
+        if missing:
+            raise ValueError(f"Fine classes without a band: {sorted(missing)}")
+        return list(BAND_DEFINITIONS)
+    raise ValueError(f"Unknown label_scheme {scheme!r}")
+
+
+def apply_label_scheme(df: pd.DataFrame, scheme: str, classes: list[str]) -> pd.DataFrame:
+    """Add a ``target`` column (class index under ``scheme``); fine labels are kept untouched."""
+    idx = {c: i for i, c in enumerate(classes)}
+    out = df.copy()
+    names = out["label"] if scheme == "fine13" else out["label"].map(FINE_TO_BAND)
+    out["target"] = names.map(idx).astype(int)
+    return out
+
+
 class FabricDataset(Dataset):
-    """Images + integer labels for one split."""
+    """Images + integer labels for one split (``target`` column if present, else ``label_idx``)."""
 
     def __init__(self, frame: pd.DataFrame, transform=None):
         self.paths = [resolve_path(p) for p in frame["path"]]
-        self.labels = frame["label_idx"].astype(int).tolist()
+        col = "target" if "target" in frame else "label_idx"
+        self.labels = frame[col].astype(int).tolist()
         self.transform = transform
 
     def __len__(self) -> int:

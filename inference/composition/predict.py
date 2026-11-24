@@ -27,7 +27,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from configs.config import DEFAULT_CHECKPOINT, cotton_label  # noqa: E402
+from configs.config import DEFAULT_CHECKPOINT, display_label  # noqa: E402
 from training.composition.model import load_model_from_checkpoint  # noqa: E402
 from training.composition.transforms import build_eval_transform  # noqa: E402
 from utils.device import get_device  # noqa: E402
@@ -54,8 +54,8 @@ class InvalidCheckpointError(RuntimeError):
 
 @dataclass
 class PredictionResult:
-    predicted_class: str          # folder name, e.g. "65cotton"
-    predicted_label: str          # display name, e.g. "65% cotton"
+    predicted_class: str          # class id, e.g. "65cotton" or "medium_cotton"
+    predicted_label: str          # display name, e.g. "65% cotton" or "Medium cotton (50-66%)"
     score: float                  # highest class probability (uncalibrated)
     probabilities: dict[str, float]  # class name -> probability, in class order
 
@@ -92,6 +92,7 @@ class CompositionPredictor:
         self.checkpoint = load_checkpoint(self.checkpoint_path)
         idx_to_class = {int(k): v for k, v in self.checkpoint["idx_to_class"].items()}
         self.classes = [idx_to_class[i] for i in range(len(idx_to_class))]
+        self.label_scheme = self.checkpoint.get("label_scheme", "fine13")
         self.preprocessing = self.checkpoint["preprocessing"]
         self.transform = build_eval_transform(self.preprocessing)
         try:
@@ -105,6 +106,9 @@ class CompositionPredictor:
         cfg = c.get("config", {})
         return {
             "architecture": c.get("architecture", "resnet50"),
+            "label_scheme": self.label_scheme,
+            "color_aug": cfg.get("color_aug", "standard"),
+            "run_name": cfg.get("run_name"),
             "num_classes": len(self.classes),
             "best_epoch": c.get("best_epoch"),
             "val_acc": c.get("val_acc"),
@@ -126,7 +130,7 @@ class CompositionPredictor:
         best = max(range(len(probs)), key=probs.__getitem__)
         return PredictionResult(
             predicted_class=self.classes[best],
-            predicted_label=cotton_label(self.classes[best]),
+            predicted_label=display_label(self.classes[best]),
             score=float(probs[best]),
             probabilities={c: float(p) for c, p in zip(self.classes, probs)},
         )
@@ -150,7 +154,7 @@ def main(argv: list[str] | None = None) -> int:
     else:
         print(f"Predicted category: {result.predicted_label}  (score {result.score:.3f}, uncalibrated)")
         for cls, p in result.top_k(5):
-            print(f"  {cotton_label(cls):>12}: {p:.3f}")
+            print(f"  {display_label(cls):>26}: {p:.3f}")
     return 0
 
 

@@ -63,7 +63,7 @@ def plot_confusion_matrix(cm: np.ndarray, labels: list[str], out_path: str | Pat
         row = data.sum(axis=1, keepdims=True)
         data = np.divide(data, row, out=np.zeros_like(data), where=row > 0)
     n = len(labels)
-    fig, ax = plt.subplots(figsize=(1.0 + 0.62 * n, 0.6 + 0.55 * n), facecolor=SURFACE)
+    fig, ax = plt.subplots(figsize=(max(6.5, 1.0 + 0.62 * n), max(4.2, 0.6 + 0.55 * n)), facecolor=SURFACE)
     im = ax.imshow(data, cmap=SEQ_CMAP, vmin=0, vmax=1 if normalize else max(1, data.max()))
     ax.set_xticks(range(n), labels, rotation=45, ha="right", fontsize=8, color=INK_2)
     ax.set_yticks(range(n), labels, fontsize=8, color=INK_2)

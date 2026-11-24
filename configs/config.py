@@ -43,6 +43,25 @@ def cotton_label(class_name: str) -> str:
     return f"{digits}% cotton" if digits else class_name
 
 
+# Four broad cotton bands (Phase 2 experiment). Order defines class indices.
+BAND_DEFINITIONS: dict[str, tuple[str, tuple[str, ...]]] = {
+    "low_cotton": ("Low cotton (30-40%)", ("30cotton", "40cotton")),
+    "medium_cotton": ("Medium cotton (50-66%)",
+                      ("50cotton", "53cotton", "58cotton", "60cotton", "63cotton", "65cotton", "66cotton")),
+    "high_cotton": ("High cotton (80-95%)", ("80cotton", "95cotton")),
+    "very_high_cotton": ("Very high cotton (98-99%)", ("98cotton", "99cotton")),
+}
+FINE_TO_BAND = {fine: band for band, (_, fines) in BAND_DEFINITIONS.items() for fine in fines}
+LABEL_SCHEMES = ("fine13", "band4")
+
+
+def display_label(class_name: str) -> str:
+    """Display name for either scheme: '65cotton' -> '65% cotton', 'low_cotton' -> 'Low cotton (30-40%)'."""
+    if class_name in BAND_DEFINITIONS:
+        return BAND_DEFINITIONS[class_name][0]
+    return cotton_label(class_name)
+
+
 @dataclass
 class CompositionConfig:
     # Data
@@ -60,6 +79,10 @@ class CompositionConfig:
     resize_size: int = 366
     mean: tuple = IMAGENET_MEAN
     std: tuple = IMAGENET_STD
+
+    # Labels and augmentation
+    label_scheme: str = "fine13"   # "fine13" (13 cotton %) or "band4" (4 cotton bands)
+    color_aug: str = "standard"    # "standard" or "strong" (large hue/saturation jitter + random grayscale)
 
     # Model
     architecture: str = "resnet50"
@@ -102,3 +125,28 @@ class CompositionConfig:
         d["mean"] = list(self.mean)
         d["std"] = list(self.std)
         return d
+
+
+# Models offered in the Streamlit app. The first entry is the default.
+# "metrics" = held-out test metrics on the swatch-corrected v2 split (comparable across models);
+# "cv_config" = the matching configuration in the 5-fold swatch-grouped cross-validation.
+APP_SAMPLE_SPLITS = PROCESSED_DIR / "splits_group_v2.csv"
+APP_MODELS: dict[str, dict] = {
+    "baseline13": {
+        "title": "13-class baseline",
+        "badge": "BASELINE",
+        "checkpoint": DEFAULT_CHECKPOINT,
+        "metrics": EVALUATION_DIR / "baseline13_on_v2" / "metrics_test.json",
+        "cv_config": "fine13_standard",
+        "description": "Predicts one of 13 cotton percentages (30-99 %). Original Phase-1 model.",
+    },
+    "band4": {
+        "title": "4-class experimental",
+        "badge": "EXPERIMENTAL",
+        "checkpoint": MODELS_DIR / "band4_strong.pth",
+        "metrics": EVALUATION_DIR / "band4_strong_v2" / "metrics_test.json",
+        "cv_config": "band4_strong",
+        "description": "Predicts one of 4 cotton bands: low (30-40 %), medium (50-66 %), high (80-95 %), "
+                       "very high (98-99 %). Trained with strong colour augmentation.",
+    },
+}

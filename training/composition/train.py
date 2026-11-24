@@ -34,8 +34,15 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from configs.config import CompositionConfig  # noqa: E402
-from training.composition.dataset import FabricDataset, discover_classes, prepare_splits, resolve_path  # noqa: E402
+from configs.config import CompositionConfig, display_label  # noqa: E402
+from training.composition.dataset import (  # noqa: E402
+    FabricDataset,
+    apply_label_scheme,
+    discover_classes,
+    prepare_splits,
+    resolve_path,
+    scheme_classes,
+)
 from training.composition.model import build_model, parameter_groups  # noqa: E402
 from training.composition.transforms import build_eval_transform, build_train_transform  # noqa: E402
 from utils.device import amp_enabled, describe_device, get_device  # noqa: E402
@@ -110,15 +117,15 @@ def train(cfg: CompositionConfig, device: torch.device, rebuild_splits: bool = F
     out_dir = Path(cfg.output_dir) / cfg.run_name
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    classes = discover_classes(cfg.data_dir)
+    classes = scheme_classes(cfg.label_scheme, discover_classes(cfg.data_dir))
     class_to_idx = {c: i for i, c in enumerate(classes)}
-    df = prepare_splits(cfg, rebuild=rebuild_splits)
+    df = apply_label_scheme(prepare_splits(cfg, rebuild=rebuild_splits), cfg.label_scheme, classes)
     train_df, val_df = df[df.split == "train"], df[df.split == "val"]
     if train_df.empty or val_df.empty:
         raise RuntimeError("Train or validation split is empty; check the dataset and split settings.")
 
     pre = cfg.preprocessing()
-    train_ds = FabricDataset(train_df, build_train_transform(pre))
+    train_ds = FabricDataset(train_df, build_train_transform(pre, cfg.color_aug))
     val_ds = FabricDataset(val_df, build_eval_transform(pre))
     loader_kw = dict(num_workers=cfg.num_workers, pin_memory=device.type == "cuda",
                      persistent_workers=cfg.num_workers > 0)
@@ -127,7 +134,7 @@ def train(cfg: CompositionConfig, device: torch.device, rebuild_splits: bool = F
 
     weight = None
     if cfg.class_weighted_loss:
-        counts = np.bincount(train_df["label_idx"], minlength=len(classes)).astype(float)
+        counts = np.bincount(train_df["target"], minlength=len(classes)).astype(float)
         w = np.where(counts > 0, counts.sum() / (len(classes) * np.maximum(counts, 1)), 0.0)
         weight = torch.tensor(w, dtype=torch.float32, device=device)
     criterion = nn.CrossEntropyLoss(weight=weight, label_smoothing=cfg.label_smoothing)
@@ -139,7 +146,8 @@ def train(cfg: CompositionConfig, device: torch.device, rebuild_splits: bool = F
     use_amp = amp_enabled(device, cfg.amp)
     scaler = torch.amp.GradScaler(device.type, enabled=use_amp)
 
-    print(f"Device: {describe_device(device)} | AMP: {use_amp}")
+    print(f"Device: {describe_device(device)} | AMP: {use_amp} | labels: {cfg.label_scheme} "
+          f"({len(classes)} classes) | colour aug: {cfg.color_aug}")
     print(f"Train: {len(train_ds)} images | Val: {len(val_ds)} images | Classes: {len(classes)}")
 
     history: list[dict] = []
@@ -162,7 +170,9 @@ def train(cfg: CompositionConfig, device: torch.device, rebuild_splits: bool = F
             save_checkpoint(ckpt_path, {
                 "model_state_dict": model.state_dict(),
                 "architecture": cfg.architecture,
+                "label_scheme": cfg.label_scheme,
                 "class_to_idx": class_to_idx,
+                "class_display": {c: display_label(c) for c in classes},
                 "idx_to_class": {i: c for c, i in class_to_idx.items()},
                 "preprocessing": pre,
                 "config": cfg.to_dict(),

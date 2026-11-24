@@ -1,0 +1,271 @@
+{
+  "original_dir": "C:\\Users\\YASH\\Desktop\\projects\\Bworth-Ai fabric intelligence\\datasets\\compositions\\CottonFabricImageBD\\Original",
+  "augmented_dir": "C:\\Users\\YASH\\Desktop\\projects\\Bworth-Ai fabric intelligence\\datasets\\compositions\\CottonFabricImageBD\\Augmented",
+  "classes": [
+    "30cotton",
+    "40cotton",
+    "50cotton",
+    "53cotton",
+    "58cotton",
+    "60cotton",
+    "63cotton",
+    "65cotton",
+    "66cotton",
+    "80cotton",
+    "95cotton",
+    "98cotton",
+    "99cotton"
+  ],
+  "num_classes": 13,
+  "augmented_classes_match_original": true,
+  "counts": {
+    "30cotton": {
+      "original": 100,
+      "augmented": 2100
+    },
+    "40cotton": {
+      "original": 100,
+      "augmented": 2100
+    },
+    "50cotton": {
+      "original": 100,
+      "augmented": 2100
+    },
+    "53cotton": {
+      "original": 100,
+      "augmented": 2100
+    },
+    "58cotton": {
+      "original": 100,
+      "augmented": 2100
+    },
+    "60cotton": {
+      "original": 100,
+      "augmented": 2100
+    },
+    "63cotton": {
+      "original": 100,
+      "augmented": 2100
+    },
+    "65cotton": {
+      "original": 100,
+      "augmented": 2100
+    },
+    "66cotton": {
+      "original": 100,
+      "augmented": 2100
+    },
+    "80cotton": {
+      "original": 100,
+      "augmented": 2100
+    },
+    "95cotton": {
+      "original": 100,
+      "augmented": 2100
+    },
+    "98cotton": {
+      "original": 100,
+      "augmented": 2100
+    },
+    "99cotton": {
+      "original": 100,
+      "augmented": 2105
+    }
+  },
+  "total_original": 1300,
+  "total_augmented": 27305,
+  "non_image_files": [],
+  "unreadable": [],
+  "image_sizes": {
+    "Original": {
+      "900x1200": 1299,
+      "905x1219": 1
+    },
+    "Augmented": {
+      "900x1200": 27305
+    }
+  },
+  "image_modes": {
+    "Original": {
+      "RGB": 1300
+    },
+    "Augmented": {
+      "RGB": 27305
+    }
+  },
+  "augmented_decode_mode": "full decode",
+  "exact_duplicate_groups": {
+    "total_groups": 657,
+    "within_original": 26,
+    "within_augmented": 8,
+    "original_vs_augmented": 623,
+    "cross_class": 370,
+    "examples": [
+      [
+        "Original/30cotton/original_1002.jpg",
+        "Original/30cotton/original_1029.jpg",
+        "Augmented/30cotton/augmented_4.jpg"
+      ],
+      [
+        "Original/30cotton/original_1003.jpg",
+        "Original/30cotton/original_1018.jpg",
+        "Augmented/30cotton/augmented_9.jpg"
+      ],
+      [
+        "Original/30cotton/original_1004.jpg",
+        "Original/30cotton/original_1028.jpg",
+        "Augmented/30cotton/augmented_0.jpg"
+      ],
+      [
+        "Original/30cotton/original_1005.jpg",
+        "Original/30cotton/original_1030.jpg",
+        "Augmented/30cotton/augmented_2.jpg"
+      ],
+      [
+        "Original/30cotton/original_1006.jpg",
+        "Original/30cotton/original_1016.jpg",
+        "Augmented/30cotton/augmented_1.jpg"
+      ],
+      [
+        "Original/30cotton/original_1007.jpg",
+        "Original/30cotton/original_1020.jpg",
+        "Augmented/30cotton/augmented_7.jpg"
+      ],
+      [
+        "Original/30cotton/original_1008.jpg",
+        "Original/30cotton/original_1023.jpg",
+        "Augmented/30cotton/augmented_10.jpg"
+      ],
+      [
+        "Original/30cotton/original_1009.jpg",
+        "Original/30cotton/original_1017.jpg",
+        "Augmented/30cotton/augmented_8.jpg"
+      ],
+      [
+        "Original/30cotton/original_1010.jpg",
+        "Original/30cotton/original_1022.jpg",
+        "Original/30cotton/original_1024.jpg"
+      ],
+      [
+        "Original/30cotton/original_1011.jpg",
+        "Original/30cotton/original_1021.jpg",
+        "Augmented/30cotton/augmented_6.jpg"
+      ],
+      [
+        "Original/30cotton/original_1012.jpg",
+        "Original/30cotton/original_1031.jpg",
+        "Augmented/30cotton/augmented_5.jpg"
+      ],
+      [
+        "Original/30cotton/original_1014.jpg",
+        "Augmented/66cotton/augmented_16811.jpg"
+      ],
+      [
+        "Original/30cotton/original_1015.jpg",
+        "Augmented/66cotton/augmented_16826.jpg"
+      ],
+      [
+        "Original/30cotton/original_1019.jpg",
+        "Original/30cotton/original_1032.jpg",
+        "Augmented/30cotton/augmented_3.jpg"
+      ],
+      [
+        "Original/30cotton/original_1025.jpg",
+        "Augmented/66cotton/augmented_16802.jpg"
+      ],
+      [
+        "Original/30cotton/original_1026.jpg",
+        "Augmented/66cotton/augmented_16837.jpg"
+      ],
+      [
+        "Original/30cotton/original_1027.jpg",
+        "Augmented/66cotton/augmented_16822.jpg"
+      ],
+      [
+        "Original/30cotton/original_1033.jpg",
+        "Original/30cotton/original_1039.jpg",
+        "Augmented/30cotton/augmented_708.jpg"
+      ],
+      [
+        "Original/30cotton/original_1034.jpg",
+        "Original/30cotton/original_1040.jpg"
+      ],
+      [
+        "Original/30cotton/original_1035.jpg",
+        "Original/30cotton/original_1045.jpg",
+        "Augmented/30cotton/augmented_703.jpg"
+      ],
+      [
+        "Original/30cotton/original_1036.jpg",
+        "Original/30cotton/original_1043.jpg",
+        "Augmented/30cotton/augmented_707.jpg"
+      ],
+      [
+        "Original/30cotton/original_1037.jpg",
+        "Original/30cotton/original_1059.jpg",
+        "Augmented/30cotton/augmented_702.jpg"
+      ],
+      [
+        "Original/30cotton/original_1038.jpg",
+        "Original/30cotton/original_1055.jpg",
+        "Augmented/30cotton/augmented_704.jpg"
+      ],
+      [
+        "Original/30cotton/original_1041.jpg",
+        "Original/30cotton/original_1042.jpg",
+        "Augmented/30cotton/augmented_710.jpg"
+      ],
+      [
+        "Original/30cotton/original_1044.jpg",
+        "Original/30cotton/original_1064.jpg",
+        "Augmented/30cotton/augmented_705.jpg"
+      ]
+    ]
+  },
+  "near_duplicates_original": {
+    "hamming_threshold_of_256": 10,
+    "pairs": 528,
+    "cross_class_pairs": 353,
+    "examples": [
+      "30cotton/original_1002.jpg ~ 30cotton/original_1029.jpg (d=0)",
+      "30cotton/original_1003.jpg ~ 30cotton/original_1018.jpg (d=0)",
+      "30cotton/original_1004.jpg ~ 30cotton/original_1028.jpg (d=0)",
+      "30cotton/original_1005.jpg ~ 30cotton/original_1030.jpg (d=0)",
+      "30cotton/original_1006.jpg ~ 30cotton/original_1016.jpg (d=0)",
+      "30cotton/original_1007.jpg ~ 30cotton/original_1020.jpg (d=0)",
+      "30cotton/original_1008.jpg ~ 30cotton/original_1023.jpg (d=0)",
+      "30cotton/original_1009.jpg ~ 30cotton/original_1017.jpg (d=0)",
+      "30cotton/original_1010.jpg ~ 30cotton/original_1022.jpg (d=0)",
+      "30cotton/original_1010.jpg ~ 30cotton/original_1024.jpg (d=0)",
+      "30cotton/original_1011.jpg ~ 30cotton/original_1021.jpg (d=0)",
+      "30cotton/original_1012.jpg ~ 30cotton/original_1031.jpg (d=0)",
+      "30cotton/original_1019.jpg ~ 30cotton/original_1032.jpg (d=0)",
+      "30cotton/original_1022.jpg ~ 30cotton/original_1024.jpg (d=0)",
+      "30cotton/original_1033.jpg ~ 30cotton/original_1039.jpg (d=0)",
+      "30cotton/original_1034.jpg ~ 30cotton/original_1040.jpg (d=0)",
+      "30cotton/original_1035.jpg ~ 30cotton/original_1045.jpg (d=0)",
+      "30cotton/original_1036.jpg ~ 30cotton/original_1043.jpg (d=0)",
+      "30cotton/original_1037.jpg ~ 30cotton/original_1059.jpg (d=0)",
+      "30cotton/original_1038.jpg ~ 30cotton/original_1055.jpg (d=0)",
+      "30cotton/original_1041.jpg ~ 30cotton/original_1042.jpg (d=0)",
+      "30cotton/original_1044.jpg ~ 30cotton/original_1064.jpg (d=0)",
+      "30cotton/original_1046.jpg ~ 30cotton/original_1054.jpg (d=0)",
+      "30cotton/original_1048.jpg ~ 30cotton/original_1049.jpg (d=0)",
+      "30cotton/original_1050.jpg ~ 30cotton/original_1062.jpg (d=0)"
+    ]
+  },
+  "filename_anomalies": {
+    "original": [],
+    "augmented": [
+      "99cotton/augmented_27037-df9PPD.jpg",
+      "99cotton/augmented_27038-gYIK2j.jpg",
+      "99cotton/augmented_27039-dL9TLN.jpg",
+      "99cotton/augmented_27040-sPDJER.jpg",
+      "99cotton/augmented_27041-m8z1Ne.jpg"
+    ]
+  },
+  "augmented_to_original_mapping": {
+    "mappable": false,
+    "reason": "Augmented files are named augmented_<global sequential index> and contain no reference to the source original; read_me.pdf documents no mapping. Augmented images are rotated/cropped versions of originals, so they cannot be split safely. They are therefore NOT used for training; augmentation is applied on the fly to training originals only."
+  }
+}

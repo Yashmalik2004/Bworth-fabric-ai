@@ -1,0 +1,449 @@
+{
+  "checkpoint": "models/composition/best_model.pth",
+  "checkpoint_md5": "50290e1db9b5db2b72ab621053895ef5",
+  "splits_md5": "c5c943243af9772b4740b5c754c5c7bd",
+  "device": "cuda",
+  "precision": "fp32 (no autocast)",
+  "original_folder_accuracy_by_membership": {
+    "duplicate_of_manifest_image:test": {
+      "n": 16,
+      "accuracy": 0.1875
+    },
+    "duplicate_of_manifest_image:train": {
+      "n": 95,
+      "accuracy": 0.8632
+    },
+    "duplicate_of_manifest_image:val": {
+      "n": 13,
+      "accuracy": 0.0769
+    },
+    "excluded_label_conflict": {
+      "n": 538,
+      "accuracy": 0.1859
+    },
+    "in_manifest:test": {
+      "n": 93,
+      "accuracy": 0.3226
+    },
+    "in_manifest:train": {
+      "n": 445,
+      "accuracy": 0.8494
+    },
+    "in_manifest:val": {
+      "n": 100,
+      "accuracy": 0.28
+    }
+  },
+  "original_membership_per_class": {
+    "30cotton": {
+      "duplicate_of_manifest_image:test": 3,
+      "duplicate_of_manifest_image:train": 26,
+      "duplicate_of_manifest_image:val": 8,
+      "excluded_label_conflict": 2,
+      "in_manifest:test": 9,
+      "in_manifest:train": 43,
+      "in_manifest:val": 9
+    },
+    "40cotton": {
+      "duplicate_of_manifest_image:test": 9,
+      "duplicate_of_manifest_image:train": 24,
+      "duplicate_of_manifest_image:val": 3,
+      "excluded_label_conflict": 1,
+      "in_manifest:test": 9,
+      "in_manifest:train": 44,
+      "in_manifest:val": 10
+    },
+    "50cotton": {
+      "duplicate_of_manifest_image:test": 2,
+      "duplicate_of_manifest_image:train": 31,
+      "duplicate_of_manifest_image:val": 1,
+      "excluded_label_conflict": 10,
+      "in_manifest:test": 8,
+      "in_manifest:train": 39,
+      "in_manifest:val": 9
+    },
+    "53cotton": {
+      "duplicate_of_manifest_image:test": 0,
+      "duplicate_of_manifest_image:train": 12,
+      "duplicate_of_manifest_image:val": 0,
+      "excluded_label_conflict": 41,
+      "in_manifest:test": 7,
+      "in_manifest:train": 33,
+      "in_manifest:val": 7
+    },
+    "58cotton": {
+      "duplicate_of_manifest_image:test": 1,
+      "duplicate_of_manifest_image:train": 1,
+      "duplicate_of_manifest_image:val": 0,
+      "excluded_label_conflict": 49,
+      "in_manifest:test": 7,
+      "in_manifest:train": 34,
+      "in_manifest:val": 8
+    },
+    "60cotton": {
+      "duplicate_of_manifest_image:test": 0,
+      "duplicate_of_manifest_image:train": 0,
+      "duplicate_of_manifest_image:val": 0,
+      "excluded_label_conflict": 81,
+      "in_manifest:test": 2,
+      "in_manifest:train": 14,
+      "in_manifest:val": 3
+    },
+    "63cotton": {
+      "duplicate_of_manifest_image:test": 0,
+      "duplicate_of_manifest_image:train": 0,
+      "duplicate_of_manifest_image:val": 0,
+      "excluded_label_conflict": 83,
+      "in_manifest:test": 2,
+      "in_manifest:train": 12,
+      "in_manifest:val": 3
+    },
+    "65cotton": {
+      "duplicate_of_manifest_image:test": 0,
+      "duplicate_of_manifest_image:train": 0,
+      "duplicate_of_manifest_image:val": 0,
+      "excluded_label_conflict": 62,
+      "in_manifest:test": 6,
+      "in_manifest:train": 26,
+      "in_manifest:val": 6
+    },
+    "66cotton": {
+      "duplicate_of_manifest_image:test": 0,
+      "duplicate_of_manifest_image:train": 0,
+      "duplicate_of_manifest_image:val": 0,
+      "excluded_label_conflict": 37,
+      "in_manifest:test": 9,
+      "in_manifest:train": 43,
+      "in_manifest:val": 11
+    },
+    "80cotton": {
+      "duplicate_of_manifest_image:test": 0,
+      "duplicate_of_manifest_image:train": 0,
+      "duplicate_of_manifest_image:val": 0,
+      "excluded_label_conflict": 39,
+      "in_manifest:test": 9,
+      "in_manifest:train": 43,
+      "in_manifest:val": 9
+    },
+    "95cotton": {
+      "duplicate_of_manifest_image:test": 0,
+      "duplicate_of_manifest_image:train": 0,
+      "duplicate_of_manifest_image:val": 1,
+      "excluded_label_conflict": 40,
+      "in_manifest:test": 9,
+      "in_manifest:train": 41,
+      "in_manifest:val": 9
+    },
+    "98cotton": {
+      "duplicate_of_manifest_image:test": 0,
+      "duplicate_of_manifest_image:train": 1,
+      "duplicate_of_manifest_image:val": 0,
+      "excluded_label_conflict": 41,
+      "in_manifest:test": 9,
+      "in_manifest:train": 40,
+      "in_manifest:val": 9
+    },
+    "99cotton": {
+      "duplicate_of_manifest_image:test": 1,
+      "duplicate_of_manifest_image:train": 0,
+      "duplicate_of_manifest_image:val": 0,
+      "excluded_label_conflict": 52,
+      "in_manifest:test": 7,
+      "in_manifest:train": 33,
+      "in_manifest:val": 7
+    }
+  },
+  "train_accuracy": 0.8494,
+  "train_n": 445,
+  "val_accuracy": 0.28,
+  "val_n": 100,
+  "test_accuracy": 0.3226,
+  "test_n": 93,
+  "per_class_train_accuracy": {
+    "30% cotton": 0.7442,
+    "40% cotton": 0.8864,
+    "50% cotton": 1.0,
+    "53% cotton": 0.7576,
+    "58% cotton": 0.8824,
+    "60% cotton": 1.0,
+    "63% cotton": 1.0,
+    "65% cotton": 0.6538,
+    "66% cotton": 0.9302,
+    "80% cotton": 0.7907,
+    "95% cotton": 0.9268,
+    "98% cotton": 0.675,
+    "99% cotton": 0.9394
+  },
+  "class_weights_used_in_training": {
+    "30% cotton": 0.796,
+    "40% cotton": 0.778,
+    "50% cotton": 0.878,
+    "53% cotton": 1.037,
+    "58% cotton": 1.007,
+    "60% cotton": 2.445,
+    "63% cotton": 2.853,
+    "65% cotton": 1.317,
+    "66% cotton": 0.796,
+    "80% cotton": 0.796,
+    "95% cotton": 0.835,
+    "98% cotton": 0.856,
+    "99% cotton": 1.037
+  },
+  "train_counts": {
+    "30% cotton": 43,
+    "40% cotton": 44,
+    "50% cotton": 39,
+    "53% cotton": 33,
+    "58% cotton": 34,
+    "60% cotton": 14,
+    "63% cotton": 12,
+    "65% cotton": 26,
+    "66% cotton": 43,
+    "80% cotton": 43,
+    "95% cotton": 41,
+    "98% cotton": 40,
+    "99% cotton": 33
+  },
+  "nn_similarity_mean": {
+    "test_to_train": 0.5284,
+    "train_to_other_train": 0.7173
+  },
+  "nn1_label_agreement_test": 0.3226,
+  "per_class_nn": {
+    "30cotton": {
+      "nn_sim": 0.4027,
+      "same_class_sim": 0.2407,
+      "nn_label_match": 0.0,
+      "acc": 0.0
+    },
+    "40cotton": {
+      "nn_sim": 0.4349,
+      "same_class_sim": 0.2341,
+      "nn_label_match": 0.1111,
+      "acc": 0.1111
+    },
+    "50cotton": {
+      "nn_sim": 0.6393,
+      "same_class_sim": 0.618,
+      "nn_label_match": 0.75,
+      "acc": 0.875
+    },
+    "53cotton": {
+      "nn_sim": 0.5398,
+      "same_class_sim": 0.4529,
+      "nn_label_match": 0.5714,
+      "acc": 0.1429
+    },
+    "58cotton": {
+      "nn_sim": 0.6083,
+      "same_class_sim": 0.4839,
+      "nn_label_match": 0.4286,
+      "acc": 0.7143
+    },
+    "60cotton": {
+      "nn_sim": 0.5701,
+      "same_class_sim": 0.092,
+      "nn_label_match": 0.0,
+      "acc": 0.0
+    },
+    "63cotton": {
+      "nn_sim": 0.5832,
+      "same_class_sim": 0.1342,
+      "nn_label_match": 0.0,
+      "acc": 0.0
+    },
+    "65cotton": {
+      "nn_sim": 0.5918,
+      "same_class_sim": 0.1871,
+      "nn_label_match": 0.0,
+      "acc": 0.0
+    },
+    "66cotton": {
+      "nn_sim": 0.5785,
+      "same_class_sim": 0.3108,
+      "nn_label_match": 0.0,
+      "acc": 0.2222
+    },
+    "80cotton": {
+      "nn_sim": 0.506,
+      "same_class_sim": 0.5033,
+      "nn_label_match": 0.8889,
+      "acc": 0.8889
+    },
+    "95cotton": {
+      "nn_sim": 0.4331,
+      "same_class_sim": 0.3176,
+      "nn_label_match": 0.0,
+      "acc": 0.3333
+    },
+    "98cotton": {
+      "nn_sim": 0.5522,
+      "same_class_sim": 0.4791,
+      "nn_label_match": 0.6667,
+      "acc": 0.1111
+    },
+    "99cotton": {
+      "nn_sim": 0.5669,
+      "same_class_sim": 0.3358,
+      "nn_label_match": 0.2857,
+      "acc": 0.2857
+    }
+  },
+  "test_prediction_counts": {
+    "30% cotton": 0,
+    "40% cotton": 7,
+    "50% cotton": 15,
+    "53% cotton": 10,
+    "58% cotton": 9,
+    "60% cotton": 3,
+    "63% cotton": 3,
+    "65% cotton": 4,
+    "66% cotton": 4,
+    "80% cotton": 19,
+    "95% cotton": 4,
+    "98% cotton": 4,
+    "99% cotton": 11
+  },
+  "test_true_counts": {
+    "30% cotton": 9,
+    "40% cotton": 9,
+    "50% cotton": 8,
+    "53% cotton": 7,
+    "58% cotton": 7,
+    "60% cotton": 2,
+    "63% cotton": 2,
+    "65% cotton": 6,
+    "66% cotton": 9,
+    "80% cotton": 9,
+    "95% cotton": 9,
+    "98% cotton": 9,
+    "99% cotton": 7
+  },
+  "test_mean_p_true_by_class": {
+    "30cotton": 0.0147,
+    "40cotton": 0.087,
+    "50cotton": 0.6959,
+    "53cotton": 0.1967,
+    "58cotton": 0.4047,
+    "60cotton": 0.0516,
+    "63cotton": 0.0468,
+    "65cotton": 0.0079,
+    "66cotton": 0.1191,
+    "80cotton": 0.6145,
+    "95cotton": 0.2957,
+    "98cotton": 0.1735,
+    "99cotton": 0.1091
+  },
+  "test_mean_score_correct_vs_wrong": {
+    "correct": 0.5966,
+    "wrong": 0.4829
+  },
+  "colour_stats": {
+    "30cotton": {
+      "train": {
+        "saturation_mean": 0.704,
+        "value_mean": 0.823,
+        "n": 43
+      },
+      "test": {
+        "saturation_mean": 0.165,
+        "value_mean": 0.56,
+        "n": 9
+      }
+    },
+    "80cotton": {
+      "train": {
+        "saturation_mean": 0.272,
+        "value_mean": 0.641,
+        "n": 43
+      },
+      "test": {
+        "saturation_mean": 0.08,
+        "value_mean": 0.604,
+        "n": 9
+      }
+    },
+    "99cotton": {
+      "train": {
+        "saturation_mean": 0.072,
+        "value_mean": 0.525,
+        "n": 33
+      },
+      "test": {
+        "saturation_mean": 0.148,
+        "value_mean": 0.588,
+        "n": 7
+      }
+    },
+    "58cotton": {
+      "train": {
+        "saturation_mean": 0.305,
+        "value_mean": 0.646,
+        "n": 34
+      },
+      "test": {
+        "saturation_mean": 0.266,
+        "value_mean": 0.606,
+        "n": 7
+      }
+    },
+    "63cotton": {
+      "train": {
+        "saturation_mean": 0.112,
+        "value_mean": 0.523,
+        "n": 12
+      },
+      "test": {
+        "saturation_mean": 0.484,
+        "value_mean": 0.705,
+        "n": 2
+      }
+    },
+    "40cotton": {
+      "train": {
+        "saturation_mean": 0.601,
+        "value_mean": 0.719,
+        "n": 44
+      },
+      "test": {
+        "saturation_mean": 0.645,
+        "value_mean": 0.59,
+        "n": 9
+      }
+    },
+    "53cotton": {
+      "train": {
+        "saturation_mean": 0.296,
+        "value_mean": 0.609,
+        "n": 33
+      },
+      "test": {
+        "saturation_mean": 0.153,
+        "value_mean": 0.517,
+        "n": 7
+      }
+    }
+  },
+  "inference_parity": {
+    "n_images": 26,
+    "direct_vs_predictor_max_abs_diff": 0.0,
+    "direct_vs_predictor_same_argmax": true,
+    "predictor_gpu_vs_cpu_max_abs_diff": 0.010201692581176758,
+    "predictor_gpu_vs_cpu_same_argmax": true,
+    "batched_fp32_vs_predictor_max_abs_diff": 0.0003444254398345947,
+    "evaluate_amp_vs_fp32_test_max_abs_diff": 0.005094707012176514,
+    "evaluate_amp_vs_fp32_test_argmax_disagreements": 0,
+    "test_accuracy_fp32": 0.3225806451612903,
+    "test_accuracy_evaluate_py_amp": 0.3225806451612903,
+    "streamlit_app_samples": [
+      "datasets/compositions/CottonFabricImageBD/Original/30cotton/original_1002.jpg",
+      "datasets/compositions/CottonFabricImageBD/Original/53cotton/original_1093.jpg",
+      "datasets/compositions/CottonFabricImageBD/Original/80cotton/original_1024.jpg",
+      "datasets/compositions/CottonFabricImageBD/Original/99cotton/original_1100.jpg"
+    ],
+    "streamlit_vs_predictor_max_abs_diff": 4.980752468108918e-05,
+    "streamlit_vs_predictor_note": "app table rounds to 0.01 %, so diffs <= 5e-5 mean identical",
+    "streamlit_vs_predictor_same_argmax": true
+  },
+  "checkpoint_md5_after": "50290e1db9b5db2b72ab621053895ef5"
+}

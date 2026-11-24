@@ -1,0 +1,17 @@
+# Core ML (install the CUDA build of torch/torchvision for GPU training, e.g.
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+# the plain PyPI wheels also work on CPU)
+torch>=2.4
+torchvision>=0.19
+numpy>=1.26
+pandas>=2.2
+scikit-learn>=1.5
+pillow>=10.0
+matplotlib>=3.8
+
+# App
+streamlit>=1.40
+altair>=5.0
+
+# Dev
+pytest>=8.0

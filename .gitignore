@@ -50,7 +50,12 @@ processed/
 .cache/
 
 # Datasets are local or externally sourced assets
-datasets/
+datasets/*
+# Phase 4 verified-dataset docs and CSV templates are tracked; collected data is not
+!datasets/phase4_verified/
+datasets/phase4_verified/images/
+datasets/phase4_verified/metadata/verification_documents/
+datasets/phase4_verified/metadata/manifests/
 data/
 
 # Model checkpoints and machine learning artifacts

@@ -1,0 +1,53 @@
+{
+  "generated": "2026-11-25T16:27:32",
+  "root": "datasets/phase4_verified",
+  "counts": {
+    "fabrics": 0,
+    "fabric_rows": 0,
+    "images": 0,
+    "verification_records": 0,
+    "fabrics_by_status": {},
+    "fabrics_in_manifest": 0,
+    "photographs_in_manifest": 0
+  },
+  "bands": {
+    "low": {
+      "verified_fabrics_in_manifest": 0,
+      "verified_photographs_in_manifest": 0,
+      "pending_fabrics": 0,
+      "target_fabrics": 30,
+      "sufficient": false
+    },
+    "medium": {
+      "verified_fabrics_in_manifest": 0,
+      "verified_photographs_in_manifest": 0,
+      "pending_fabrics": 0,
+      "target_fabrics": 30,
+      "sufficient": false
+    },
+    "high": {
+      "verified_fabrics_in_manifest": 0,
+      "verified_photographs_in_manifest": 0,
+      "pending_fabrics": 0,
+      "target_fabrics": 30,
+      "sufficient": false
+    },
+    "very_high": {
+      "verified_fabrics_in_manifest": 0,
+      "verified_photographs_in_manifest": 0,
+      "pending_fabrics": 0,
+      "target_fabrics": 30,
+      "sufficient": false
+    }
+  },
+  "issues_by_severity": {
+    "WARNING": 4
+  },
+  "issues_by_check": [
+    {
+      "severity": "WARNING",
+      "check": "insufficient_samples_per_band",
+      "n": 4
+    }
+  ]
+}

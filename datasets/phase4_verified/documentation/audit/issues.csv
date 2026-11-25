@@ -1,0 +1,5 @@
+severity,check,fabric_id,image_id,record_id,message
+WARNING,insufficient_samples_per_band,,,,"Low (30–40%): 0 verified independent fabrics, target 30"
+WARNING,insufficient_samples_per_band,,,,"Medium (50–66%): 0 verified independent fabrics, target 30"
+WARNING,insufficient_samples_per_band,,,,"High (80–95%): 0 verified independent fabrics, target 30"
+WARNING,insufficient_samples_per_band,,,,"Very high (98–99%): 0 verified independent fabrics, target 30"

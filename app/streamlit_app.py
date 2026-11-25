@@ -32,6 +32,10 @@ from app.phase3_model import RANGE_NOTE as P3_RANGE_NOTE  # noqa: E402
 from app.phase3_model import SELECTION_FILE as P3_SELECTION_FILE  # noqa: E402
 from app.phase3_model import app_spec as p3_app_spec  # noqa: E402
 from app.phase3_model import load_selection as p3_load_selection  # noqa: E402
+from app.phase5_model import SYNTHETIC_WARNING as P5_SYNTHETIC_WARNING  # noqa: E402
+from app.phase5_model import app_spec as p5_app_spec  # noqa: E402
+from app.phase5_model import load_selection as p5_load_selection  # noqa: E402
+from app.phase5_model import selection_file as p5_selection_file  # noqa: E402
 
 ACCENT = "#2a78d6"
 MUTED_BAR = "#c9c8c2"
@@ -100,6 +104,12 @@ def phase3_selection(sel_mtime: float) -> dict | None:
     return p3_load_selection(verify_hash=True)
 
 
+@st.cache_data
+def phase5_selection(sel_path: str, sel_mtime: float) -> dict | None:
+    """Phase 5 model record; None (model not offered) if absent or the checkpoint hash does not match."""
+    return p5_load_selection(verify_hash=True)
+
+
 def pct(x: float) -> str:
     return f"{x * 100:.1f}%"
 
@@ -133,6 +143,9 @@ available = {k: m for k, m in APP_MODELS.items() if _mtime(m["checkpoint"]) and 
 _p3 = phase3_selection(_mtime(P3_SELECTION_FILE))
 if _p3 is not None:
     available["phase3_band3"] = p3_app_spec(_p3)
+_p5 = phase5_selection(str(p5_selection_file()), _mtime(p5_selection_file()))
+if _p5 is not None:                       # dormant until a Phase 5 model is approved and selected
+    available["phase5_band4"] = p5_app_spec(_p5)
 cv_summary = load_json(str(EVALUATION_DIR / "cv" / "cv_summary.json"), _mtime(EVALUATION_DIR / "cv" / "cv_summary.json"))
 
 with st.sidebar:
@@ -163,7 +176,8 @@ except (CheckpointNotFoundError, InvalidCheckpointError) as exc:
 
 info = predictor.info
 is_p3 = spec.get("kind") == "phase3_band3"
-is_band = info["label_scheme"] in ("band4", "band3_stageB")
+is_p5 = spec.get("kind") == "phase5_band4"
+is_band = info["label_scheme"] in ("band4", "band3_stageB", "phase5_band4")
 metrics = load_json(str(spec["metrics"]), _mtime(spec["metrics"]))
 cv_entry = (cv_summary or {}).get("configs", {}).get(spec["cv_config"]) if spec.get("cv_config") else None
 
@@ -177,13 +191,24 @@ with st.sidebar:
     st.markdown(f'<span class="bw-badge">{spec["badge"]}</span>', unsafe_allow_html=True)
     st.caption(spec["description"])
     st.markdown(
-        f"- **Architecture:** ResNet-50 (ImageNet transfer learning)\n"
+        f"- **Architecture:** {'ResNet-50' if info['architecture'] == 'resnet50' else info['architecture']} (ImageNet transfer learning)\n"
         f"- **Output:** {info['num_classes']} {'cotton bands' if is_band else 'cotton-percentage categories'}\n"
         f"- **Colour augmentation:** {info['color_aug']}\n"
         f"- **Input:** {info['image_size']}×{info['image_size']} px · **Device:** {info['device']}"
     )
-    st.subheader("Unseen-fabric performance" if is_p3 else "Unseen-swatch performance")
-    if is_p3:
+    st.subheader("Unseen-fabric performance" if (is_p3 or is_p5) else "Unseen-swatch performance")
+    if is_p5:
+        cv = spec.get("cv") or {}
+        if "balanced_accuracy_mean" in cv:
+            st.metric("Fabric balanced acc.", f"{pct(cv['balanced_accuracy_mean'])} ± {cv.get('balanced_accuracy_std', 0) * 100:.1f}")
+            if cv.get("pooled_ci95"):
+                st.caption(f"95% CI (fabric bootstrap): {pct(cv['pooled_ci95'][0])} – {pct(cv['pooled_ci95'][1])}. "
+                           "Chance level is 25% balanced accuracy.")
+        else:
+            st.caption("No cross-validated Phase 5 results recorded for this model.")
+        if spec.get("synthetic"):
+            st.caption(P5_SYNTHETIC_WARNING)
+    elif is_p3:
         cv = spec["cv"]
         c1, c2 = st.columns(2)
         c1.metric("Balanced acc.", f"{pct(cv['balanced_accuracy_mean'])} ± {cv['balanced_accuracy_std'] * 100:.1f}")
@@ -220,11 +245,17 @@ with st.sidebar:
     if is_p3:
         st.caption(P3_RANGE_NOTE)
         st.caption(P3_LOW_NOTE)
+    if is_p5:
+        st.caption(spec["range_note"])
 
 st.info(f"Model in use: **{spec['title']}** ({spec['badge'].lower()}) — {spec['description']}", icon="🧠")
 if is_p3:
     st.error(P3_DISCLAIMER, icon="⚠️")
     st.caption(P3_LOW_NOTE)
+if is_p5:
+    if spec.get("synthetic"):
+        st.error(P5_SYNTHETIC_WARNING, icon="🧪")
+    st.error(spec["disclaimer"], icon="⚠️")
 
 # --------------------------------------------------------------------------- #
 # Input
@@ -247,7 +278,10 @@ with left:
             source = ("camera", cam.getvalue())
     with tab_sample:
         sample_file = spec.get("sample_splits", APP_SAMPLE_SPLITS)
-        samples = load_test_samples(str(sample_file), _mtime(sample_file))
+        if is_p5:   # Phase 5 held-out fabrics are in the sealed lockbox; unverified samples are never shown as truth
+            samples = pd.DataFrame()
+        else:
+            samples = load_test_samples(str(sample_file), _mtime(sample_file))
         if samples.empty:
             st.caption("Test split file not found (run `python -m training.composition.experiment_splits`).")
         else:
@@ -304,6 +338,8 @@ with right:
             )
             if is_p3:
                 st.warning(P3_DISCLAIMER, icon="⚠️")
+            if is_p5:
+                st.warning(spec["disclaimer"], icon="⚠️")
             if t_fine is not None:
                 if is_p3:                      # Phase 3 sample files already carry the band label
                     t_class, extra = t_fine, ""
@@ -358,3 +394,6 @@ with right:
             if is_p3:
                 st.caption(P3_RANGE_NOTE + " Probabilities are uncalibrated softmax outputs, not confidence levels. "
                            + P3_LOW_NOTE)
+            if is_p5:
+                st.caption(spec["range_note"] + " Probabilities are softmax outputs; treat them as uncalibrated unless "
+                           "the model record states a measured calibration error.")

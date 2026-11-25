@@ -1,0 +1,60 @@
+{
+  "protocol_version": "1.0",
+  "frozen_on": "2026-11-25",
+  "status": "FROZEN - changes require a new protocol_version and owner approval",
+  "task": {
+    "label_scheme": "phase5_band4",
+    "classes": ["low", "medium", "high", "very_high"],
+    "bands": {"low": [30.0, 40.0], "medium": [50.0, 66.0], "high": [80.0, 95.0], "very_high": [98.0, 100.0]},
+    "unit_of_independence": "provenance group (fabrics sharing a provenance_group, source product/lot or evidence product identifier)",
+    "ground_truth": "Phase 4 VERIFIED fabrics only (verification policy v2: accepted evidence + independent second review). CottonFabricImageBD labels are never ground truth."
+  },
+  "readiness_gates": {
+    "R1_min_verified_fabrics_per_band": 30,
+    "R1_pilot_min_verified_fabrics_per_band": 20,
+    "R2_max_validator_errors": 0,
+    "R2_required_verification_policy_version": 2,
+    "R3_min_photos_per_fabric": 4,
+    "R3_required_image_types": ["full_fabric", "macro_texture"],
+    "R4_min_distinct_sources_per_band": 5,
+    "R4_max_single_source_share_per_band": 0.30,
+    "R5_min_colour_families_per_band": 4,
+    "R6_max_cramers_v": 0.30,
+    "R6_confound_fields": ["capture_device", "lighting", "capture_session"],
+    "R6_metadata_baseline_max_margin_over_chance": 0.15,
+    "R7_boundary_distance_pct_points": 3.0,
+    "R7_max_boundary_share_per_band": 0.20,
+    "R8_lookalike_similarity_threshold": 0.92,
+    "R9_requires_frozen_snapshot_and_sealed_lockbox": true
+  },
+  "splits": {
+    "lockbox_fraction": 0.20,
+    "lockbox_seed": 20261125,
+    "cv_folds": 5,
+    "cv_repeats": 3,
+    "cv_seed": 42,
+    "training_seeds": [42, 43],
+    "inner_validation_fraction": 0.20
+  },
+  "training_reference_recipe": {
+    "architectures": ["resnet50", "efficientnet_b0", "mobilenet_v3_large"],
+    "pretrained": "ImageNet (downloaded only when real-data training is approved)",
+    "resize_size": 366, "image_size": 320,
+    "mean": [0.485, 0.456, 0.406], "std": [0.229, 0.224, 0.225],
+    "color_aug": "strong", "optimizer": "AdamW", "lr_backbone": 0.0001, "lr_head": 0.001, "weight_decay": 0.0001,
+    "epochs": 30, "batch_size": 16, "label_smoothing": 0.1, "class_weighted_loss": true, "early_stopping_patience": 8
+  },
+  "success_criteria": {
+    "S1_fabric_balanced_accuracy_mean_min": 0.55,
+    "S1_fabric_balanced_accuracy_ci95_lower_min": 0.40,
+    "S2_min_margin_over_colour_and_metadata_baselines": 0.10,
+    "S3_min_recall_per_band": 0.40,
+    "S3_min_precision_per_band": 0.35,
+    "S4_max_far_band_error_rate": 0.05,
+    "S5_max_std_across_repeats": 0.10,
+    "S6_lockbox_within_cv_ci95": true,
+    "S7_max_expected_calibration_error": 0.10
+  },
+  "model_selection_rule": "simplest model whose paired balanced-accuracy difference to the best has a 95% CI including 0; prefer lighter architectures when equivalent",
+  "metrics": {"primary_level": "fabric (mean of image probabilities per fabric)", "bootstrap_resamples": 2000}
+}

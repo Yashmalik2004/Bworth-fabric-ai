@@ -25,7 +25,8 @@ from data_collection.phase4 import registry as R  # noqa: E402
 from data_collection.phase4.validate import validate, write_outputs  # noqa: E402
 
 st.set_page_config(page_title="BWorth · Verified fabric collection", page_icon="🧵", layout="wide")
-P = R.init_dataset()
+P = R.init_dataset(policy_version=R.CURRENT_POLICY_VERSION)   # only affects a brand-new dataset
+SCHEMA = R.read_schema()
 
 st.title("Verified fabric collection")
 st.caption(f"Dataset: `{P['root']}` · one entry per **physical fabric**; photographs and evidence attach to it.")
@@ -33,6 +34,12 @@ st.info("A composition label counts only when backed by a laboratory test, trace
         "supplier documentation identifying the exact product. **Garment care labels are recorded but never verify a "
         "label.** Incomplete entries are saved as *pending verification* and stay out of the training manifest.",
         icon="🔎")
+if R.policy_version() < R.CURRENT_POLICY_VERSION:
+    st.warning(f"This dataset uses **verification policy v{R.policy_version()}** (legacy, single review). Existing records "
+               "stay valid. Phase 5 training needs policy v2 (independent second review): run "
+               "`python -m data_collection.phase4.migrate` (dry run) and then `--apply`.", icon="ℹ️")
+else:
+    st.caption(f"Verification policy v{R.policy_version()}: evidence counts only after an independent second review.")
 
 
 def opt_blank(options: list[str]) -> list[str]:
@@ -60,6 +67,10 @@ with tab_fab:
         c7, c8 = st.columns(2)
         source = c7.text_input("Source (who supplied the fabric)", placeholder="e.g. Supplier X, lot 2026-11-A")
         location = c8.text_input("Physical sample location", placeholder="e.g. Box 3, sleeve 12")
+        c8a, c8b = st.columns(2)
+        prov = c8a.text_input("Provenance group (optional)", placeholder="e.g. PG-0001 — same value for pieces of one bolt/garment",
+                              help="Fabrics cut from the same bolt, product or garment must share this value.")
+        spid = c8b.text_input("Source product / lot id (optional)", placeholder="e.g. ART-5521 lot 7")
         c9, c10 = st.columns(2)
         vmethod = c9.selectbox("Claimed verification method", opt_blank(R.EVIDENCE_TYPES),
                                help="Informational. Status is computed from the evidence records in tab 3.")
@@ -72,6 +83,7 @@ with tab_fab:
                                 "other_fibre_composition": other_comp.strip(), "fabric_type": ftype.strip(),
                                 "weave_or_knit": wk, "colour": colour.strip(), "source": source.strip(),
                                 "physical_sample_location": location.strip(), "verification_method": vmethod,
+                                "provenance_group": prov.strip(), "source_product_id": spid.strip(),
                                 "collection_date": cdate.isoformat(), "notes": notes.strip()})
             st.success(f"Saved **{fid}** (status: pending verification until accepted evidence is added). "
                        f"Write **{fid}** on the physical sample's tag.")
@@ -98,6 +110,7 @@ with tab_img:
             c4, c5 = st.columns(2)
             device = c4.text_input("Capture device", placeholder="e.g. Pixel 8, main camera")
             cdate = c5.date_input("Capture date", value=date.today(), key="img_date")
+            session = st.text_input("Capture session id", placeholder="e.g. S-2026-11-25-A (one id per photo session)")
             inotes = st.text_input("Notes")
             ok = st.form_submit_button("Save photographs", type="primary")
         if ok:
@@ -107,7 +120,8 @@ with tab_img:
                 try:
                     iid = R.add_image(fid, f.name, f.getvalue(), {"capture_device": device.strip(), "image_type": itype,
                                                                   "lighting": light, "camera_angle": angle,
-                                                                  "capture_date": cdate.isoformat(), "notes": inotes.strip()})
+                                                                  "capture_date": cdate.isoformat(), "notes": inotes.strip(),
+                                                                  "capture_session": session.strip()})
                     st.success(f"{f.name} → {iid}")
                 except ValueError as exc:
                     st.error(f"{f.name}: {exc}")
@@ -155,6 +169,28 @@ with tab_ver:
                 fab, img, ver = R.load()
                 s = R.fabric_statuses(fab[fab.fabric_id == fid], ver, P["root"]).iloc[0]
                 st.success(f"Saved {rid}. Fabric {fid} is now **{s.status}**" + (f" — {s.reasons}" if s.reasons else ""))
+            except ValueError as exc:
+                st.error(str(exc))
+
+    st.markdown("##### Independent second review")
+    st.caption("Under verification policy v2 a record counts only after a second, different person accepts it.")
+    awaiting = ver[(ver.review_decision == "accepted") & (ver.second_review_decision.fillna("") == "")] if len(ver) else ver
+    if awaiting.empty:
+        st.caption("No records awaiting a second review.")
+    else:
+        with st.form("second_review_form", clear_on_submit=True):
+            rid = st.selectbox("Record awaiting second review", awaiting.record_id.tolist(),
+                               format_func=lambda r: f"{r} · {awaiting.set_index('record_id').fabric_id[r]} · "
+                                                     f"first reviewer {awaiting.set_index('record_id').reviewed_by[r]}")
+            c1, c2 = st.columns(2)
+            reviewer2 = c1.text_input("Second reviewer (must differ from the first)")
+            decision2 = c2.selectbox("Second review decision", ["accepted", "rejected", "pending"])
+            ok2 = st.form_submit_button("Save second review")
+        if ok2:
+            try:
+                R.add_second_review(rid, reviewer2, decision2)
+                st.success(f"Second review saved for {rid}.")
+                fab, img, ver = R.load()
             except ValueError as exc:
                 st.error(str(exc))
 

@@ -25,7 +25,8 @@ datasets/phase4_verified/
 1. **Register** the physical fabric. Tag the sample with its `BWF-xxxx` ID.
 2. **Photograph** it per `CAPTURE_PROTOCOL.md` and upload the photos to that fabric.
 3. **Attach evidence** per `VERIFICATION_PROTOCOL.md`. A reviewer accepts or rejects it.
-4. **Validate**: `python -m data_collection.phase4.validate`. This refreshes the audit report, the fabric statuses
+4. **Second review** (policy v2): a different person accepts the evidence (tab 3).
+5. **Validate**: `python -m data_collection.phase4.validate`. This refreshes the audit report, the fabric statuses
    and the verified training manifest. A non-zero exit code means integrity errors need fixing.
 
 Data entry (all steps):

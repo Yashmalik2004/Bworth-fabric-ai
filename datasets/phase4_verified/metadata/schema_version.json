@@ -1,0 +1,7 @@
+{
+  "schema_version": 2,
+  "verification_policy_version": 2,
+  "updated": "2026-11-25T18:35:04",
+  "note": "migrated from policy v1",
+  "migration_backup": "metadata/migration_backups/20261125T183504475031_migrate_to_policy_v2"
+}

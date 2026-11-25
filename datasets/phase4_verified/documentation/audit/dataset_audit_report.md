@@ -1,6 +1,6 @@
 # Phase 4 verified fabric dataset: audit report
 
-Generated 2026-11-25T16:36:35 by `python -m data_collection.phase4.validate`. Do not edit by hand: re-run the validator.
+Generated 2026-11-25T18:58:47 by `python -m data_collection.phase4.validate`. Do not edit by hand: re-run the validator.
 
 ## Summary
 
@@ -11,6 +11,8 @@ Generated 2026-11-25T16:36:35 by `python -m data_collection.phase4.validate`. Do
 | Verification records | 0 |
 | **Fabrics in verified training manifest** | **0** |
 | Photographs in verified training manifest | 0 |
+
+Schema / verification policy: schema v2, verification policy v2
 
 Fabric status: no fabrics registered yet
 
@@ -40,7 +42,8 @@ First 40 issues (all in `issues.csv`):
 
 ## Rules applied
 
-* A fabric enters the training manifest only if it is **VERIFIED** (accepted laboratory, manufacturer or product-identified supplier evidence, document on file, reviewer recorded, evidence agreeing within 3.0 points), lies in a task band, and has no ERROR. Garment care labels never verify.
+* A fabric enters the training manifest only if it is **VERIFIED** (accepted laboratory, manufacturer or product-identified supplier evidence, document on file, reviewer recorded, evidence agreeing within 3.0 points; under verification policy v2 also an independent second review), lies in a task band, and has no ERROR. Garment care labels never verify.
+* Fabrics sharing a product identifier must share a `provenance_group` (or be explained); Phase 5 keeps every provenance group in one split.
 * Each image must exist under `images/`, match its recorded SHA-256, and not duplicate another photograph.
 * Band targets count **independent physical fabrics**. Several photographs of one fabric are one sample.
 * Use `fabric_id` as the grouping key for any train/validation/test split.

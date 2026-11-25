@@ -1,0 +1,79 @@
+{
+  "banner": "SYNTHETIC \u2014 PIPELINE TEST (learnability check) \u2014 NOT evidence of fabric-composition accuracy",
+  "arch": "mobilenet_v3_large",
+  "pretrained": false,
+  "recipe_overrides": {
+    "lr_backbone": 0.001,
+    "lr_head": 0.001,
+    "early_stopping_patience": 30
+  },
+  "epochs_max": 30,
+  "folds": 3,
+  "fabrics_per_band": 24,
+  "photos_per_fabric": 4,
+  "chance_balanced_accuracy": 0.25,
+  "training_loss": {
+    "rep0_fold0": {
+      "first_epoch_train_loss": 1.5367951393127441,
+      "min_train_loss": 0.9333011905352274,
+      "last_epoch_train_loss": 0.9335170785586039,
+      "epochs_run": 30,
+      "best_val_acc": 0.2727272727272727,
+      "first_val_acc": 0.2727272727272727
+    },
+    "rep0_fold1": {
+      "first_epoch_train_loss": 1.5468481302261352,
+      "min_train_loss": 0.8822183668613434,
+      "last_epoch_train_loss": 0.8822183668613434,
+      "epochs_run": 30,
+      "best_val_acc": 0.2727272727272727,
+      "first_val_acc": 0.2727272727272727
+    },
+    "rep0_fold2": {
+      "first_epoch_train_loss": 1.6634260535240173,
+      "min_train_loss": 0.8900165379047393,
+      "last_epoch_train_loss": 0.8965224623680115,
+      "epochs_run": 30,
+      "best_val_acc": 0.2727272727272727,
+      "first_val_acc": 0.18181818181818182
+    }
+  },
+  "training_loss_decreased_every_fold": true,
+  "held_out_fabric_balanced_accuracy_per_fold": {
+    "rep0_fold0": 0.25,
+    "rep0_fold1": 0.25,
+    "rep0_fold2": 0.25
+  },
+  "held_out_fabric_balanced_accuracy_pooled": 0.25,
+  "pooled_ci95": [
+    0.25,
+    0.25
+  ],
+  "above_chance": false,
+  "confusion_matrix_pooled": [
+    [
+      0,
+      0,
+      19,
+      0
+    ],
+    [
+      0,
+      0,
+      19,
+      0
+    ],
+    [
+      0,
+      0,
+      19,
+      0
+    ],
+    [
+      0,
+      0,
+      19,
+      0
+    ]
+  ]
+}

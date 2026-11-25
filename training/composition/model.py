@@ -36,6 +36,14 @@ def parameter_groups(model: nn.Module, lr_backbone: float, lr_head: float) -> li
 
 def load_model_from_checkpoint(checkpoint: dict, device: torch.device) -> nn.Module:
     cfg = checkpoint.get("config", {})
+    arch = checkpoint.get("architecture", "resnet50")
+    if arch != "resnet50":  # Phase 5 architectures; ResNet-50 checkpoints take the original path unchanged
+        from training.phase5.models import build_model as build_phase5_model
+
+        model = build_phase5_model(arch, len(checkpoint["class_to_idx"]), pretrained=False,
+                                   dropout=float(cfg.get("dropout", 0.3)))
+        model.load_state_dict(checkpoint["model_state_dict"])
+        return model.to(device).eval()
     model = build_model(
         num_classes=len(checkpoint["class_to_idx"]),
         pretrained=False,

@@ -1,1 +1,1 @@
-image_id,fabric_id,image_path,capture_device,image_type,lighting,camera_angle,resolution,capture_date,sha256,notes
+image_id,fabric_id,image_path,capture_device,image_type,lighting,camera_angle,resolution,capture_date,sha256,notes,capture_session

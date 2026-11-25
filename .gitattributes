@@ -1,0 +1,4 @@
+# Phase 5 protocol files are verified by SHA-256 (snapshots, checkpoints, changelog).
+# Store and check them out byte-for-byte so the hash is identical on every platform.
+experiments/phase5/protocol.json -text
+experiments/phase5/protocol_history/** -text

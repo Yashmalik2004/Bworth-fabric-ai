@@ -91,15 +91,16 @@ REVIEW_DECISIONS = ["accepted", "rejected", "pending"]
 # documentation that must identify the specific product to be acceptable
 NEEDS_PRODUCT_ID = {"manufacturer_documentation", "supplier_documentation"}
 
-# Bands of the BWorth composition task (inclusive). Values in the gaps are kept but are out of band.
+# Bands of the Phase 4 collection task (inclusive). Very high includes 100 % cotton (Phase 4 decision, 2026-11-25;
+# earlier experiments used 98-99 % and keep their own definitions). Values in the gaps are kept but are out of band.
 BANDS = {
     "low": (30.0, 40.0),
     "medium": (50.0, 66.0),
     "high": (80.0, 95.0),
-    "very_high": (98.0, 99.0),
+    "very_high": (98.0, 100.0),
 }
 BAND_LABELS = {"low": "Low (30–40%)", "medium": "Medium (50–66%)", "high": "High (80–95%)",
-               "very_high": "Very high (98–99%)"}
+               "very_high": "Very high (98–100%)"}
 TARGET_FABRICS_PER_BAND = 30
 MIN_IMAGES_PER_FABRIC = 4
 MAX_IMAGES_PER_FABRIC = 6

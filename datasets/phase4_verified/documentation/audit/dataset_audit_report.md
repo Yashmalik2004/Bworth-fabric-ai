@@ -1,6 +1,6 @@
 # Phase 4 verified fabric dataset: audit report
 
-Generated 2026-11-25T16:27:32 by `python -m data_collection.phase4.validate`. Do not edit by hand: re-run the validator.
+Generated 2026-11-25T16:36:35 by `python -m data_collection.phase4.validate`. Do not edit by hand: re-run the validator.
 
 ## Summary
 
@@ -21,7 +21,7 @@ Fabric status: no fabrics registered yet
 | Low (30–40%) | 0 | 30 | 0 | 0 | **no** |
 | Medium (50–66%) | 0 | 30 | 0 | 0 | **no** |
 | High (80–95%) | 0 | 30 | 0 | 0 | **no** |
-| Very high (98–99%) | 0 | 30 | 0 | 0 | **no** |
+| Very high (98–100%) | 0 | 30 | 0 | 0 | **no** |
 
 ## Issues
 
@@ -36,7 +36,7 @@ First 40 issues (all in `issues.csv`):
 | WARNING | insufficient_samples_per_band |  |  |  | Low (30–40%): 0 verified independent fabrics, target 30 |
 | WARNING | insufficient_samples_per_band |  |  |  | Medium (50–66%): 0 verified independent fabrics, target 30 |
 | WARNING | insufficient_samples_per_band |  |  |  | High (80–95%): 0 verified independent fabrics, target 30 |
-| WARNING | insufficient_samples_per_band |  |  |  | Very high (98–99%): 0 verified independent fabrics, target 30 |
+| WARNING | insufficient_samples_per_band |  |  |  | Very high (98–100%): 0 verified independent fabrics, target 30 |
 
 ## Rules applied
 

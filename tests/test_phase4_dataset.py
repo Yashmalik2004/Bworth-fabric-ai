@@ -63,10 +63,20 @@ def test_templates_have_required_columns(root):
 
 
 @pytest.mark.parametrize("value,band", [(30, "low"), (40, "low"), (41, "out_of_band"), (50, "medium"), (66, "medium"),
-                                        (80, "high"), (95, "high"), (97, "out_of_band"), (98, "very_high"),
-                                        (99, "very_high"), (100, "out_of_band"), (None, None)])
+                                        (80, "high"), (95, "high"), (97, "out_of_band"), (97.9, "out_of_band"),
+                                        (98, "very_high"), (99, "very_high"), (99.5, "very_high"), (100, "very_high"),
+                                        (100.0, "very_high"), ("100", None), (None, None)])
 def test_band_mapping(value, band):
-    assert R.band_of(value) == band
+    if isinstance(value, str):                       # band_of expects numbers; registry strings go through to_float
+        assert R.band_of(R.to_float(value)) == "very_high"
+    else:
+        assert R.band_of(value) == band
+
+
+def test_very_high_band_definition_and_label():
+    assert R.BANDS["very_high"] == (98.0, 100.0)
+    assert R.BAND_LABELS["very_high"] == "Very high (98–100%)"
+    assert R.TARGET_FABRICS_PER_BAND == 30
 
 
 def test_verified_fabric_enters_manifest(root):
@@ -229,3 +239,51 @@ def test_entry_app_registers_pending_fabric(root):
     fab = R.load()[0]
     assert len(fab) == 1 and fab.cotton_percentage.iloc[0] == "65"
     assert any("pending verification" in s.value for s in at.success)
+
+
+# ---- Very high band extended to 100 % (Phase 4 update) --------------------- #
+@pytest.mark.parametrize("cotton,other,comp", [(100, 0, ""), (100, "", ""), (98, 2, "polyester:2"), (99, 1, "elastane:1")])
+def test_valid_very_high_compositions(root, cotton, other, comp):
+    R.add_fabric({"cotton_percentage": cotton, "other_fibre_percentage": other, "other_fibre_composition": comp})
+    iss = V.validate()["issues"]
+    assert "invalid_percentage" not in set(iss.check)
+
+
+@pytest.mark.parametrize("cotton,other,comp", [(100, 5, "polyester:5"), (100, 0, "polyester:5"), (98, 5, "polyester:5")])
+def test_invalid_fibre_totals_rejected(root, cotton, other, comp):
+    R.add_fabric({"cotton_percentage": cotton, "other_fibre_percentage": other, "other_fibre_composition": comp})
+    res = V.validate()
+    assert "invalid_percentage" in checks(res, "ERROR")
+    assert res["manifest"].empty
+
+
+def test_100_percent_cotton_still_requires_accepted_evidence(root):
+    plain = R.add_fabric({"cotton_percentage": 100, "other_fibre_percentage": 0})
+    labelled = R.add_fabric({"cotton_percentage": 100, "other_fibre_percentage": 0})
+    R.add_verification({"fabric_id": labelled, "evidence_type": "garment_care_label", "evidence_reference": "label",
+                        "reported_cotton_percentage": 100, "reviewed_by": "QA", "review_decision": "accepted"},
+                       document=("label.jpg", jpeg(21)))
+    res = V.validate()
+    st = res["status"].set_index("fabric_id")
+    assert st.status[plain] == R.PENDING and st.status[labelled] == R.PENDING
+    assert st.band[plain] == "very_high"                         # in band, but not verified
+    assert res["manifest"].empty
+
+
+def test_verified_100_percent_cotton_in_manifest_and_counted(root):
+    fid = verified_fabric(cotton=100, other=0, seed=30)
+    res = V.validate()
+    st = res["status"].set_index("fabric_id")
+    assert st.status[fid] == R.VERIFIED and st.band[fid] == "very_high"
+    man = res["manifest"]
+    assert set(man.fabric_id) == {fid} and set(man.band) == {"very_high"} and len(man) == 4
+    assert res["bands"]["very_high"]["verified_fabrics_in_manifest"] == 1
+    assert "out_of_band" not in set(res["issues"].check)
+
+
+def test_verified_97_percent_is_not_very_high(root):
+    fid = verified_fabric(cotton=97, other=3, seed=31)
+    res = V.validate()
+    assert res["status"].set_index("fabric_id").band[fid] == "out_of_band"
+    assert "out_of_band" in checks(res, "WARNING")
+    assert res["manifest"].empty and res["bands"]["very_high"]["verified_fabrics_in_manifest"] == 0

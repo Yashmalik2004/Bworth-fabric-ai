@@ -50,8 +50,10 @@ The ±3-point tolerance reflects typical laboratory reproducibility for blend an
 evidence disagrees by more.
 
 ## 5. Bands
-* Low 30–40 %, Medium 50–66 %, High 80–95 %, Very high 98–99 % (inclusive).
-* Verified fabrics outside these ranges (e.g. 45 %, 100 %) are kept and reported as `out_of_band`, but are not
+* Low 30–40 %, Medium 50–66 %, High 80–95 %, Very high 98–100 % (inclusive). **100 % cotton is a valid Very high
+  sample**, but like every other value it must be verified by accepted evidence. A claimed 100 % is never verified
+  just because it is 100 %, and "100 % cotton" garment labels are a common source of error.
+* Verified fabrics outside these ranges (e.g. 45 %, 70 %, 97 %) are kept and reported as `out_of_band`, but are not
   in the band manifest. Decide later whether to extend the bands.
 * Never move a fabric into a band by rounding or by majority vote.
 

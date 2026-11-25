@@ -63,5 +63,9 @@ Example: `BWF-0001,65,35,poplin,woven,navy,Supplier A lot 7,laboratory_test,,202
 | File | Content |
 |---|---|
 | `metadata/manifests/verified_training_manifest.csv` | the **only** file training may use: images of VERIFIED, in-band, error-free fabrics, with `fabric_id` (grouping key), `cotton_percentage`, `band`, `verification_records` |
+
+`band` values (inclusive, from the verified cotton percentage): `low` 30–40 %, `medium` 50–66 %, `high` 80–95 %,
+`very_high` 98–100 % (100 % cotton included). Verified values in the gaps (e.g. 45 %, 70 %, 97 %) are reported as
+`out_of_band` and are not in the manifest. Target: 30 independent physical fabrics per band.
 | `metadata/manifests/fabric_status.csv` | computed status and reasons for every fabric |
 | `documentation/audit/dataset_audit_report.md`, `audit_results.json`, `issues.csv` | validator output |

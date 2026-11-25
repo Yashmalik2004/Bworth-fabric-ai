@@ -28,7 +28,8 @@ fabrics, never photographs.
   Tag photos go in the verification evidence, not in `image_registry`.
 
 ## 3. Recording
-For each batch, the entry app (`streamlit run data_collection/phase4/entry_app.py`, tab 2) records:
+For each batch, the entry app (`streamlit run data_collection/phase4/entry_app.py`, tab 2) records a **capture
+session id** (one id per photo session; used to check that sessions are not correlated with band), and:
 * the fabric ID, image type, lighting, camera angle, capture device and date;
 * the SHA-256 and resolution, computed automatically.
 

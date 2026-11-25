@@ -49,15 +49,25 @@ def validate(root: Path | None = None) -> dict:
         issues.append({"severity": sev, "check": check, "fabric_id": fabric_id, "image_id": image_id,
                        "record_id": record_id, "message": msg})
 
-    # ---- schema ------------------------------------------------------------ #
-    for key, cols in (("fabrics", R.FABRIC_COLUMNS), ("images_csv", R.IMAGE_COLUMNS), ("verification", R.VERIFICATION_COLUMNS)):
+    # ---- schema (v1 columns required; v2 extension columns optional for legacy datasets) ---- #
+    schema = R.read_schema(root)
+    policy = R.policy_version(root)
+    for key in ("fabrics", "images_csv", "verification"):
         if not p[key].is_file():
             add("ERROR", "schema", f"missing file {p[key].name}")
             continue
         present = set(pd.read_csv(p[key], nrows=0).columns)
-        for c in cols:
+        for c in R.V1_COLUMNS[key]:
             if c not in present:
                 add("ERROR", "schema", f"{p[key].name}: missing column '{c}'")
+        miss = [c for c in R.V2_EXTENSION_COLUMNS[key] if c not in present]
+        if miss:
+            add("WARNING", "legacy_schema", f"{p[key].name}: schema v2 columns not present yet {miss} "
+                "(legacy records stay valid; run `python -m data_collection.phase4.migrate`)")
+    if policy < R.CURRENT_POLICY_VERSION:
+        add("WARNING", "legacy_verification_policy",
+            f"dataset uses verification policy v{policy} (single review). Phase 5 training requires policy "
+            f"v{R.CURRENT_POLICY_VERSION} (independent second review); run the migration (dry run first)")
 
     # ---- fabric registry --------------------------------------------------- #
     for f in fab.itertuples():
@@ -97,6 +107,9 @@ def validate(root: Path | None = None) -> dict:
             add("WARNING", "provenance", "source is empty", fid)
         if not str(f.physical_sample_location).strip():
             add("WARNING", "provenance", "physical_sample_location is empty (sample cannot be re-tested)", fid)
+        if policy >= 2 and not str(f.provenance_group).strip() and not str(f.source_product_id).strip():
+            add("WARNING", "provenance", "neither provenance_group nor source_product_id recorded; related fabrics "
+                "cut from the same bolt/product cannot be grouped", fid)
 
     dup = fab[fab.fabric_id.str.strip() != ""].groupby("fabric_id")
     for fid, g in dup:
@@ -118,6 +131,13 @@ def validate(root: Path | None = None) -> dict:
             add("ERROR", "vocabulary", f"review_decision '{r.review_decision}' not in {R.REVIEW_DECISIONS}", r.fabric_id, record_id=r.record_id)
         if r.document_path and not (p["root"] / r.document_path).is_file():
             add("ERROR", "missing_document", f"document '{r.document_path}' not found", r.fabric_id, record_id=r.record_id)
+        if r.second_review_decision and r.second_review_decision not in R.REVIEW_DECISIONS:
+            add("ERROR", "vocabulary", f"second_review_decision '{r.second_review_decision}' not in {R.REVIEW_DECISIONS}",
+                r.fabric_id, record_id=r.record_id)
+        if (str(r.second_reviewed_by).strip() and str(r.reviewed_by).strip()
+                and str(r.second_reviewed_by).strip().casefold() == str(r.reviewed_by).strip().casefold()):
+            add("ERROR", "second_review_not_independent", "second reviewer is the same person as the first reviewer",
+                r.fabric_id, record_id=r.record_id)
         if ver.record_id.tolist().count(r.record_id) > 1:
             add("ERROR", "duplicate_record_id", f"record_id {r.record_id} used more than once", r.fabric_id, record_id=r.record_id)
 
@@ -131,6 +151,35 @@ def validate(root: Path | None = None) -> dict:
             add("PENDING", "rejected_evidence", "all evidence was rejected: " + s.reasons, s.fabric_id)
         elif s.status == R.VERIFIED and s.band == "out_of_band":
             add("WARNING", "out_of_band", f"verified cotton {s.cotton_percentage}% lies outside the four task bands", s.fabric_id)
+
+    # ---- cross-fabric product identifiers ------------------------------------ #
+    def norm(x):
+        return " ".join(str(x).strip().casefold().split())
+
+    ident = {}
+    for f in fab.itertuples():
+        if str(f.source_product_id).strip():
+            ident.setdefault(norm(f.source_product_id), set()).add(f.fabric_id)
+    for r in ver.itertuples():
+        if str(r.product_identifier).strip() and r.fabric_id in known:
+            ident.setdefault(norm(r.product_identifier), set()).add(r.fabric_id)
+    pg = dict(zip(fab.fabric_id, fab.provenance_group))
+    vcot = dict(zip(status.fabric_id, status.cotton_percentage))
+    vstat = dict(zip(status.fabric_id, status.status))
+    for pid, fids in ident.items():
+        if len(fids) < 2:
+            continue
+        fids = sorted(fids)
+        groups = {str(pg.get(x, "")).strip() for x in fids}
+        verified = [vcot[x] for x in fids if vstat.get(x) == R.VERIFIED and vcot.get(x) is not None]
+        if verified and max(verified) - min(verified) > R.LAB_AGREEMENT_TOLERANCE:
+            for x in fids:
+                add("ERROR", "contradictory_labels", f"product identifier '{pid}' is shared by {fids} whose verified "
+                    f"compositions differ ({sorted(verified)})", x)
+        elif len(groups) > 1 or groups == {""}:
+            for x in fids:
+                add("WARNING", "shared_product_identifier", f"product identifier '{pid}' appears on fabrics {fids}: "
+                    "assign one provenance_group if they come from the same product/bolt, or record why they differ", x)
 
     # ---- image registry ---------------------------------------------------- #
     images_dir = p["images"].resolve()
@@ -177,6 +226,8 @@ def validate(root: Path | None = None) -> dict:
             add("ERROR", "vocabulary", f"camera_angle '{im.camera_angle}' not in {R.CAMERA_ANGLES}", fid, iid); bad = True
         if not str(im.capture_device).strip():
             add("WARNING", "capture_metadata", "capture_device is empty", fid, iid)
+        if policy >= 2 and not str(im.capture_session).strip():
+            add("WARNING", "capture_metadata", "capture_session is empty (needed for confound audits)", fid, iid)
         if not bad:
             ok_images.append(iid)
 
@@ -233,7 +284,9 @@ def validate(root: Path | None = None) -> dict:
     eligible = status[(status.status == R.VERIFIED) & (status.band.isin(list(R.BANDS))) & (~status.fabric_id.isin(fabric_errors))]
     man = img[img.fabric_id.isin(eligible.fabric_id) & img.image_id.isin(ok_images) & ~img.image_id.isin(image_errors)]
     man = man.merge(eligible[["fabric_id", "cotton_percentage", "band", "accepted_records"]], on="fabric_id")
-    man = man[["image_id", "fabric_id", "image_path", "cotton_percentage", "band", "image_type", "sha256", "accepted_records"]]
+    man = man.merge(fab.drop_duplicates("fabric_id")[["fabric_id", "provenance_group", "source_product_id"]], on="fabric_id", how="left")
+    man = man[["image_id", "fabric_id", "image_path", "cotton_percentage", "band", "image_type", "sha256", "accepted_records",
+               "provenance_group", "source_product_id", "capture_session", "capture_device", "lighting"]]
     man = man.rename(columns={"accepted_records": "verification_records"})
     status["blocking_errors"] = status.fabric_id.isin(fabric_errors)
     status["in_training_manifest"] = status.fabric_id.isin(man.fabric_id)
@@ -253,7 +306,8 @@ def validate(root: Path | None = None) -> dict:
                 f"{R.BAND_LABELS[b]}: {bands[b]['verified_fabrics_in_manifest']} verified independent fabrics, target {R.TARGET_FABRICS_PER_BAND}")
     iss = pd.DataFrame(issues, columns=["severity", "check", "fabric_id", "image_id", "record_id", "message"])
 
-    return {"generated": datetime.now().isoformat(timespec="seconds"), "root": (p["root"].resolve().relative_to(R.PROJECT_ROOT).as_posix() if R.PROJECT_ROOT in p["root"].resolve().parents else str(p["root"])),
+    return {"schema": {k: v for k, v in schema.items()}, "verification_policy_version": policy,
+            "generated": datetime.now().isoformat(timespec="seconds"), "root": (p["root"].resolve().relative_to(R.PROJECT_ROOT).as_posix() if R.PROJECT_ROOT in p["root"].resolve().parents else str(p["root"])),
             "counts": {"fabrics": int(fab.fabric_id.nunique()), "fabric_rows": int(len(fab)), "images": int(len(img)),
                        "verification_records": int(len(ver)),
                        "fabrics_by_status": status.status.value_counts().to_dict(),
@@ -286,6 +340,9 @@ def write_outputs(res: dict, root: Path | None = None) -> dict[str, Path]:
         f"| Verification records | {c['verification_records']} |",
         f"| **Fabrics in verified training manifest** | **{c['fabrics_in_manifest']}** |",
         f"| Photographs in verified training manifest | {c['photographs_in_manifest']} |",
+        "", f"Schema / verification policy: schema v{res['schema'].get('schema_version')}, "
+        f"verification policy v{res['verification_policy_version']}"
+        + (" (legacy dataset: no schema_version.json)" if res['schema'].get('legacy') else ""),
         "", "Fabric status: " + (", ".join(f"{k} {v}" for k, v in c["fabrics_by_status"].items()) or "no fabrics registered yet"), "",
         "## Progress per band (independent physical fabrics, not photographs)", "",
         "| Band | Verified fabrics | Target | Pending | Photographs | Sufficient |", "|---|---|---|---|---|---|",
@@ -307,7 +364,10 @@ def write_outputs(res: dict, root: Path | None = None) -> dict[str, Path]:
     lines += ["", "## Rules applied", "",
               "* A fabric enters the training manifest only if it is **VERIFIED** (accepted laboratory, manufacturer or "
               "product-identified supplier evidence, document on file, reviewer recorded, evidence agreeing within "
-              f"{R.LAB_AGREEMENT_TOLERANCE} points), lies in a task band, and has no ERROR. Garment care labels never verify.",
+              f"{R.LAB_AGREEMENT_TOLERANCE} points; under verification policy v2 also an independent second review), "
+              "lies in a task band, and has no ERROR. Garment care labels never verify.",
+              "* Fabrics sharing a product identifier must share a `provenance_group` (or be explained); Phase 5 keeps "
+              "every provenance group in one split.",
               "* Each image must exist under `images/`, match its recorded SHA-256, and not duplicate another photograph.",
               "* Band targets count **independent physical fabrics**. Several photographs of one fabric are one sample.",
               "* Use `fabric_id` as the grouping key for any train/validation/test split."]

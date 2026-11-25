@@ -26,6 +26,17 @@ For every accepted record:
   (product number, lot, photo of the bolt tag);
 * the reviewer sets `review_decision = accepted`.
 
+### Verification policy v2: independent second review
+Under policy v2 (required for Phase 5 training), an accepted record also needs a **second review** by a different person
+(`second_reviewed_by`, `second_review_decision = accepted`). Same-person second reviews are errors. A second-review
+rejection makes the record unusable. Legacy datasets stay on policy v1 until migrated explicitly; the dry-run migration
+lists every fabric that would move from VERIFIED to PENDING_VERIFICATION.
+
+### Related fabrics and product identifiers
+Fabrics cut from the same bolt, product or garment must share a `provenance_group`. The validator warns when a
+product identifier (`source_product_id` or evidence `product_identifier`) appears on several fabrics without a common
+group, and reports an ERROR if such fabrics have different verified compositions.
+
 ## 3. Recorded but never sufficient
 
 | `evidence_type` | Why not |

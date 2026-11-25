@@ -56,6 +56,9 @@ datasets/*
 datasets/phase4_verified/images/
 datasets/phase4_verified/metadata/verification_documents/
 datasets/phase4_verified/metadata/manifests/
+# registry migration backups and logs stay local (copies of registries; never committed)
+datasets/phase4_verified/metadata/migration_backups/
+datasets/phase4_verified/metadata/migration_log.jsonl
 data/
 
 # Model checkpoints and machine learning artifacts

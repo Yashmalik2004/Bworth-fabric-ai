@@ -39,6 +39,8 @@ def paths(root: Path | None = None) -> dict[str, Path]:
         "fabrics": r / "metadata" / "fabric_registry.csv",
         "images_csv": r / "metadata" / "image_registry.csv",
         "verification": r / "metadata" / "verification_records.csv",
+        "schema": r / "metadata" / "schema_version.json",
+        "migration_backups": r / "metadata" / "migration_backups",
     }
 
 
@@ -51,17 +53,36 @@ FABRIC_COLUMNS = [
     # extensions (documented in DATA_DICTIONARY.md)
     "other_fibre_composition",   # e.g. "polyester:35|elastane:5"; must sum to other_fibre_percentage
     "physical_sample_location",  # where the physical swatch is stored (needed for re-testing)
+    # schema v2 extensions (Phase 5 approval, 2026-11-25); optional, legacy rows keep them empty
+    "provenance_group",          # same value for fabrics cut from one bolt/product/garment (e.g. PG-0001)
+    "source_product_id",         # product / article / lot identifier of the physical source
 ]
 IMAGE_COLUMNS = [
     "image_id", "fabric_id", "image_path", "capture_device", "image_type", "lighting", "camera_angle",
     "resolution", "capture_date", "sha256",
     "notes",
+    "capture_session",           # schema v2: photo session id (e.g. S-2026-11-25-A), for confound audits
 ]
 VERIFICATION_COLUMNS = [
     "record_id", "fabric_id", "evidence_type", "evidence_reference", "issuing_party", "product_identifier",
     "document_path", "reported_cotton_percentage", "reported_other_fibres", "test_method_standard",
     "reviewed_by", "review_date", "review_decision", "notes",
+    # schema v2: independent second review (required for acceptance under verification policy v2)
+    "second_reviewed_by", "second_review_date", "second_review_decision",
 ]
+V2_EXTENSION_COLUMNS = {
+    "fabrics": ["provenance_group", "source_product_id"],
+    "images_csv": ["capture_session"],
+    "verification": ["second_reviewed_by", "second_review_date", "second_review_decision"],
+}
+V1_COLUMNS = {
+    "fabrics": [c for c in FABRIC_COLUMNS if c not in V2_EXTENSION_COLUMNS["fabrics"]],
+    "images_csv": [c for c in IMAGE_COLUMNS if c not in V2_EXTENSION_COLUMNS["images_csv"]],
+    "verification": [c for c in VERIFICATION_COLUMNS if c not in V2_EXTENSION_COLUMNS["verification"]],
+}
+SCHEMA_VERSION = 2
+CURRENT_POLICY_VERSION = 2
+LEGACY_POLICY_VERSION = 1
 
 FABRIC_ID_RE = re.compile(r"^BWF-\d{4}$")
 IMAGE_ID_RE = re.compile(r"^BWI-\d{6}$")
@@ -152,14 +173,124 @@ def parse_fibres(spec) -> dict[str, float] | None:
 # --------------------------------------------------------------------------- #
 # Storage
 # --------------------------------------------------------------------------- #
-def init_dataset(root: Path | None = None) -> dict[str, Path]:
+def init_dataset(root: Path | None = None, policy_version: int | None = None) -> dict[str, Path]:
+    """Create folders and empty CSV templates if missing.
+
+    A schema/policy file is written only for a brand-new dataset and only when ``policy_version`` is given.
+    Existing datasets are never re-versioned here; use ``migrate`` (explicit, logged, backed up).
+    """
     p = paths(root)
+    brand_new = not any(p[k].is_file() for k in ("fabrics", "images_csv", "verification"))
     for k in ("images", "documents", "manifests", "audit"):
         p[k].mkdir(parents=True, exist_ok=True)
     for key, cols in (("fabrics", FABRIC_COLUMNS), ("images_csv", IMAGE_COLUMNS), ("verification", VERIFICATION_COLUMNS)):
         if not p[key].is_file():
             write_csv(p[key], pd.DataFrame(columns=cols))
+    if brand_new and policy_version is not None and not p["schema"].is_file():
+        write_schema(p, policy_version, note="created")
     return p
+
+
+def read_schema(root: Path | None = None) -> dict:
+    """Schema/policy of a dataset. No file = legacy dataset: schema 1, verification policy 1."""
+    import json
+
+    f = paths(root)["schema"]
+    if not f.is_file():
+        return {"schema_version": 1, "verification_policy_version": LEGACY_POLICY_VERSION, "legacy": True}
+    d = json.loads(f.read_text(encoding="utf-8"))
+    d["legacy"] = False
+    return d
+
+
+def policy_version(root: Path | None = None) -> int:
+    return int(read_schema(root).get("verification_policy_version", LEGACY_POLICY_VERSION))
+
+
+def write_schema(p: dict, policy: int, note: str, extra: dict | None = None) -> None:
+    import json
+    from datetime import datetime
+
+    d = {"schema_version": SCHEMA_VERSION, "verification_policy_version": int(policy),
+         "updated": datetime.now().isoformat(timespec="seconds"), "note": note}
+    if extra:
+        d.update(extra)
+    p["schema"].write_text(json.dumps(d, indent=2), encoding="utf-8")
+
+
+def _backup(p: dict, tag: str) -> Path:
+    import shutil
+    from datetime import datetime
+
+    d = p["migration_backups"] / f"{datetime.now().strftime('%Y%m%dT%H%M%S%f')}_{tag}"
+    d.mkdir(parents=True, exist_ok=True)
+    for k in ("fabrics", "images_csv", "verification", "schema"):
+        if p[k].is_file():
+            shutil.copy2(p[k], d / p[k].name)
+    return d
+
+
+def _log(p: dict, entry: dict) -> None:
+    import json
+    from datetime import datetime
+
+    with open(p["metadata"] / "migration_log.jsonl", "a", encoding="utf-8") as f:
+        f.write(json.dumps({"time": datetime.now().isoformat(timespec="seconds"), **entry}, default=str) + "\n")
+
+
+def missing_extension_columns(root: Path | None = None) -> dict[str, list[str]]:
+    p = paths(root)
+    out = {}
+    for key, cols in V2_EXTENSION_COLUMNS.items():
+        if p[key].is_file():
+            present = set(pd.read_csv(p[key], nrows=0, dtype=str).columns)
+            miss = [c for c in cols if c not in present]
+            if miss:
+                out[key] = miss
+    return out
+
+
+def ensure_extension_columns(root: Path | None = None) -> list[str]:
+    """Add missing v2 columns (empty) to legacy CSVs before a write. Existing values are never changed.
+    Backed up and logged. Does NOT change the verification policy version."""
+    p = paths(root)
+    miss = missing_extension_columns(root)
+    if not miss:
+        return []
+    bdir = _backup(p, "add_columns")
+    for key in miss:
+        cols = {"fabrics": FABRIC_COLUMNS, "images_csv": IMAGE_COLUMNS, "verification": VERIFICATION_COLUMNS}[key]
+        df = read_csv(p[key], cols)
+        write_csv(p[key], df[[c for c in df.columns if c in cols] + [c for c in df.columns if c not in cols]])
+    _log(p, {"action": "add_extension_columns", "columns": miss, "backup": bdir.relative_to(p["root"]).as_posix()})
+    return [f"{k}:{c}" for k, cs in miss.items() for c in cs]
+
+
+def migrate(root: Path | None = None, to_policy: int = CURRENT_POLICY_VERSION, dry_run: bool = True) -> dict:
+    """Explicit migration to schema v2 / verification policy ``to_policy``.
+
+    Reports every fabric whose computed status would change (e.g. single-review VERIFIED -> PENDING under v2)
+    BEFORE anything is written. With dry_run=False: backs up the CSVs, adds missing columns (empty), writes the
+    schema file and appends to metadata/migration_log.jsonl. Existing values are never modified.
+    """
+    p = paths(root)
+    fab, img, ver = load(root)
+    cur = policy_version(root)
+    before = fabric_statuses(fab, ver, p["root"], policy=cur)
+    after = fabric_statuses(fab, ver, p["root"], policy=to_policy)
+    changes = before.merge(after, on="fabric_id", suffixes=("_before", "_after"))
+    changes = changes[changes.status_before != changes.status_after]
+    report = {"from_policy": cur, "to_policy": to_policy, "dry_run": dry_run,
+              "missing_columns": missing_extension_columns(root),
+              "status_changes": changes[["fabric_id", "status_before", "status_after", "reasons_after"]].to_dict(orient="records"),
+              "fabrics": int(len(fab)), "images": int(len(img)), "verification_records": int(len(ver))}
+    if not dry_run:
+        bdir = _backup(p, f"migrate_to_policy_v{to_policy}")
+        ensure_extension_columns(root)
+        write_schema(p, to_policy, note=f"migrated from policy v{cur}",
+                     extra={"migration_backup": bdir.relative_to(p["root"]).as_posix()})
+        _log(p, {"action": "migrate", **report, "backup": bdir.relative_to(p["root"]).as_posix()})
+    return report
 
 
 def read_csv(path: Path, columns: list[str]) -> pd.DataFrame:
@@ -207,6 +338,7 @@ def sha256_bytes(data: bytes) -> str:
 
 def add_fabric(fields: dict, root: Path | None = None) -> str:
     p = init_dataset(root)
+    ensure_extension_columns(root)
     fab, _, _ = load(root)
     fid = fields.get("fabric_id") or next_id(fab.fabric_id, "BWF", 4)
     if fid in set(fab.fabric_id):
@@ -221,6 +353,7 @@ def add_fabric(fields: dict, root: Path | None = None) -> str:
 
 def add_verification(fields: dict, document: tuple[str, bytes] | None = None, root: Path | None = None) -> str:
     p = init_dataset(root)
+    ensure_extension_columns(root)
     fab, _, ver = load(root)
     if fields.get("fabric_id") not in set(fab.fabric_id):
         raise ValueError(f"unknown fabric_id {fields.get('fabric_id')!r}")
@@ -247,6 +380,7 @@ def add_image(fabric_id: str, filename: str, data: bytes, fields: dict, root: Pa
     from PIL import Image
 
     p = init_dataset(root)
+    ensure_extension_columns(root)
     fab, img, _ = load(root)
     if fabric_id not in set(fab.fabric_id):
         raise ValueError(f"unknown fabric_id {fabric_id!r}")
@@ -276,6 +410,28 @@ def add_image(fabric_id: str, filename: str, data: bytes, fields: dict, root: Pa
     return iid
 
 
+def add_second_review(record_id: str, reviewer: str, decision: str, review_date: str | None = None,
+                      root: Path | None = None) -> None:
+    """Record an independent second review on an existing evidence record (verification policy v2)."""
+    p = init_dataset(root)
+    ensure_extension_columns(root)
+    _, _, ver = load(root)
+    if record_id not in set(ver.record_id):
+        raise ValueError(f"unknown record_id {record_id!r}")
+    if decision not in REVIEW_DECISIONS:
+        raise ValueError(f"decision must be one of {REVIEW_DECISIONS}")
+    i = ver.index[ver.record_id == record_id][0]
+    first = str(ver.at[i, "reviewed_by"]).strip()
+    if not str(reviewer).strip():
+        raise ValueError("second reviewer name is required")
+    if first and first.casefold() == str(reviewer).strip().casefold():
+        raise ValueError("second reviewer must be a different person from the first reviewer")
+    ver.at[i, "second_reviewed_by"] = str(reviewer).strip()
+    ver.at[i, "second_review_decision"] = decision
+    ver.at[i, "second_review_date"] = review_date or date.today().isoformat()
+    write_csv(p["verification"], ver)
+
+
 # --------------------------------------------------------------------------- #
 # Verification status (the only route into the training manifest)
 # --------------------------------------------------------------------------- #
@@ -289,8 +445,8 @@ class FabricStatus:
     reasons: list[str]
 
 
-def record_is_acceptable(r: pd.Series, root: Path) -> tuple[bool, str]:
-    """An evidence record can verify a label only if every rule below holds."""
+def record_is_acceptable(r: pd.Series, root: Path, policy: int = LEGACY_POLICY_VERSION) -> tuple[bool, str]:
+    """An evidence record can verify a label only if every rule below holds (policy v2 adds a second review)."""
     if r.evidence_type not in ACCEPTED_EVIDENCE:
         return False, f"{r.record_id}: evidence type '{r.evidence_type}' cannot verify a label"
     if r.review_decision != "accepted":
@@ -308,11 +464,25 @@ def record_is_acceptable(r: pd.Series, root: Path) -> tuple[bool, str]:
         return False, f"{r.record_id}: reported cotton percentage missing or invalid"
     if not str(r.reviewed_by).strip():
         return False, f"{r.record_id}: reviewer not recorded"
+    if policy >= 2:
+        second = str(r.get("second_reviewed_by", "") or "").strip()
+        if not second or str(r.get("second_review_decision", "") or "") != "accepted":
+            return False, f"{r.record_id}: awaiting independent second review (verification policy v2)"
+        if second.casefold() == str(r.reviewed_by).strip().casefold():
+            return False, f"{r.record_id}: second reviewer is the same person as the first reviewer"
     return True, ""
 
 
-def fabric_statuses(fab: pd.DataFrame, ver: pd.DataFrame, root: Path | None = None) -> pd.DataFrame:
+def _any_rejected(recs: pd.DataFrame) -> bool:
+    first = (recs.review_decision == "rejected").any()
+    second = "second_review_decision" in recs.columns and (recs["second_review_decision"] == "rejected").any()
+    return bool(first or second)
+
+
+def fabric_statuses(fab: pd.DataFrame, ver: pd.DataFrame, root: Path | None = None,
+                    policy: int | None = None) -> pd.DataFrame:
     root = paths(root)["root"]
+    policy = policy_version(root) if policy is None else policy
     out = []
     for f in fab.itertuples():
         reasons = []
@@ -320,7 +490,7 @@ def fabric_statuses(fab: pd.DataFrame, ver: pd.DataFrame, root: Path | None = No
         recs = ver[ver.fabric_id == f.fabric_id]
         acc = []
         for r in recs.itertuples():
-            ok, why = record_is_acceptable(pd.Series(r._asdict()), root)
+            ok, why = record_is_acceptable(pd.Series(r._asdict()), root, policy)
             if ok:
                 acc.append(r)
             elif why:
@@ -328,7 +498,7 @@ def fabric_statuses(fab: pd.DataFrame, ver: pd.DataFrame, root: Path | None = No
         if cotton is None or pd.isna(cotton) or not 0 <= cotton <= 100:
             status = INCOMPLETE
             reasons.insert(0, "cotton percentage missing or invalid")
-        elif (recs.review_decision == "rejected").any() and not acc:
+        elif _any_rejected(recs) and not acc:
             status = REJECTED
         elif not acc:
             status = PENDING

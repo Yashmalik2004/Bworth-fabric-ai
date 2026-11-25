@@ -21,6 +21,8 @@ Dates use ISO format (`YYYY-MM-DD`). Percentages are numbers 0–100 without `%`
 | `notes` | optional | free text |
 | `other_fibre_composition` | recommended | extension: `fibre:percent` list, e.g. `polyester:30\|elastane:5`; must sum to `other_fibre_percentage`; must not list cotton |
 | `physical_sample_location` | recommended | extension: where the physical swatch is stored, so it can be re-tested |
+| `provenance_group` | recommended (schema v2) | same value (e.g. `PG-0001`) for fabrics cut from one bolt, product or garment; Phase 5 keeps a group in one split |
+| `source_product_id` | recommended (schema v2) | product/article/lot identifier of the physical source; shared identifiers across fabrics are flagged |
 
 Example: `BWF-0001,65,35,poplin,woven,navy,Supplier A lot 7,laboratory_test,,2026-11-25,,polyester:35,Box 1 / 12`
 
@@ -39,6 +41,7 @@ Example: `BWF-0001,65,35,poplin,woven,navy,Supplier A lot 7,laboratory_test,,202
 | `capture_date` | yes | date taken |
 | `sha256` | auto | SHA-256 of the stored file; duplicates are rejected |
 | `notes` | optional | extension |
+| `capture_session` | recommended (schema v2) | photo-session id (e.g. `S-2026-11-25-A`), used for confound audits |
 
 ## `metadata/verification_records.csv`: evidence for composition labels
 
@@ -56,7 +59,17 @@ Example: `BWF-0001,65,35,poplin,woven,navy,Supplier A lot 7,laboratory_test,,202
 | `test_method_standard` | for lab tests | e.g. ISO 1833-11, AATCC 20A |
 | `reviewed_by`, `review_date` | for acceptance | who checked the evidence against the physical sample |
 | `review_decision` | yes | `pending` (default), `accepted`, `rejected` |
+| `second_reviewed_by`, `second_review_date`, `second_review_decision` | for acceptance under policy v2 | independent second review by a **different** person |
 | `notes` | optional | |
+
+## Schema and policy versions
+
+`metadata/schema_version.json` records `schema_version` and `verification_policy_version`. A dataset without it is a
+**legacy** dataset (schema 1, policy 1): it stays valid, missing v2 columns are only warnings, and single-review
+evidence still verifies. Writing a record adds missing v2 columns (empty, values unchanged, backed up to
+`metadata/migration_backups/`, logged in `metadata/migration_log.jsonl`) without changing the policy.
+`python -m data_collection.phase4.migrate` (dry run) lists every fabric whose status would change under policy v2;
+`--apply` backs up and switches the policy. Phase 5 requires policy v2.
 
 ## Generated files (do not edit)
 

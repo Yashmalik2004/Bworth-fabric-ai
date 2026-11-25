@@ -1,0 +1,55 @@
+{
+  "checks": {
+    "every_row_has_fold": true,
+    "each_photograph_once": true,
+    "each_image_path_once": true,
+    "each_photo_one_fabric": true,
+    "each_fabric_one_fold": true,
+    "no_sha256_in_two_folds": true,
+    "no_sha256_in_two_photographs": true,
+    "each_fabric_one_band": true,
+    "only_consistent_confirmed_or_distinct_fabrics": true,
+    "files_exist": true,
+    "every_train_split_has_all_3_classes": true,
+    "every_val_split_has_all_3_classes": true,
+    "every_test_split_has_all_3_classes": true,
+    "ablation_identical_val_and_test_populations": true
+  },
+  "all_passed": true,
+  "notes": {
+    "low_removed": {
+      "photographs": 4,
+      "fabrics": 2
+    },
+    "photographs": 129,
+    "fabrics": 52,
+    "photographs_per_class": {
+      "medium_cotton": 59,
+      "high_cotton": 56,
+      "very_high_cotton": 14
+    },
+    "fabrics_per_class": {
+      "medium_cotton": 24,
+      "high_cotton": 20,
+      "very_high_cotton": 8
+    },
+    "former_conflict_photographs": 24,
+    "former_conflict_per_class": {
+      "medium_cotton": 12,
+      "high_cotton": 9,
+      "very_high_cotton": 3
+    },
+    "former_conflict_fabrics": 18,
+    "fabrics_made_only_of_former_conflict_photos": 7,
+    "phase3_recoverable_14_in_dataset": 6,
+    "phase3_recoverable_14_that_are_former_conflict": 6,
+    "fabrics_per_fold": {
+      "0": 11,
+      "1": 11,
+      "2": 11,
+      "3": 10,
+      "4": 9
+    }
+  },
+  "low_statement": "Low cotton composition is not evaluable because the dataset does not contain enough independent, verified physical-fabric samples."
+}

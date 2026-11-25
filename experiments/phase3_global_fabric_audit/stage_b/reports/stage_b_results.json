@@ -1,0 +1,435 @@
+{
+  "low_statement": "Low cotton composition is not evaluable because the dataset does not contain enough independent, verified physical-fabric samples.",
+  "variants": {
+    "baseline": {
+      "all_test": {
+        "pooled_over_seeds": {
+          "n_images": 258,
+          "balanced_accuracy": 0.5264830508474576,
+          "accuracy": 0.5581395348837209,
+          "macro_f1": 0.5018161802302771,
+          "per_class": {
+            "medium_cotton": {
+              "precision": 0.7625,
+              "recall": 0.5169491525423728,
+              "f1": 0.6161616161616161,
+              "support": 118
+            },
+            "high_cotton": {
+              "precision": 0.6173913043478261,
+              "recall": 0.6339285714285714,
+              "f1": 0.6255506607929515,
+              "support": 112
+            },
+            "very_high_cotton": {
+              "precision": 0.19047619047619047,
+              "recall": 0.42857142857142855,
+              "f1": 0.26373626373626374,
+              "support": 28
+            }
+          },
+          "confusion_matrix": [
+            [
+              61,
+              33,
+              24
+            ],
+            [
+              14,
+              71,
+              27
+            ],
+            [
+              5,
+              11,
+              12
+            ]
+          ]
+        },
+        "pooled_per_seed": {
+          "42": {
+            "balanced_accuracy": 0.5683010492332526,
+            "accuracy": 0.5891472868217055,
+            "macro_f1": 0.5350516818441026
+          },
+          "43": {
+            "balanced_accuracy": 0.4846650524616627,
+            "accuracy": 0.5271317829457365,
+            "macro_f1": 0.46978356092489987
+          }
+        }
+      },
+      "non_conflict_test": {
+        "pooled_over_seeds": {
+          "n_images": 210,
+          "balanced_accuracy": 0.528046421663443,
+          "accuracy": 0.6,
+          "macro_f1": 0.5183745735630695,
+          "per_class": {
+            "medium_cotton": {
+              "precision": 0.7638888888888888,
+              "recall": 0.5851063829787234,
+              "f1": 0.6626506024096386,
+              "support": 94
+            },
+            "high_cotton": {
+              "precision": 0.6530612244897959,
+              "recall": 0.6808510638297872,
+              "f1": 0.6666666666666666,
+              "support": 94
+            },
+            "very_high_cotton": {
+              "precision": 0.175,
+              "recall": 0.3181818181818182,
+              "f1": 0.22580645161290322,
+              "support": 22
+            }
+          },
+          "confusion_matrix": [
+            [
+              55,
+              23,
+              16
+            ],
+            [
+              13,
+              64,
+              17
+            ],
+            [
+              4,
+              11,
+              7
+            ]
+          ]
+        },
+        "pooled_per_seed": {
+          "42": {
+            "balanced_accuracy": 0.5680206318504192,
+            "accuracy": 0.638095238095238,
+            "macro_f1": 0.5541762452107281
+          },
+          "43": {
+            "balanced_accuracy": 0.4880722114764668,
+            "accuracy": 0.5619047619047619,
+            "macro_f1": 0.4831124544679532
+          }
+        }
+      }
+    },
+    "ablationA": {
+      "all_test": {
+        "pooled_over_seeds": {
+          "n_images": 258,
+          "balanced_accuracy": 0.4651937046004843,
+          "accuracy": 0.5581395348837209,
+          "macro_f1": 0.4577602057915093,
+          "per_class": {
+            "medium_cotton": {
+              "precision": 0.7571428571428571,
+              "recall": 0.4491525423728814,
+              "f1": 0.5638297872340425,
+              "support": 118
+            },
+            "high_cotton": {
+              "precision": 0.5443037974683544,
+              "recall": 0.7678571428571429,
+              "f1": 0.6370370370370371,
+              "support": 112
+            },
+            "very_high_cotton": {
+              "precision": 0.16666666666666666,
+              "recall": 0.17857142857142858,
+              "f1": 0.1724137931034483,
+              "support": 28
+            }
+          },
+          "confusion_matrix": [
+            [
+              53,
+              54,
+              11
+            ],
+            [
+              12,
+              86,
+              14
+            ],
+            [
+              5,
+              18,
+              5
+            ]
+          ]
+        },
+        "pooled_per_seed": {
+          "42": {
+            "balanced_accuracy": 0.4504640839386602,
+            "accuracy": 0.5503875968992248,
+            "macro_f1": 0.44185205281244344
+          },
+          "43": {
+            "balanced_accuracy": 0.4799233252623083,
+            "accuracy": 0.5658914728682171,
+            "macro_f1": 0.47371460656132186
+          }
+        }
+      },
+      "non_conflict_test": {
+        "pooled_over_seeds": {
+          "n_images": 210,
+          "balanced_accuracy": 0.4932301740812379,
+          "accuracy": 0.6,
+          "macro_f1": 0.49061431410853035,
+          "per_class": {
+            "medium_cotton": {
+              "precision": 0.7903225806451613,
+              "recall": 0.5212765957446809,
+              "f1": 0.6282051282051282,
+              "support": 94
+            },
+            "high_cotton": {
+              "precision": 0.5887096774193549,
+              "recall": 0.776595744680851,
+              "f1": 0.6697247706422018,
+              "support": 94
+            },
+            "very_high_cotton": {
+              "precision": 0.16666666666666666,
+              "recall": 0.18181818181818182,
+              "f1": 0.17391304347826086,
+              "support": 22
+            }
+          },
+          "confusion_matrix": [
+            [
+              49,
+              35,
+              10
+            ],
+            [
+              11,
+              73,
+              10
+            ],
+            [
+              2,
+              16,
+              4
+            ]
+          ]
+        },
+        "pooled_per_seed": {
+          "42": {
+            "balanced_accuracy": 0.47904577691811734,
+            "accuracy": 0.580952380952381,
+            "macro_f1": 0.4742860637191952
+          },
+          "43": {
+            "balanced_accuracy": 0.5074145712443585,
+            "accuracy": 0.6190476190476191,
+            "macro_f1": 0.5073216638434029
+          }
+        }
+      }
+    }
+  },
+  "paired": {
+    "all_test": {
+      "definition": "baseline (B, includes former-conflict photos in training) minus ablationA (A, excludes them); same test photos",
+      "per_run_diff": [
+        {
+          "fold": 0,
+          "seed": 42,
+          "balanced_accuracy": 0.3813,
+          "accuracy": 0.1923,
+          "macro_f1": 0.2926
+        },
+        {
+          "fold": 0,
+          "seed": 43,
+          "balanced_accuracy": 0.0808,
+          "accuracy": 0.0,
+          "macro_f1": 0.0265
+        },
+        {
+          "fold": 1,
+          "seed": 42,
+          "balanced_accuracy": 0.0,
+          "accuracy": -0.1111,
+          "macro_f1": 0.0279
+        },
+        {
+          "fold": 1,
+          "seed": 43,
+          "balanced_accuracy": 0.0278,
+          "accuracy": 0.037,
+          "macro_f1": 0.1549
+        },
+        {
+          "fold": 2,
+          "seed": 42,
+          "balanced_accuracy": 0.0808,
+          "accuracy": 0.0,
+          "macro_f1": 0.0192
+        },
+        {
+          "fold": 2,
+          "seed": 43,
+          "balanced_accuracy": 0.101,
+          "accuracy": -0.0769,
+          "macro_f1": 0.0416
+        },
+        {
+          "fold": 3,
+          "seed": 42,
+          "balanced_accuracy": 0.0606,
+          "accuracy": 0.0833,
+          "macro_f1": 0.0519
+        },
+        {
+          "fold": 3,
+          "seed": 43,
+          "balanced_accuracy": -0.2273,
+          "accuracy": -0.125,
+          "macro_f1": -0.1768
+        },
+        {
+          "fold": 4,
+          "seed": 42,
+          "balanced_accuracy": 0.0303,
+          "accuracy": 0.0385,
+          "macro_f1": 0.0222
+        },
+        {
+          "fold": 4,
+          "seed": 43,
+          "balanced_accuracy": -0.0328,
+          "accuracy": -0.0385,
+          "macro_f1": -0.0247
+        }
+      ],
+      "mean_diff": {
+        "balanced_accuracy": 0.050252525252525236,
+        "accuracy": -3.561253561255029e-05,
+        "macro_f1": 0.04354500184725966
+      },
+      "std_diff": {
+        "balanced_accuracy": 0.14963029825560456,
+        "accuracy": 0.09553640437749754,
+        "macro_f1": 0.11985165673107556
+      },
+      "per_fold_mean_diff_balanced_accuracy": {
+        "0": 0.2311,
+        "1": 0.0139,
+        "2": 0.0909,
+        "3": -0.0833,
+        "4": -0.0013
+      },
+      "runs_B_better_bal_acc": 7,
+      "runs_A_better_bal_acc": 2,
+      "runs_equal_bal_acc": 1,
+      "folds_B_better_bal_acc": 3,
+      "runs": 10,
+      "identical_test_photographs": true
+    },
+    "non_conflict_test": {
+      "definition": "baseline (B, includes former-conflict photos in training) minus ablationA (A, excludes them); same test photos",
+      "per_run_diff": [
+        {
+          "fold": 0,
+          "seed": 42,
+          "balanced_accuracy": 0.35,
+          "accuracy": 0.1053,
+          "macro_f1": 0.1687
+        },
+        {
+          "fold": 0,
+          "seed": 43,
+          "balanced_accuracy": -0.075,
+          "accuracy": -0.1053,
+          "macro_f1": -0.096
+        },
+        {
+          "fold": 1,
+          "seed": 42,
+          "balanced_accuracy": 0.1481,
+          "accuracy": 0.0952,
+          "macro_f1": 0.1767
+        },
+        {
+          "fold": 1,
+          "seed": 43,
+          "balanced_accuracy": 0.0741,
+          "accuracy": 0.0952,
+          "macro_f1": 0.1707
+        },
+        {
+          "fold": 2,
+          "seed": 42,
+          "balanced_accuracy": -0.037,
+          "accuracy": -0.0455,
+          "macro_f1": -0.0523
+        },
+        {
+          "fold": 2,
+          "seed": 43,
+          "balanced_accuracy": 0.1852,
+          "accuracy": -0.0909,
+          "macro_f1": 0.0484
+        },
+        {
+          "fold": 3,
+          "seed": 42,
+          "balanced_accuracy": 0.0667,
+          "accuracy": 0.1,
+          "macro_f1": 0.0632
+        },
+        {
+          "fold": 3,
+          "seed": 43,
+          "balanced_accuracy": -0.2417,
+          "accuracy": -0.15,
+          "macro_f1": -0.2232
+        },
+        {
+          "fold": 4,
+          "seed": 42,
+          "balanced_accuracy": 0.0303,
+          "accuracy": 0.0435,
+          "macro_f1": 0.0247
+        },
+        {
+          "fold": 4,
+          "seed": 43,
+          "balanced_accuracy": -0.0236,
+          "accuracy": -0.0435,
+          "macro_f1": -0.0317
+        }
+      ],
+      "mean_diff": {
+        "balanced_accuracy": 0.04771043771043769,
+        "accuracy": 0.00041125541125540676,
+        "macro_f1": 0.024917952779867795
+      },
+      "std_diff": {
+        "balanced_accuracy": 0.1608253964358592,
+        "accuracy": 0.09826882625841182,
+        "macro_f1": 0.13010136069151693
+      },
+      "per_fold_mean_diff_balanced_accuracy": {
+        "0": 0.1375,
+        "1": 0.1111,
+        "2": 0.0741,
+        "3": -0.0875,
+        "4": 0.0034
+      },
+      "runs_B_better_bal_acc": 6,
+      "runs_A_better_bal_acc": 4,
+      "runs_equal_bal_acc": 0,
+      "folds_B_better_bal_acc": 4,
+      "runs": 10,
+      "identical_test_photographs": true
+    }
+  }
+}

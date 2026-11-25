@@ -1,0 +1,387 @@
+{
+  "model_key": "phase3_band3",
+  "title": "3-class corrected (Phase 3)",
+  "badge": "EXPERIMENTAL",
+  "checkpoint": "experiments/phase3_global_fabric_audit/stage_b/models/baseline/fold4_seed43.pth",
+  "checkpoint_sha256": "0eccb7158412b5ca321bfda56abc06c7680a6ea479a16b99a8df7cca5a296d8f",
+  "selection_rule": "highest validation accuracy among the 10 Stage B baseline checkpoints; ties -> lower validation loss; test results not used",
+  "selection_caveat": "Its validation fold is the easiest fold, so its own validation score (shown below) is not representative; use the cross-validated metrics.",
+  "chosen": {
+    "checkpoint": "experiments/phase3_global_fabric_audit/stage_b/models/baseline/fold4_seed43.pth",
+    "variant": "baseline",
+    "fold": 4,
+    "seed": 43,
+    "best_epoch": 6,
+    "val_acc": 0.9230769230769231,
+    "val_loss": 0.8568198680877686,
+    "label_scheme": "band3_stageB",
+    "classes": [
+      "medium_cotton",
+      "high_cotton",
+      "very_high_cotton"
+    ],
+    "color_aug": "strong",
+    "preprocessing": {
+      "resize_size": 366,
+      "image_size": 320,
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ]
+    },
+    "valid": true
+  },
+  "candidates": [
+    {
+      "checkpoint": "experiments/phase3_global_fabric_audit/stage_b/models/baseline/fold0_seed42.pth",
+      "variant": "baseline",
+      "fold": 0,
+      "seed": 42,
+      "best_epoch": 6,
+      "val_acc": 0.5555555555555556,
+      "val_loss": 1.1408717632293701,
+      "label_scheme": "band3_stageB",
+      "classes": [
+        "medium_cotton",
+        "high_cotton",
+        "very_high_cotton"
+      ],
+      "color_aug": "strong",
+      "preprocessing": {
+        "resize_size": 366,
+        "image_size": 320,
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ]
+      },
+      "valid": true
+    },
+    {
+      "checkpoint": "experiments/phase3_global_fabric_audit/stage_b/models/baseline/fold0_seed43.pth",
+      "variant": "baseline",
+      "fold": 0,
+      "seed": 43,
+      "best_epoch": 18,
+      "val_acc": 0.5185185185185185,
+      "val_loss": 1.5709689855575562,
+      "label_scheme": "band3_stageB",
+      "classes": [
+        "medium_cotton",
+        "high_cotton",
+        "very_high_cotton"
+      ],
+      "color_aug": "strong",
+      "preprocessing": {
+        "resize_size": 366,
+        "image_size": 320,
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ]
+      },
+      "valid": true
+    },
+    {
+      "checkpoint": "experiments/phase3_global_fabric_audit/stage_b/models/baseline/fold1_seed42.pth",
+      "variant": "baseline",
+      "fold": 1,
+      "seed": 42,
+      "best_epoch": 11,
+      "val_acc": 0.5,
+      "val_loss": 0.9717695713043213,
+      "label_scheme": "band3_stageB",
+      "classes": [
+        "medium_cotton",
+        "high_cotton",
+        "very_high_cotton"
+      ],
+      "color_aug": "strong",
+      "preprocessing": {
+        "resize_size": 366,
+        "image_size": 320,
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ]
+      },
+      "valid": true
+    },
+    {
+      "checkpoint": "experiments/phase3_global_fabric_audit/stage_b/models/baseline/fold1_seed43.pth",
+      "variant": "baseline",
+      "fold": 1,
+      "seed": 43,
+      "best_epoch": 15,
+      "val_acc": 0.5384615384615384,
+      "val_loss": 0.9978593587875366,
+      "label_scheme": "band3_stageB",
+      "classes": [
+        "medium_cotton",
+        "high_cotton",
+        "very_high_cotton"
+      ],
+      "color_aug": "strong",
+      "preprocessing": {
+        "resize_size": 366,
+        "image_size": 320,
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ]
+      },
+      "valid": true
+    },
+    {
+      "checkpoint": "experiments/phase3_global_fabric_audit/stage_b/models/baseline/fold2_seed42.pth",
+      "variant": "baseline",
+      "fold": 2,
+      "seed": 42,
+      "best_epoch": 8,
+      "val_acc": 0.6666666666666666,
+      "val_loss": 0.8787563443183899,
+      "label_scheme": "band3_stageB",
+      "classes": [
+        "medium_cotton",
+        "high_cotton",
+        "very_high_cotton"
+      ],
+      "color_aug": "strong",
+      "preprocessing": {
+        "resize_size": 366,
+        "image_size": 320,
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ]
+      },
+      "valid": true
+    },
+    {
+      "checkpoint": "experiments/phase3_global_fabric_audit/stage_b/models/baseline/fold2_seed43.pth",
+      "variant": "baseline",
+      "fold": 2,
+      "seed": 43,
+      "best_epoch": 7,
+      "val_acc": 0.6666666666666666,
+      "val_loss": 0.8744370341300964,
+      "label_scheme": "band3_stageB",
+      "classes": [
+        "medium_cotton",
+        "high_cotton",
+        "very_high_cotton"
+      ],
+      "color_aug": "strong",
+      "preprocessing": {
+        "resize_size": 366,
+        "image_size": 320,
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ]
+      },
+      "valid": true
+    },
+    {
+      "checkpoint": "experiments/phase3_global_fabric_audit/stage_b/models/baseline/fold3_seed42.pth",
+      "variant": "baseline",
+      "fold": 3,
+      "seed": 42,
+      "best_epoch": 7,
+      "val_acc": 0.6153846153846154,
+      "val_loss": 0.9606186151504517,
+      "label_scheme": "band3_stageB",
+      "classes": [
+        "medium_cotton",
+        "high_cotton",
+        "very_high_cotton"
+      ],
+      "color_aug": "strong",
+      "preprocessing": {
+        "resize_size": 366,
+        "image_size": 320,
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ]
+      },
+      "valid": true
+    },
+    {
+      "checkpoint": "experiments/phase3_global_fabric_audit/stage_b/models/baseline/fold3_seed43.pth",
+      "variant": "baseline",
+      "fold": 3,
+      "seed": 43,
+      "best_epoch": 7,
+      "val_acc": 0.6538461538461539,
+      "val_loss": 0.9532458782196045,
+      "label_scheme": "band3_stageB",
+      "classes": [
+        "medium_cotton",
+        "high_cotton",
+        "very_high_cotton"
+      ],
+      "color_aug": "strong",
+      "preprocessing": {
+        "resize_size": 366,
+        "image_size": 320,
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ]
+      },
+      "valid": true
+    },
+    {
+      "checkpoint": "experiments/phase3_global_fabric_audit/stage_b/models/baseline/fold4_seed42.pth",
+      "variant": "baseline",
+      "fold": 4,
+      "seed": 42,
+      "best_epoch": 4,
+      "val_acc": 0.8461538461538461,
+      "val_loss": 0.8898544907569885,
+      "label_scheme": "band3_stageB",
+      "classes": [
+        "medium_cotton",
+        "high_cotton",
+        "very_high_cotton"
+      ],
+      "color_aug": "strong",
+      "preprocessing": {
+        "resize_size": 366,
+        "image_size": 320,
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ]
+      },
+      "valid": true
+    },
+    {
+      "checkpoint": "experiments/phase3_global_fabric_audit/stage_b/models/baseline/fold4_seed43.pth",
+      "variant": "baseline",
+      "fold": 4,
+      "seed": 43,
+      "best_epoch": 6,
+      "val_acc": 0.9230769230769231,
+      "val_loss": 0.8568198680877686,
+      "label_scheme": "band3_stageB",
+      "classes": [
+        "medium_cotton",
+        "high_cotton",
+        "very_high_cotton"
+      ],
+      "color_aug": "strong",
+      "preprocessing": {
+        "resize_size": 366,
+        "image_size": 320,
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ]
+      },
+      "valid": true
+    }
+  ],
+  "held_out_samples": "experiments/phase3_global_fabric_audit/stage_b/splits/baseline_fold4.csv",
+  "trained_on": "3 of 5 fabric-disjoint folds of the strict corrected dataset (not a final all-data model)",
+  "cv": {
+    "runs": 10,
+    "balanced_accuracy_mean": 0.5181818181818182,
+    "balanced_accuracy_std": 0.17353873095832864,
+    "accuracy_mean": 0.5597222222222222,
+    "accuracy_std": 0.15544735136774765,
+    "macro_f1_mean": 0.4810075226867528,
+    "macro_f1_std": 0.1423687537285107,
+    "per_class": {
+      "Medium": {
+        "precision": 0.7625,
+        "recall": 0.5169491525423728
+      },
+      "High": {
+        "precision": 0.6173913043478261,
+        "recall": 0.6339285714285714
+      },
+      "Very high": {
+        "precision": 0.19047619047619047,
+        "recall": 0.42857142857142855
+      }
+    }
+  },
+  "fabrics_per_class": {
+    "medium_cotton": 24,
+    "high_cotton": 20,
+    "very_high_cotton": 8
+  },
+  "photos_per_class": {
+    "medium_cotton": 59,
+    "high_cotton": 56,
+    "very_high_cotton": 14
+  }
+}

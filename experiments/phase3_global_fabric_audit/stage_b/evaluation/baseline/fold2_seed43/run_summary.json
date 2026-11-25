@@ -1,0 +1,57 @@
+{
+  "variant": "baseline",
+  "fold": 2,
+  "seed": 43,
+  "best_epoch": 7,
+  "epochs_run": 15,
+  "best_val_acc": 0.6666666666666666,
+  "train_acc_at_best": 0.734375,
+  "n_train": 79,
+  "n_val": 24,
+  "n_test": 26,
+  "test_metrics": {
+    "n_images": 26,
+    "accuracy": 0.3076923076923077,
+    "balanced_accuracy": 0.39898989898989895,
+    "macro_f1": 0.30256410256410254,
+    "weighted_f1": 0.2996055226824458,
+    "top2_accuracy": 0.5769230769230769,
+    "per_class": {
+      "medium_cotton": {
+        "precision": 0.6666666666666666,
+        "recall": 0.16666666666666666,
+        "f1": 0.26666666666666666,
+        "support": 12
+      },
+      "high_cotton": {
+        "precision": 0.3076923076923077,
+        "recall": 0.36363636363636365,
+        "f1": 0.3333333333333333,
+        "support": 11
+      },
+      "very_high_cotton": {
+        "precision": 0.2,
+        "recall": 0.6666666666666666,
+        "f1": 0.3076923076923077,
+        "support": 3
+      }
+    },
+    "confusion_matrix": [
+      [
+        2,
+        9,
+        1
+      ],
+      [
+        0,
+        4,
+        7
+      ],
+      [
+        1,
+        0,
+        2
+      ]
+    ]
+  }
+}

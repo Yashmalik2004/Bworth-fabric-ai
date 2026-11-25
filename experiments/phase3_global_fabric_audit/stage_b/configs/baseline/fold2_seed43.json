@@ -1,0 +1,40 @@
+{
+  "data_dir": "C:\\Users\\YASH\\Desktop\\projects\\Bworth-Ai fabric intelligence\\datasets\\compositions\\CottonFabricImageBD\\Original",
+  "split_strategy": "group",
+  "val_fraction": 0.15,
+  "test_fraction": 0.15,
+  "seed": 43,
+  "group_distance_threshold": 0.35,
+  "group_min_groups_per_class": 3,
+  "image_size": 320,
+  "resize_size": 366,
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "label_scheme": "band3_stageB",
+  "color_aug": "strong",
+  "architecture": "resnet50",
+  "pretrained": true,
+  "dropout": 0.3,
+  "epochs": 30,
+  "batch_size": 16,
+  "lr_head": 0.001,
+  "lr_backbone": 0.0001,
+  "weight_decay": 0.0001,
+  "label_smoothing": 0.1,
+  "class_weighted_loss": true,
+  "amp": true,
+  "num_workers": 1,
+  "early_stopping_patience": 8,
+  "run_name": "baseline/fold2_seed43",
+  "checkpoint_path": "C:\\Users\\YASH\\Desktop\\projects\\Bworth-Ai fabric intelligence\\experiments\\phase3_global_fabric_audit\\stage_b\\models\\baseline\\fold2_seed43.pth",
+  "output_dir": "C:\\Users\\YASH\\Desktop\\projects\\Bworth-Ai fabric intelligence\\experiments\\phase3_global_fabric_audit\\stage_b\\evaluation",
+  "splits_path": "C:\\Users\\YASH\\Desktop\\projects\\Bworth-Ai fabric intelligence\\experiments\\phase3_global_fabric_audit\\stage_b\\splits\\baseline_fold2.csv"
+}

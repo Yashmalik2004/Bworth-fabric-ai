@@ -2,7 +2,7 @@
 
 Infrastructure for collecting **independently verified physical fabric samples** for cotton-composition
 modelling. Initial target: **120 physical fabrics, 30 per band** (Low 30–40 %, Medium 50–66 %, High 80–95 %,
-Very high 98–99 %). No model is trained here.
+Very high 98–100 %, so 100 % cotton is included). No model is trained here.
 
 ```
 datasets/phase4_verified/

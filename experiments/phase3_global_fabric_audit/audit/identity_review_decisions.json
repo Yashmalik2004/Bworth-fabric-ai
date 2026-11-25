@@ -1,0 +1,1866 @@
+{
+  "description": "Manual physical-identity review of all 150 visual families (883 unique photographs), from audit/contact_sheets/review_pages/*.jpg and review_cross_family_pairs.jpg. Photo ids are the last 4 digits of PHxxxx. Each unit = photographs judged to be one physical fabric (CONFIRMED_MATCH: specific evidence; POSSIBLE_MATCH: same colour/structure but no specific marks; DISTINCT_FABRIC: single photograph of a fabric with no confirmed sibling). Units sharing a 'label' across families are the same fabric. Photographs not placed in a unit are UNCERTAIN (rest). A fabric whose photographs carry labels from more than one band is CONTRADICTORY automatically.",
+  "reviewer": "Claude (visual review, 2026-11-25)",
+  "families": {
+    "FAM084": {
+      "units": [
+        {
+          "label": "red_slub_plainweave",
+          "photos": [
+            "0056",
+            "0060",
+            "0024",
+            "0455",
+            "0472",
+            "0485",
+            "0488",
+            "0505"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "0056 and 0060 are byte-identical photographs filed under 30% and 65%; coral-red plain weave with white slub lines appears under 30% (0024) and 65% (0455, 0485, 0488, 0505)"
+        }
+      ],
+      "rest": "red/orange/pink plain weaves under 30%, 65% and 66% that are visually inseparable from the contradictory red fabric"
+    },
+    "FAM048": {
+      "units": [
+        {
+          "label": "terracotta_open_mesh",
+          "photos": [
+            "0025",
+            "0027",
+            "0050",
+            "0054",
+            "0090",
+            "0094",
+            "0102",
+            "0109",
+            "0115",
+            "0125",
+            "0226",
+            "0227",
+            "0229",
+            "0250",
+            "0257",
+            "0479",
+            "0483",
+            "0508",
+            "0512"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same terracotta open-mesh structure, colour and yarn sheen under 30/40% and 53/58/65/66%"
+        },
+        {
+          "label": "tan_linen_60_63",
+          "photos": [
+            "0335",
+            "0344",
+            "0387",
+            "0395",
+            "0400",
+            "0427"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "tan plain linen, all photographs filed under 60|63%"
+        }
+      ],
+      "rest": "salmon plain weaves resembling both low- and medium-band photographs; safety check: 0583 (66%) resembles terracotta mesh 0090 (40%)"
+    },
+    "FAM001": {
+      "units": [
+        {
+          "label": "grey_denim_bytecopies_FAM001",
+          "photos": [
+            "0150",
+            "0415",
+            "0441"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "byte-identical photographs filed under 50|98|99, 60|99 and 63|99"
+        },
+        {
+          "label": "grey_rib_knit_high",
+          "photos": [
+            "0599",
+            "0628",
+            "0671",
+            "0672",
+            "0673",
+            "0737"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "grey horizontal rib knit, only under 80/95%"
+        }
+      ],
+      "rest": "generic grey twills/denims spread over 50-63%, 80-95% and 98-99%; safety check: 0806 (98%) resembles cell-patterned 0432 (63%)"
+    },
+    "FAM096": {
+      "units": [
+        {
+          "label": "orange_weave_FAM096",
+          "photos": [
+            "0122",
+            "0011",
+            "0017",
+            "0693",
+            "0703",
+            "0469",
+            "0492",
+            "0515"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "0122 byte-identical under 40% and 65%; same orange twill under 30% (0011, 0017), 65% and 95% (0693, 0703)"
+        },
+        {
+          "label": "bright_red_weave_low",
+          "photos": [
+            "0019",
+            "0022",
+            "0034",
+            "0043",
+            "0062",
+            "0063",
+            "0088",
+            "0096",
+            "0121"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "bright red open weave, only under 30/40%"
+        }
+      ],
+      "rest": "orange weaves under 40%, 65%, 66% inseparable from the contradictory orange fabric"
+    },
+    "FAM066": {
+      "units": [
+        {
+          "label": "flower_pink",
+          "photos": [
+            "0664",
+            "0253",
+            "0310",
+            "0245",
+            "0261",
+            "0306",
+            "0312"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "pink open mesh with dark flower-shaped patches under 80% (0664) and 53/58%; same fabric as the flower-watermark pink (FAM072, FAM124)"
+        },
+        {
+          "label": "mauve_maroon_66",
+          "photos": [
+            "0531",
+            "0534",
+            "0538",
+            "0552",
+            "0565",
+            "0572",
+            "0454"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "mauve and maroon weaves, all under 65|66/66%"
+        }
+      ],
+      "rest": "tan weaves resembling the tan basket weave filed under 80|95% (FAM026) and pink plain 0290 (flower-fabric colour)"
+    },
+    "FAM038": {
+      "units": [
+        {
+          "label": "grey_bytecopy_0447",
+          "photos": [
+            "0447"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "byte-identical photograph filed under 63% and 99%"
+        },
+        {
+          "label": "grey_diamond_knit_high",
+          "photos": [
+            "0620",
+            "0675",
+            "0738"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "identical small diamond knit pattern, 80/95% only"
+        },
+        {
+          "label": "grey_chevron_knit_50",
+          "photos": [
+            "0156",
+            "0170",
+            "0178",
+            "0186"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "grey chevron knit, 50% only"
+        }
+      ],
+      "rest": "grey knits/denims spread over medium, high and very-high bands"
+    },
+    "FAM032": {
+      "units": [],
+      "rest": "grey denims under 53-63% and 98-99% with no distinguishing marks; safety check: 0629/0655 (80|95%) resemble 0865/0868 (99%)"
+    },
+    "FAM030": {
+      "units": [],
+      "rest": "plain greys under 30-40%, 53-60%, 66% and 80-95%; safety check: stains prove 0006/0018 are one fabric, but the same plain grey gauze may appear unstained under 66% (0529); safety check: grey mesh (65/66%) resembles 0602 (80|95%)"
+    },
+    "FAM011": {
+      "units": [
+        {
+          "label": "raspberry_open_mesh",
+          "photos": [
+            "0093",
+            "0095",
+            "0111",
+            "0116",
+            "0255",
+            "0274",
+            "0305",
+            "0482",
+            "0484",
+            "0502",
+            "0507"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same raspberry open mesh under 40% and 53/58/65/66%"
+        }
+      ],
+      "rest": "pink weaves: 0280 is a cross-band look-alike of 40% 0073/0076 (cross-family pairs); dusty-pink linens resemble the rose fabric filed under 30% (FAM122)"
+    },
+    "FAM101": {
+      "units": [
+        {
+          "label": "hot_pink_open_weave",
+          "photos": [
+            "0717",
+            "0721",
+            "0723",
+            "0726",
+            "0733",
+            "0035",
+            "0040",
+            "0049",
+            "0057"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same hot-pink open weave under 30% and 95%"
+        }
+      ],
+      "rest": "hot-pink plain weaves under 30%, 66%, 95%"
+    },
+    "FAM068": {
+      "units": [
+        {
+          "label": "rib_knit_FAM068",
+          "photos": [
+            "0623",
+            "0626",
+            "0353",
+            "0357"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "same horizontal rib knit under 80|95% and 60|63%"
+        },
+        {
+          "label": "herringbone_60_63",
+          "photos": [
+            "0421"
+          ],
+          "identity": "DISTINCT_FABRIC",
+          "evidence": "distinctive herringbone twill, 60|63%"
+        },
+        {
+          "label": "grey_houndstooth_99",
+          "photos": [
+            "0837"
+          ],
+          "identity": "DISTINCT_FABRIC",
+          "evidence": "grey houndstooth, 99%"
+        }
+      ],
+      "rest": "grey twills/knits over medium, high and very-high"
+    },
+    "FAM012": {
+      "units": [
+        {
+          "label": "olive_mesh",
+          "photos": [
+            "0069",
+            "0081",
+            "0092",
+            "0097",
+            "0113",
+            "0119",
+            "0476",
+            "0478",
+            "0506",
+            "0513"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same olive open mesh under 40% and 65|66%"
+        }
+      ],
+      "rest": "mustard linens (60|63) resemble the mustard filed under 40% and 50% (FAM099)"
+    },
+    "FAM065": {
+      "units": [
+        {
+          "label": "grey_oval_mesh",
+          "photos": [
+            "0324",
+            "0632",
+            "0648",
+            "0653",
+            "0657",
+            "0041",
+            "0042",
+            "0052",
+            "0055",
+            "0065",
+            "0066",
+            "0098",
+            "0107",
+            "0118",
+            "0120"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "0324 byte-identical under 58% and 99%; same grey oval mesh under 30/40% and 80%"
+        }
+      ],
+      "rest": "grey meshes under 58/66%"
+    },
+    "FAM122": {
+      "units": [
+        {
+          "label": "rose_open_weave",
+          "photos": [
+            "0028",
+            "0036",
+            "0053",
+            "0371",
+            "0386",
+            "0407",
+            "0417"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "same rose open weave under 30% and 60|63%"
+        }
+      ],
+      "rest": "rose plain weaves under 30/40% and 60/63%"
+    },
+    "FAM061": {
+      "units": [
+        {
+          "label": "orange_honeycomb",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same orange honeycomb mesh under 30%, 53/58% and 95%"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM018": {
+      "units": [
+        {
+          "label": "pink_mesh_FAM018",
+          "photos": [
+            "0634",
+            "0647",
+            "0661",
+            "0714",
+            "0722",
+            "0725",
+            "0731",
+            "0741",
+            "0231",
+            "0235",
+            "0251",
+            "0262",
+            "0271"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same pink mesh under 80/95% and 53/58%"
+        }
+      ],
+      "rest": "0197 maroon and 0331 pink"
+    },
+    "FAM047": {
+      "units": [
+        {
+          "label": "flecked_tweed_very_high",
+          "photos": [
+            "0834",
+            "0759",
+            "0760",
+            "0763",
+            "0765",
+            "0781",
+            "0784",
+            "0787",
+            "0796",
+            "0872",
+            "0874",
+            "0876",
+            "0878"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "blue-purple flecked tweed, 98/99% only"
+        }
+      ],
+      "rest": "0443 (63%) grey knit, appearance different but not confirmed"
+    },
+    "FAM016": {
+      "units": [
+        {
+          "label": "blue_denim_bytecopy_0199",
+          "photos": [
+            "0199"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "byte-identical under 53%, 98%, 99%"
+        }
+      ],
+      "rest": "blue denims under 50/63% and 98/99%"
+    },
+    "FAM006": {
+      "units": [
+        {
+          "label": "grey_denim_bytecopies_FAM006",
+          "photos": [
+            "0295",
+            "0341",
+            "0445"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "byte-identical under 58|98|99, 60|63|98|99, 63|99"
+        },
+        {
+          "label": "coarse_cream_black_twill_vh",
+          "photos": [
+            "0800",
+            "0879"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same coarse cream/black twill, 98/99% only"
+        }
+      ],
+      "rest": "grey denims across bands"
+    },
+    "FAM029": {
+      "units": [
+        {
+          "label": "green_mesh",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same sage-green mesh under 50/53/58% and 80/95%"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM143": {
+      "units": [
+        {
+          "label": "grey_denim_bytecopy_0336",
+          "photos": [
+            "0336"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "byte-identical under 60|63|98|99"
+        }
+      ],
+      "rest": "grey denims across bands"
+    },
+    "FAM008": {
+      "units": [
+        {
+          "label": "blue_bytecopy_0145",
+          "photos": [
+            "0145"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "byte-identical under 50|98|99"
+        }
+      ],
+      "rest": "blue knits/denims across 53%, 95%, 98%; 95% light-blue knits resemble 99% light-blue knit (FAM092)"
+    },
+    "FAM054": {
+      "units": [
+        {
+          "label": "magenta_weave",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same magenta weave under 40% and 65%"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM132": {
+      "units": [],
+      "rest": "teal weaves under 40% resemble the teal mesh filed under 53% (FAM031); 0161 light-blue knit resembles 95/99% knits"
+    },
+    "FAM022": {
+      "units": [],
+      "rest": "0208 (53%) marled knit; safety check: 0776 (98%) closely resembles 0208 (53%) marl knit"
+    },
+    "FAM062": {
+      "units": [],
+      "rest": "plain greys under 40%, 50-60%, 98-99%"
+    },
+    "FAM020": {
+      "units": [
+        {
+          "label": "white_rib_knit_50",
+          "photos": [
+            "0168",
+            "0185"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "white horizontal rib knit, 50%"
+        },
+        {
+          "label": "grey_tweed_knit_medium",
+          "photos": [
+            "0390",
+            "0420"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "grey tweed knit, 60/63/65%"
+        }
+      ],
+      "rest": "beige knits under 50% resembling 0650 (80|95%)"
+    },
+    "FAM033": {
+      "units": [
+        {
+          "label": "royal_blue",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "0146, 0162, 0182, 0308 byte-identical under 50/58% and 98/99%; same royal blue under 58%"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM099": {
+      "units": [
+        {
+          "label": "mustard_mesh",
+          "photos": [
+            "0085",
+            "0100",
+            "0127",
+            "0147",
+            "0158",
+            "0189"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same mustard mesh under 40% and 50%"
+        },
+        {
+          "label": "orange_grid_slub_95",
+          "photos": [
+            "0692"
+          ],
+          "identity": "DISTINCT_FABRIC",
+          "evidence": "orange with slub grid, 95%"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM056": {
+      "units": [
+        {
+          "label": "grey_bytecopy_0343",
+          "photos": [
+            "0343"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "byte-identical under 60|63|98|99"
+        }
+      ],
+      "rest": "grey meshes/knits across bands"
+    },
+    "FAM026": {
+      "units": [
+        {
+          "label": "tan_basket_weave",
+          "photos": [
+            "0614",
+            "0244",
+            "0260",
+            "0303",
+            "0314"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same tan basket weave with identical shadow fold under 80|95% and 53|58%"
+        },
+        {
+          "label": "pink_loop_knit_medium",
+          "photos": [
+            "0329"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "pink loop knit, same fabric as 0279 (53%)"
+        }
+      ],
+      "rest": "0409 tan"
+    },
+    "FAM060": {
+      "units": [],
+      "rest": "teal weaves under 30% and 50%; teal also under 40% and 53% (FAM132, FAM031)"
+    },
+    "FAM071": {
+      "units": [],
+      "rest": "navy/cream denims under 53% and 98%"
+    },
+    "FAM000": {
+      "units": [
+        {
+          "label": "tan_twist_knit_high",
+          "photos": [
+            "0635",
+            "0677",
+            "0734"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same tan twisted-rib knit, 80/95%"
+        },
+        {
+          "label": "rust_twist_knit_medium",
+          "photos": [
+            "0393",
+            "0414"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same rust twisted-rib knit (different colourway from the tan), 60/63/65%"
+        }
+      ],
+      "rest": "0678 tan plain"
+    },
+    "FAM040": {
+      "units": [],
+      "rest": "black/white twills under 50% and 98/99%"
+    },
+    "FAM049": {
+      "units": [
+        {
+          "label": "pink_navy_stripe_80",
+          "photos": [
+            "0641",
+            "0676"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "pink stripes with navy lines, 80%"
+        },
+        {
+          "label": "pink_white_stripe_knit_vh",
+          "photos": [
+            "0830",
+            "0858",
+            "0880"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "pink/white striped knit with brown edge stripe, 98/99% (no navy lines: different fabric from 80%)"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM007": {
+      "units": [
+        {
+          "label": "grey_black_multistripe_80",
+          "photos": [
+            "0621",
+            "0665"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "grey/black striped fabric, same garment as FAM010/FAM034 (80%)"
+        },
+        {
+          "label": "bw_geometric_50",
+          "photos": [
+            "0167"
+          ],
+          "identity": "DISTINCT_FABRIC",
+          "evidence": "black/white geometric weave, 50%"
+        }
+      ],
+      "rest": "0209 dark grey mesh"
+    },
+    "FAM073": {
+      "units": [
+        {
+          "label": "grey_white_diamond_95",
+          "photos": [
+            "0699"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "grey/white diamond jacquard, same as 0706 (95%)"
+        }
+      ],
+      "rest": "plain beige/grey/brown under 60/63%, 80/95%, 99%"
+    },
+    "FAM019": {
+      "units": [],
+      "rest": "grey twills under 50%, 58%, 99%"
+    },
+    "FAM009": {
+      "units": [],
+      "rest": "plain beiges under 53%, 80/95%, 98%"
+    },
+    "FAM041": {
+      "units": [
+        {
+          "label": "sage_cable_knit_high",
+          "photos": [
+            "0667",
+            "0735"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same sage cable knit, 80/95%"
+        }
+      ],
+      "rest": "0309 grey twill (58%), 0817 grey knit (98%)"
+    },
+    "FAM014": {
+      "units": [],
+      "rest": "green meshes under 30% and 53% resembling the contradictory green mesh (FAM029)"
+    },
+    "FAM052": {
+      "units": [
+        {
+          "label": "grey_bytecopy_0154",
+          "photos": [
+            "0154"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "byte-identical under 50|98|99"
+        }
+      ],
+      "rest": "grey denims under 53%"
+    },
+    "FAM078": {
+      "units": [],
+      "rest": "brown flecked twill under 53% and 98/99%"
+    },
+    "FAM094": {
+      "units": [],
+      "rest": "brown denim under 60/63% and 98/99%"
+    },
+    "FAM043": {
+      "units": [
+        {
+          "label": "bright_blue_bytecopies",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "0148, 0166, 0188 byte-identical under 50% and 98/99%"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM055": {
+      "units": [
+        {
+          "label": "blue_denim_bytecopy_0211",
+          "photos": [
+            "0211"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "byte-identical under 53|98|99"
+        }
+      ],
+      "rest": "blue denims under 53% and 98%"
+    },
+    "FAM028": {
+      "units": [
+        {
+          "label": "green_twill_53",
+          "photos": [
+            "0196"
+          ],
+          "identity": "DISTINCT_FABRIC",
+          "evidence": "green twill, 53%"
+        },
+        {
+          "label": "white_grey_twill_vh",
+          "photos": [
+            "0811"
+          ],
+          "identity": "DISTINCT_FABRIC",
+          "evidence": "white/grey twill, 98|99%"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM013": {
+      "units": [],
+      "rest": "dark grey weaves under 66% and 95%"
+    },
+    "FAM070": {
+      "units": [],
+      "rest": "plain greys under 58% and 80/95%"
+    },
+    "FAM069": {
+      "units": [
+        {
+          "label": "grey_loop_knit_40",
+          "photos": [
+            "0132"
+          ],
+          "identity": "DISTINCT_FABRIC",
+          "evidence": "grey loop knit, 40%"
+        },
+        {
+          "label": "grey_cable_50",
+          "photos": [
+            "0174"
+          ],
+          "identity": "DISTINCT_FABRIC",
+          "evidence": "grey cable weave, 50%"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM002": {
+      "units": [
+        {
+          "label": "red_slub_plainweave",
+          "photos": [
+            "0593",
+            "0594"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "coral-red plain weave with white slub lines, the fabric also filed under 30% and 65% (FAM084)"
+        }
+      ],
+      "rest": "coral/red meshes under 80/95% resembling the 65% red open weave (FAM084)"
+    },
+    "FAM051": {
+      "units": [
+        {
+          "label": "blue_mesh_medium",
+          "photos": [
+            "*"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "navy-blue mesh, 53-63% only"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM126": {
+      "units": [
+        {
+          "label": "green_mesh",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same green mesh as 80% 0654/0656 (cross-family pairs, similarity 0.88-0.92)"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM003": {
+      "units": [
+        {
+          "label": "wine_mesh_medium",
+          "photos": [
+            "*"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "wine-red mesh, 60/63/65% only"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM149": {
+      "units": [
+        {
+          "label": "emerald_linen_medium",
+          "photos": [
+            "*"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "emerald plain linen, 60/63/65% only"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM021": {
+      "units": [
+        {
+          "label": "mauve_grey_medium",
+          "photos": [
+            "*"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "mauve/grey weaves, 50/58% only"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM036": {
+      "units": [],
+      "rest": "sage-green weaves (65/66%) resemble sage photographs filed under 80% (FAM029)"
+    },
+    "FAM142": {
+      "units": [],
+      "rest": "navy denims (98/99%) resemble blue denims under 50/63% (FAM016)"
+    },
+    "FAM118": {
+      "units": [
+        {
+          "label": "maroon_knit_65_66",
+          "photos": [
+            "0462",
+            "0457"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same maroon knit"
+        },
+        {
+          "label": "purple_knit_66",
+          "photos": [
+            "0526",
+            "0587"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same purple knit"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM072": {
+      "units": [
+        {
+          "label": "flower_pink",
+          "photos": [
+            "0288"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "pink with flower watermark, same as 80% 0596/0597"
+        }
+      ],
+      "rest": "pink plain weaves of the flower-fabric colour"
+    },
+    "FAM039": {
+      "units": [
+        {
+          "label": "light_grey_knit_60_63",
+          "photos": [
+            "0333",
+            "0339"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "light grey knit, 60|63%"
+        }
+      ],
+      "rest": "black/white marled knits resembling 98/99% knits"
+    },
+    "FAM035": {
+      "units": [
+        {
+          "label": "grey_star_motif",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same white star motif on grey ground, 60/63%"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM144": {
+      "units": [
+        {
+          "label": "chevron_knit_garment",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same multi-colour chevron knit garment (blue/cream, black/cream, dark edge) under 65% and 66%"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM045": {
+      "units": [
+        {
+          "label": "orange_white_stripe_high",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "orange/white striped weave, 80/95%"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM124": {
+      "units": [
+        {
+          "label": "flower_pink",
+          "photos": [
+            "0596",
+            "0597"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "pink with flower watermark under 80%; same fabric as 58% 0288"
+        }
+      ],
+      "rest": "0690, 0702 pink plain (95%) of the flower-fabric colour"
+    },
+    "FAM005": {
+      "units": [],
+      "rest": "generic grey knits (80/95%) resembling grey knits in other bands"
+    },
+    "FAM081": {
+      "units": [
+        {
+          "label": "emerald_knit_high",
+          "photos": [
+            "*"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "emerald jersey knit, 80/95%"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM074": {
+      "units": [
+        {
+          "label": "sage_jersey_high",
+          "photos": [
+            "*"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "sage jersey knit (knit structure, unlike the contradictory sage mesh), 80/95%"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM023": {
+      "units": [
+        {
+          "label": "maroon_cream_jacquard_50",
+          "photos": [
+            "0183"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "maroon/cream jacquard, same as FAM015"
+        },
+        {
+          "label": "pink_knit_65_66",
+          "photos": [
+            "0493",
+            "0500"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "pink knit, 65|66%"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM063": {
+      "units": [
+        {
+          "label": "grey_brown_plaid_80",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "grey with brown/orange grid lines, 80/95%"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM145": {
+      "units": [
+        {
+          "label": "blue_linen_60_63",
+          "photos": [
+            "*"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "blue linen, 60/63%"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM146": {
+      "units": [
+        {
+          "label": "maroon_linen_60_63",
+          "photos": [
+            "*"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "maroon slub linen, 60/63%"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM128": {
+      "units": [
+        {
+          "label": "beige_knit_high",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same beige knit with identical shading, 80/95%"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM086": {
+      "units": [],
+      "rest": "safety check: grey mesh (65/66%) resembles 0602 (80|95%)"
+    },
+    "FAM050": {
+      "units": [],
+      "rest": "plain blue-grey weaves with generic look-alikes"
+    },
+    "FAM046": {
+      "units": [
+        {
+          "label": "pale_pink_herringbone_high",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "pale pink block herringbone, 80/95%"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM115": {
+      "units": [
+        {
+          "label": "rust_zigzag_knit_60_63",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same rust zigzag knit"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM093": {
+      "units": [],
+      "rest": "navy denim (98/99%) resembling medium-band denims"
+    },
+    "FAM091": {
+      "units": [
+        {
+          "label": "grey_chunky_knit_65_66",
+          "photos": [
+            "*"
+          ],
+          "identity": "DISTINCT_FABRIC",
+          "evidence": "grey chunky knit"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM089": {
+      "units": [],
+      "rest": "generic grey twill"
+    },
+    "FAM044": {
+      "units": [],
+      "rest": "tan dotted weave resembling the contradictory tan basket weave (FAM026)"
+    },
+    "FAM107": {
+      "units": [],
+      "rest": "tan dotted weave resembling the contradictory tan basket weave (FAM026)"
+    },
+    "FAM102": {
+      "units": [
+        {
+          "label": "grey_diamond_weave_vh",
+          "photos": [
+            "*"
+          ],
+          "identity": "DISTINCT_FABRIC",
+          "evidence": "grey small-diamond weave, 98|99%"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM097": {
+      "units": [
+        {
+          "label": "navy_cream_zigzag_65_66",
+          "photos": [
+            "*"
+          ],
+          "identity": "DISTINCT_FABRIC",
+          "evidence": "fine navy/cream zigzag knit"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM139": {
+      "units": [
+        {
+          "label": "dark_green_knit_65_66",
+          "photos": [
+            "*"
+          ],
+          "identity": "DISTINCT_FABRIC",
+          "evidence": "dark green knit"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM127": {
+      "units": [
+        {
+          "label": "grey_rib_knit_high",
+          "photos": [
+            "*"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "grey rib knit, 80|95%"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM067": {
+      "units": [
+        {
+          "label": "bw_zigzag_weave_50",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same black/white zigzag weave"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM010": {
+      "units": [
+        {
+          "label": "grey_black_multistripe_80",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "grey/black fabric with red, white and lilac stripes"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM034": {
+      "units": [
+        {
+          "label": "grey_black_multistripe_80",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "grey/black fabric with pink stripes; same garment as FAM010"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM004": {
+      "units": [],
+      "rest": "grey/black-white twills resembling very-high denims"
+    },
+    "FAM025": {
+      "units": [
+        {
+          "label": "blue_diamond_jacquard_80",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "blue diamond jacquard"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM058": {
+      "units": [
+        {
+          "label": "green_pink_navy_plaid_65",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "green/pink/navy plaid"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM042": {
+      "units": [
+        {
+          "label": "blue_lilac_stripe_80",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "blue with lilac stripes"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM017": {
+      "units": [],
+      "rest": "grey denim (98%) resembling medium-band denims"
+    },
+    "FAM015": {
+      "units": [
+        {
+          "label": "maroon_cream_jacquard_50",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "maroon/cream jacquard"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM059": {
+      "units": [
+        {
+          "label": "yellow_stripe_80",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "yellow/white stripe with navy lines"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM024": {
+      "units": [
+        {
+          "label": "purple_cross_80",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "grey with purple cross motifs"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM076": {
+      "units": [
+        {
+          "label": "cream_herringbone_50",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "cream herringbone jacquard"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM095": {
+      "units": [
+        {
+          "label": "purple_linen_30",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "purple slub linen"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM037": {
+      "units": [
+        {
+          "label": "black_orange_stripe_50",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "black/orange striped knit"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM027": {
+      "units": [
+        {
+          "label": "blue_loop_knit_98",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "blue loop-patterned knit"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM053": {
+      "units": [
+        {
+          "label": "brown_knit_66",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "brown knit with pink sheen"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM057": {
+      "units": [],
+      "rest": "light-blue knit (95%) resembling light-blue knit filed under 99% (FAM092)"
+    },
+    "FAM031": {
+      "units": [],
+      "rest": "teal mesh (53%) resembling teal under 30/40% (FAM060, FAM132)"
+    },
+    "FAM064": {
+      "units": [],
+      "rest": "teal-blue knit (50%) resembling light-blue knits under 95/99%"
+    },
+    "FAM080": {
+      "units": [
+        {
+          "label": "blue_houndstooth_99",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "blue/white houndstooth"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM092": {
+      "units": [],
+      "rest": "light-blue knit (99%) resembling light-blue knit filed under 95% (FAM057)"
+    },
+    "FAM087": {
+      "units": [],
+      "rest": "pink plain (95%) resembling pink fabrics under 40% and 58%"
+    },
+    "FAM077": {
+      "units": [
+        {
+          "label": "paint_splatter_knit_99",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "grey knit with identical red/yellow paint marks"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM121": {
+      "units": [],
+      "rest": "grey twill (50%) resembling very-high denims"
+    },
+    "FAM120": {
+      "units": [
+        {
+          "label": "cream_herringbone_50",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "cream herringbone jacquard, same as FAM076"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM105": {
+      "units": [
+        {
+          "label": "blue_grid_65",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "white with dotted blue grid"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM148": {
+      "units": [],
+      "rest": "magenta mesh (65%) resembling magenta filed under 40% (FAM054)"
+    },
+    "FAM100": {
+      "units": [
+        {
+          "label": "navy_pink_weave_80",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "navy/pink block weave"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM082": {
+      "units": [
+        {
+          "label": "grey_rib_knit_high",
+          "photos": [
+            "*"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "grey vertical rib knit, 95%"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM075": {
+      "units": [
+        {
+          "label": "chevron_knit_garment",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "black/white chevron part of the chevron garment"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM079": {
+      "units": [
+        {
+          "label": "black_orange_stripe_50",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "black/orange stripe, same as FAM037"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM098": {
+      "units": [
+        {
+          "label": "pale_pink_herringbone_high",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "pale pink block herringbone, same as FAM046"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM090": {
+      "units": [
+        {
+          "label": "chevron_knit_garment",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "black/cream chevron part of the chevron garment"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM085": {
+      "units": [
+        {
+          "label": "sage_twill_50",
+          "photos": [
+            "*"
+          ],
+          "identity": "DISTINCT_FABRIC",
+          "evidence": "sage twill"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM088": {
+      "units": [
+        {
+          "label": "bw_rib_50",
+          "photos": [
+            "*"
+          ],
+          "identity": "DISTINCT_FABRIC",
+          "evidence": "black/white rib weave"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM083": {
+      "units": [
+        {
+          "label": "tan_rib_knit_95",
+          "photos": [
+            "*"
+          ],
+          "identity": "DISTINCT_FABRIC",
+          "evidence": "tan rib knit"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM108": {
+      "units": [],
+      "rest": "generic denim (98%)"
+    },
+    "FAM106": {
+      "units": [],
+      "rest": "generic grey marl (99%)"
+    },
+    "FAM103": {
+      "units": [
+        {
+          "label": "dark_green_weave_65",
+          "photos": [
+            "*"
+          ],
+          "identity": "DISTINCT_FABRIC",
+          "evidence": "very dark green weave"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM110": {
+      "units": [],
+      "rest": "dark green mesh (53%) resembling green meshes under 30% and 80%"
+    },
+    "FAM111": {
+      "units": [
+        {
+          "label": "cream_herringbone_50",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "cream herringbone jacquard"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM113": {
+      "units": [
+        {
+          "label": "cream_herringbone_50",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "cream herringbone jacquard"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM112": {
+      "units": [
+        {
+          "label": "pink_loop_knit_medium",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "pink loop knit, same as 0329 (58%)"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM114": {
+      "units": [],
+      "rest": "black/white knit (98%) resembling medium-band knits"
+    },
+    "FAM116": {
+      "units": [],
+      "rest": "black/white knit (66%) resembling very-high knits"
+    },
+    "FAM109": {
+      "units": [
+        {
+          "label": "blue_cream_jacquard_50",
+          "photos": [
+            "*"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "jacquard, same design as 0172"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM133": {
+      "units": [
+        {
+          "label": "blue_cream_jacquard_50",
+          "photos": [
+            "*"
+          ],
+          "identity": "POSSIBLE_MATCH",
+          "evidence": "blue/cream jacquard"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM104": {
+      "units": [
+        {
+          "label": "olive_knit_95",
+          "photos": [
+            "*"
+          ],
+          "identity": "DISTINCT_FABRIC",
+          "evidence": "olive knit"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM119": {
+      "units": [
+        {
+          "label": "grey_brown_plaid_80",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "grey with brown grid, same as FAM063"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM117": {
+      "units": [],
+      "rest": "generic denim (98%)"
+    },
+    "FAM125": {
+      "units": [],
+      "rest": "generic denim (99%)"
+    },
+    "FAM123": {
+      "units": [
+        {
+          "label": "brown_pink_knit_95",
+          "photos": [
+            "*"
+          ],
+          "identity": "DISTINCT_FABRIC",
+          "evidence": "brown-pink knit"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM130": {
+      "units": [
+        {
+          "label": "grey_white_diamond_95",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "grey/white diamond jacquard, same as 0699"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM131": {
+      "units": [],
+      "rest": "generic grey denim (98%)"
+    },
+    "FAM129": {
+      "units": [
+        {
+          "label": "blue_grid_65",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "white with dotted blue grid, same as FAM105"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM134": {
+      "units": [],
+      "rest": "lavender plain knit (95%) with blue-grey look-alikes in other bands"
+    },
+    "FAM135": {
+      "units": [],
+      "rest": "olive plain (53%) resembling olive filed under 40% (FAM012)"
+    },
+    "FAM137": {
+      "units": [],
+      "rest": "mustard mesh (40%) resembling mustard under 50% (FAM099)"
+    },
+    "FAM136": {
+      "units": [
+        {
+          "label": "green_pink_navy_plaid_65",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "same plaid as FAM058"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM138": {
+      "units": [],
+      "rest": "coral plain (95%) resembling the red/coral fabrics under 30%/65%"
+    },
+    "FAM140": {
+      "units": [],
+      "rest": "generic grey twill (58%)"
+    },
+    "FAM141": {
+      "units": [
+        {
+          "label": "lavender_knit_shiny_stripe_95",
+          "photos": [
+            "*"
+          ],
+          "identity": "DISTINCT_FABRIC",
+          "evidence": "lavender knit with shiny blue stripe"
+        }
+      ],
+      "rest": ""
+    },
+    "FAM147": {
+      "units": [
+        {
+          "label": "pink_navy_stripe_80",
+          "photos": [
+            "*"
+          ],
+          "identity": "CONFIRMED_MATCH",
+          "evidence": "pink stripes with navy lines, same as 0641/0676"
+        }
+      ],
+      "rest": ""
+    }
+  },
+  "safety_check_revision": "2026-11-25: units moved to UNCERTAIN after reviewing contact_sheets/results/safety_check_kept_vs_other_band.jpg: boucle_knit_very_high, brown_rib_twill_high, grey_stained_30, grey_mesh_medium, brown_weave_66, waffle_98, grey_mesh_medium"
+}

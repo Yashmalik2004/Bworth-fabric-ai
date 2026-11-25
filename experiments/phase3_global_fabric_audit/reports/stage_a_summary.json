@@ -1,0 +1,129 @@
+{
+  "images_audited_original": 1300,
+  "augmented_files_inventoried_only": 27305,
+  "unique_sha256": 889,
+  "unique_photographs": 883,
+  "photographs_filed_under_more_than_one_class": 242,
+  "photographs_filed_under_more_than_one_band": 24,
+  "visual_families_reviewed": 150,
+  "global_fabric_ids_assigned": 100,
+  "unresolved_remainders_(not_fabric_ids)": 77,
+  "photographs_by_identity_status": {
+    "UNCERTAIN": 447,
+    "CONFIRMED_MATCH": 303,
+    "POSSIBLE_MATCH": 114,
+    "DISTINCT_FABRIC": 19
+  },
+  "images_by_identity_status": {
+    "UNCERTAIN": 601,
+    "CONFIRMED_MATCH": 475,
+    "POSSIBLE_MATCH": 198,
+    "DISTINCT_FABRIC": 26
+  },
+  "fabric_ids_by_identity_status": {
+    "CONFIRMED_MATCH": 60,
+    "POSSIBLE_MATCH": 21,
+    "DISTINCT_FABRIC": 19
+  },
+  "fabric_ids_by_label_status": {
+    "CONSISTENT_SINGLE_BAND": 73,
+    "CONTRADICTORY_BANDS": 27
+  },
+  "contradictory_band_fabrics": 27,
+  "contradictory_band_images": 339,
+  "eligible": {
+    "strict": {
+      "photographs": 133,
+      "fabrics": 54,
+      "photographs_per_band": {
+        "medium_cotton": 59,
+        "high_cotton": 56,
+        "very_high_cotton": 14,
+        "low_cotton": 4
+      },
+      "fabrics_per_band": {
+        "high_cotton": 20,
+        "low_cotton": 2,
+        "medium_cotton": 24,
+        "very_high_cotton": 8
+      },
+      "fabrics_per_fold": {
+        "0": 11,
+        "1": 11,
+        "2": 11,
+        "3": 11,
+        "4": 10
+      },
+      "photographs_per_fold": {
+        "0": 26,
+        "1": 27,
+        "2": 26,
+        "3": 27,
+        "4": 27
+      }
+    },
+    "ALT_family_safe": {
+      "photographs": 236,
+      "fabrics": 73,
+      "photographs_per_band": {
+        "medium_cotton": 126,
+        "high_cotton": 70,
+        "very_high_cotton": 27,
+        "low_cotton": 13
+      },
+      "fabrics_per_band": {
+        "high_cotton": 23,
+        "low_cotton": 3,
+        "medium_cotton": 38,
+        "very_high_cotton": 9
+      },
+      "fabrics_per_fold": {
+        "0": 14,
+        "1": 13,
+        "2": 15,
+        "3": 16,
+        "4": 15
+      },
+      "photographs_per_fold": {
+        "0": 44,
+        "1": 44,
+        "2": 52,
+        "3": 51,
+        "4": 45
+      }
+    }
+  },
+  "excluded_strict": {
+    "original_image_files": 1116,
+    "photographs": 750,
+    "fabric_ids_and_remainders": 123
+  },
+  "integrity": {
+    "strict": {
+      "fabric_ids_shared_across_folds": 0,
+      "photographs_in_more_than_one_fold": 0,
+      "sha256_in_more_than_one_fold": 0,
+      "all_rows_assigned_a_fold": true,
+      "every_fabric_single_band": true,
+      "contradictory_or_uncertain_fabrics_included": 0,
+      "cross_fold_pairs_similarity_ge_0_90": 0,
+      "min_fabrics_per_band": 2,
+      "five_fold_feasible_(>=5_fabrics_per_band)": false
+    },
+    "ALT_family_safe": {
+      "fabric_ids_shared_across_folds": 0,
+      "photographs_in_more_than_one_fold": 0,
+      "sha256_in_more_than_one_fold": 0,
+      "all_rows_assigned_a_fold": true,
+      "every_fabric_single_band": true,
+      "contradictory_or_uncertain_fabrics_included": 0,
+      "cross_fold_pairs_similarity_ge_0_90": 0,
+      "min_fabrics_per_band": 3,
+      "five_fold_feasible_(>=5_fabrics_per_band)": false
+    }
+  },
+  "phase3_provisional_14": {
+    "ELIGIBLE_ONLY_UNDER_FAMILY_SAFE_POLICY": 8,
+    "ELIGIBLE_STRICT": 6
+  }
+}

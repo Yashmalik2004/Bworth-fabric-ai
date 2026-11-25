@@ -66,3 +66,15 @@ evaluation/composition/diagnostics/sheets/
 # OS metadata
 .DS_Store
 Thumbs.db
+# Phase 3 experiments: regenerable arrays and bulk dataset-thumbnail review sheets
+experiments/**/*.npy
+experiments/**/*.pth
+experiments/phase3_global_fabric_audit/audit/contact_sheets/review_families/
+experiments/phase3_global_fabric_audit/audit/contact_sheets/review_pages/
+experiments/phase3_global_fabric_audit/audit/contact_sheets/review_cross_family_pairs.jpg
+experiments/phase3_recovered_data/audit/review_sheet_*.jpg
+# ...but keep the Stage A corrected-dataset manifests (CSV/MD only; raw images stay ignored via datasets/)
+!experiments/phase3_global_fabric_audit/datasets/
+# dataset-thumbnail contact sheets are not committed (dataset licence for derivatives unconfirmed)
+experiments/**/contact_sheets/
+experiments/phase3_recovered_data/audit/*.jpg

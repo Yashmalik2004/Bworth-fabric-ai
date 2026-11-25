@@ -1,0 +1,6 @@
+fold,images_high_cotton,images_low_cotton,images_medium_cotton,images_very_high_cotton,fabrics_high_cotton,fabrics_low_cotton,fabrics_medium_cotton,fabrics_very_high_cotton,images_total,fabrics_total
+0,11,0,12,3,4,0,5,2,26,11
+1,12,0,12,3,5,0,5,1,27,11
+2,11,0,12,3,4,0,5,2,26,11
+3,11,3,11,2,5,1,4,1,27,11
+4,11,1,12,3,2,1,5,2,27,10

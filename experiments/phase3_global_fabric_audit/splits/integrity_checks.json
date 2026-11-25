@@ -1,0 +1,24 @@
+{
+  "strict": {
+    "fabric_ids_shared_across_folds": 0,
+    "photographs_in_more_than_one_fold": 0,
+    "sha256_in_more_than_one_fold": 0,
+    "all_rows_assigned_a_fold": true,
+    "every_fabric_single_band": true,
+    "contradictory_or_uncertain_fabrics_included": 0,
+    "cross_fold_pairs_similarity_ge_0_90": 0,
+    "min_fabrics_per_band": 2,
+    "five_fold_feasible_(>=5_fabrics_per_band)": false
+  },
+  "ALT_family_safe": {
+    "fabric_ids_shared_across_folds": 0,
+    "photographs_in_more_than_one_fold": 0,
+    "sha256_in_more_than_one_fold": 0,
+    "all_rows_assigned_a_fold": true,
+    "every_fabric_single_band": true,
+    "contradictory_or_uncertain_fabrics_included": 0,
+    "cross_fold_pairs_similarity_ge_0_90": 0,
+    "min_fabrics_per_band": 3,
+    "five_fold_feasible_(>=5_fabrics_per_band)": false
+  }
+}

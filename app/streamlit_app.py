@@ -26,6 +26,12 @@ from inference.composition.predict import (  # noqa: E402
     InvalidImageError,
 )
 from utils.image_utils import load_rgb_image  # noqa: E402
+from app.phase3_model import DISCLAIMER as P3_DISCLAIMER  # noqa: E402
+from app.phase3_model import LOW_NOTE as P3_LOW_NOTE  # noqa: E402
+from app.phase3_model import RANGE_NOTE as P3_RANGE_NOTE  # noqa: E402
+from app.phase3_model import SELECTION_FILE as P3_SELECTION_FILE  # noqa: E402
+from app.phase3_model import app_spec as p3_app_spec  # noqa: E402
+from app.phase3_model import load_selection as p3_load_selection  # noqa: E402
 
 ACCENT = "#2a78d6"
 MUTED_BAR = "#c9c8c2"
@@ -88,6 +94,12 @@ def _mtime(p: Path) -> float:
     return p.stat().st_mtime if p.exists() else 0.0
 
 
+@st.cache_data
+def phase3_selection(sel_mtime: float) -> dict | None:
+    """Recorded Phase 3 checkpoint choice; None if missing or the checkpoint's SHA-256 does not match."""
+    return p3_load_selection(verify_hash=True)
+
+
 def pct(x: float) -> str:
     return f"{x * 100:.1f}%"
 
@@ -118,6 +130,9 @@ st.warning(
 # Model selection (sidebar)
 # --------------------------------------------------------------------------- #
 available = {k: m for k, m in APP_MODELS.items() if _mtime(m["checkpoint"]) and Path(m["checkpoint"]).stat().st_size}
+_p3 = phase3_selection(_mtime(P3_SELECTION_FILE))
+if _p3 is not None:
+    available["phase3_band3"] = p3_app_spec(_p3)
 cv_summary = load_json(str(EVALUATION_DIR / "cv" / "cv_summary.json"), _mtime(EVALUATION_DIR / "cv" / "cv_summary.json"))
 
 with st.sidebar:
@@ -130,7 +145,7 @@ with st.sidebar:
             options=list(available),
             format_func=lambda k: f"{available[k]['title']}  ·  {available[k]['badge'].lower()}",
             index=0,
-            help="The 13-class baseline is the default. The 4-class model is an experiment.",
+            help="The 13-class baseline is the default. The 4-class and 3-class models are experiments.",
         )
 
 if model_key is None:
@@ -147,9 +162,16 @@ except (CheckpointNotFoundError, InvalidCheckpointError) as exc:
     st.stop()
 
 info = predictor.info
-is_band = info["label_scheme"] == "band4"
+is_p3 = spec.get("kind") == "phase3_band3"
+is_band = info["label_scheme"] in ("band4", "band3_stageB")
 metrics = load_json(str(spec["metrics"]), _mtime(spec["metrics"]))
-cv_entry = (cv_summary or {}).get("configs", {}).get(spec["cv_config"])
+cv_entry = (cv_summary or {}).get("configs", {}).get(spec["cv_config"]) if spec.get("cv_config") else None
+
+
+def lab(class_name: str) -> str:
+    """Display label for the selected model (Phase 3 uses its own exact wording)."""
+    return spec.get("labels", {}).get(class_name, display_label(class_name))
+
 
 with st.sidebar:
     st.markdown(f'<span class="bw-badge">{spec["badge"]}</span>', unsafe_allow_html=True)
@@ -160,8 +182,22 @@ with st.sidebar:
         f"- **Colour augmentation:** {info['color_aug']}\n"
         f"- **Input:** {info['image_size']}×{info['image_size']} px · **Device:** {info['device']}"
     )
-    st.subheader("Unseen-swatch performance")
-    if metrics:
+    st.subheader("Unseen-fabric performance" if is_p3 else "Unseen-swatch performance")
+    if is_p3:
+        cv = spec["cv"]
+        c1, c2 = st.columns(2)
+        c1.metric("Balanced acc.", f"{pct(cv['balanced_accuracy_mean'])} ± {cv['balanced_accuracy_std'] * 100:.1f}")
+        c2.metric("Accuracy", f"{pct(cv['accuracy_mean'])} ± {cv['accuracy_std'] * 100:.1f}")
+        st.metric("Macro F1", f"{cv['macro_f1_mean']:.3f} ± {cv['macro_f1_std']:.3f}")
+        st.caption(
+            f"5-fold cross-validation on physical fabrics never seen in training, {cv['runs']} runs (mean ± std). "
+            "Chance level is 33.3% balanced accuracy. Per class (pooled): "
+            + " · ".join(f"{k}: precision {v['precision']:.2f}, recall {v['recall']:.2f}" for k, v in cv["per_class"].items())
+            + ". The selected checkpoint's own validation score is not shown because its validation fold was the easiest."
+        )
+        fab = spec["selection"]["fabrics_per_class"]
+        st.caption("Independent fabrics in the data: " + " · ".join(f"{lab(c).split(':')[0]} {n}" for c, n in fab.items()))
+    elif metrics:
         own = "13 classes" if not is_band else "4 bands"
         c1, c2 = st.columns(2)
         c1.metric(f"Accuracy ({own})", pct(metrics["accuracy"]))
@@ -180,9 +216,15 @@ with st.sidebar:
         st.caption("Same training recipe retrained on 5 swatch-grouped folds (mean ± std across folds).")
     st.caption("Expect lower accuracy on real-world photos that differ from the dataset.")
     st.subheader("Categories")
-    st.caption(" · ".join(display_label(c) for c in predictor.classes))
+    st.caption(" · ".join(lab(c) for c in predictor.classes))
+    if is_p3:
+        st.caption(P3_RANGE_NOTE)
+        st.caption(P3_LOW_NOTE)
 
 st.info(f"Model in use: **{spec['title']}** ({spec['badge'].lower()}) — {spec['description']}", icon="🧠")
+if is_p3:
+    st.error(P3_DISCLAIMER, icon="⚠️")
+    st.caption(P3_LOW_NOTE)
 
 # --------------------------------------------------------------------------- #
 # Input
@@ -204,15 +246,18 @@ with left:
         if cam is not None:
             source = ("camera", cam.getvalue())
     with tab_sample:
-        samples = load_test_samples(str(APP_SAMPLE_SPLITS), _mtime(APP_SAMPLE_SPLITS))
+        sample_file = spec.get("sample_splits", APP_SAMPLE_SPLITS)
+        samples = load_test_samples(str(sample_file), _mtime(sample_file))
         if samples.empty:
             st.caption("Test split file not found (run `python -m training.composition.experiment_splits`).")
         else:
-            st.caption("Images from the held-out v2 test split — never used to train either model.")
+            st.caption(
+                "Photographs from this checkpoint's own held-out test fold — physical fabrics it never saw in training."
+                if is_p3 else "Images from the held-out v2 test split — never used to train either model.")
             idx = st.selectbox(
                 "Sample",
                 options=list(range(len(samples))),
-                format_func=lambda i: f"#{i + 1:03d} · true: {display_label(samples.label[i])}",
+                format_func=lambda i: f"#{i + 1:03d} · true: {lab(samples.label[i])}",
                 index=None,
                 placeholder="Choose a test image…",
             )
@@ -250,19 +295,24 @@ with right:
                 f"""
                 <div class="bw-card">
                   <div class="bw-kicker">{kicker} · {spec['title']}</div>
-                  <div class="bw-result">{result.predicted_label}</div>
+                  <div class="bw-result">{lab(result.predicted_class)}</div>
                   <div class="bw-score">Prediction score: <b>{result.score * 100:.1f}%</b>
                     <span class="bw-note">(top class probability, uncalibrated)</span></div>
                 </div>
                 """,
                 unsafe_allow_html=True,
             )
+            if is_p3:
+                st.warning(P3_DISCLAIMER, icon="⚠️")
             if t_fine is not None:
-                t_class = FINE_TO_BAND[t_fine] if is_band else t_fine
+                if is_p3:                      # Phase 3 sample files already carry the band label
+                    t_class, extra = t_fine, ""
+                else:
+                    t_class = FINE_TO_BAND[t_fine] if is_band else t_fine
+                    extra = f" ({display_label(t_fine)})" if is_band else ""
                 ok = t_class == result.predicted_class
-                extra = f" ({display_label(t_fine)})" if is_band else ""
                 (st.success if ok else st.error)(
-                    f"Dataset label: **{display_label(t_class)}**{extra} — prediction is "
+                    f"Dataset label: **{lab(t_class)}**{extra} — prediction is "
                     f"{'correct' if ok else 'incorrect'}."
                 )
             if result.score < (0.5 if is_band else 0.4):
@@ -272,7 +322,7 @@ with right:
                 )
 
             st.markdown("##### Probability across all categories")
-            order = [display_label(c) for c in predictor.classes]
+            order = [lab(c) for c in predictor.classes]
             prob_df = pd.DataFrame(
                 {
                     "Category": order,
@@ -305,3 +355,6 @@ with right:
                  if is_band else "Categories are the cotton percentages present in the training dataset; ")
                 + "the model cannot estimate values outside them and says nothing about the other fibres in the blend."
             )
+            if is_p3:
+                st.caption(P3_RANGE_NOTE + " Probabilities are uncalibrated softmax outputs, not confidence levels. "
+                           + P3_LOW_NOTE)

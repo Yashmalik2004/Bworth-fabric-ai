@@ -1,0 +1,57 @@
+{
+  "variant": "ablationA",
+  "fold": 1,
+  "seed": 43,
+  "best_epoch": 3,
+  "epochs_run": 11,
+  "best_val_acc": 0.4230769230769231,
+  "train_acc_at_best": 0.6458333333333334,
+  "n_train": 62,
+  "n_val": 26,
+  "n_test": 27,
+  "test_metrics": {
+    "n_images": 27,
+    "accuracy": 0.4074074074074074,
+    "balanced_accuracy": 0.3055555555555556,
+    "macro_f1": 0.2533022533022533,
+    "weighted_f1": 0.33773633773633777,
+    "top2_accuracy": 0.5925925925925926,
+    "per_class": {
+      "medium_cotton": {
+        "precision": 1.0,
+        "recall": 0.08333333333333333,
+        "f1": 0.15384615384615385,
+        "support": 12
+      },
+      "high_cotton": {
+        "precision": 0.47619047619047616,
+        "recall": 0.8333333333333334,
+        "f1": 0.6060606060606061,
+        "support": 12
+      },
+      "very_high_cotton": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 3
+      }
+    },
+    "confusion_matrix": [
+      [
+        1,
+        8,
+        3
+      ],
+      [
+        0,
+        10,
+        2
+      ],
+      [
+        0,
+        3,
+        0
+      ]
+    ]
+  }
+}

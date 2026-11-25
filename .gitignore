@@ -78,3 +78,6 @@ experiments/phase3_recovered_data/audit/review_sheet_*.jpg
 # dataset-thumbnail contact sheets are not committed (dataset licence for derivatives unconfirmed)
 experiments/**/contact_sheets/
 experiments/phase3_recovered_data/audit/*.jpg
+
+# Local experiment backups (contain model checkpoints; never commit to ordinary GitHub)
+backups/

@@ -1,0 +1,220 @@
+{
+  "experiment": "NIST E2 high-resolution texture analysis (exploratory; no classifier, no fine-tuning)",
+  "run_utc": "2026-11-27T08:49:26Z",
+  "runtime_s": 547.2,
+  "device": "cuda",
+  "device_name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "device_note": null,
+  "gpu_free_mib_after_model_load": 3163,
+  "gpu_peak_allocated_mib": 276,
+  "batch_size": 16,
+  "cuda_visible_devices_env": "0",
+  "software": {
+    "python": "3.12.5",
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "opencv": "5.1.0",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1",
+    "pillow": "13.0.0",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "scikit_image": "not installed (GLCM implemented in NumPy)"
+  },
+  "selection": {
+    "rule": "inventory source == B AND SampleInformation 'Dye Type' == none AND 'Visual Inspected Color' == White",
+    "swatches": [
+      "B01_a092e008x000_00_01_",
+      "B02_b088e012x000_00_01_",
+      "B03_c081e019x000_00_01_",
+      "B04_a050b050x000_00_01_",
+      "B05_b065a035x000_00_00_",
+      "B06_a050b050x000_00_00_",
+      "B07_b065a035x000_00_00_",
+      "B08_a050b050x000_00_01_",
+      "B09_b100x000x000_00_00_",
+      "B10_b100x000x000_00_00_",
+      "B12_a100x000x000_00_00_",
+      "B13_b100x000x000_00_00_",
+      "B14_a100x000x000_00_00_",
+      "B15_a100x000x000_00_00_",
+      "B16_c100x000x000_00_00_",
+      "B17_g100x000x000_00_00_",
+      "B19_c100x000x000_00_01_",
+      "B20_c100x000x000_00_00_"
+    ],
+    "n_swatches": 18,
+    "n_strict_groups": 16,
+    "images": 108
+  },
+  "tiling": {
+    "tile_px": 224,
+    "grid": "non-overlapping, centred on the 2448x2048 image (10 x 9 = 90 tiles/image)",
+    "no_resizing": true,
+    "qc_thresholds": {
+      "max_highlight_clip_frac": 0.2,
+      "max_shadow_clip_frac": 0.2,
+      "min_grey_std": 3.0,
+      "min_focus_ratio_to_image_median": 0.25
+    },
+    "qc_definitions": {
+      "highlight": "fraction of pixels with max(R,G,B) >= 250",
+      "shadow": "fraction with min(R,G,B) <= 5",
+      "texture": "std of luma (0-255)",
+      "focus": "variance of Laplacian of luma, relative to the image's median tile"
+    }
+  },
+  "representations": {
+    "rgb": "original RGB /255, ImageNet mean/std normalisation",
+    "grey": "luma 0.299R+0.587G+0.114B, /255, replicated to 3 channels, ImageNet normalisation",
+    "cnorm": "per-parent-image per-channel z-score (whole-image mean/std), fed directly to the CNN"
+  },
+  "cnn": {
+    "resnet50": {
+      "weights_enum": "ResNet50_Weights.IMAGENET1K_V2",
+      "weights_file": "resnet50-11ad3fa6.pth",
+      "weights_location": "torch hub cache (checkpoints/)",
+      "weights_file_sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca",
+      "fine_tuned": false
+    },
+    "efficientnet_b0": {
+      "weights_enum": "EfficientNet_B0_Weights.IMAGENET1K_V1",
+      "weights_file": "efficientnet_b0_rwightman-7f5810bc.pth",
+      "weights_location": "torch hub cache (checkpoints/)",
+      "weights_file_sha256": "7f5810bc96def8f7552d5b7e68d53c4786f81167d28291b21c0d90e1fca14934",
+      "fine_tuned": false
+    },
+    "input": "native 224x224 tiles (no resize, no crop)",
+    "pooling": "global average pool (penultimate)",
+    "image_feature": "mean over included tiles"
+  },
+  "handcrafted": {
+    "gabor": {
+      "lambdas_px": [
+        4,
+        8,
+        16,
+        32
+      ],
+      "thetas_deg": [
+        0,
+        45,
+        90,
+        135
+      ],
+      "sigma": "0.56*lambda",
+      "gamma": 0.5,
+      "kernels": "zero-mean, L2-normalised even/odd pair; magnitude; tile mean and std; computed on full-res luma",
+      "greynorm": "raw Gabor features / image luma std (exact, kernels are zero-mean and linear)"
+    },
+    "glcm": {
+      "levels": 16,
+      "distances_px": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "angles_deg": [
+        0,
+        45,
+        90,
+        135
+      ],
+      "properties": [
+        "contrast",
+        "dissimilarity",
+        "homogeneity",
+        "energy",
+        "correlation"
+      ],
+      "grey": "fixed 0-255 quantisation",
+      "greynorm": "per-image z-score clipped to +/-2.5 then quantised"
+    },
+    "colour": [
+      "mean_r",
+      "mean_g",
+      "mean_b",
+      "std_r",
+      "std_g",
+      "std_b",
+      "brightness_mean",
+      "brightness_std",
+      "saturation_mean",
+      "blue_yellow_mean",
+      "frac_highlight_clipped",
+      "frac_shadow_clipped"
+    ]
+  },
+  "dataset_root": "datasets\\external\\NIST_NIR_SORT\\raw_download\\NIST_SORT_DATA",
+  "analysis": {
+    "script": "analyse_e2.py",
+    "unit": "strict provenance group (16: 7 cotton, 9 no cotton)",
+    "views": {
+      "high": [
+        "03",
+        "06"
+      ],
+      "medium": [
+        "02",
+        "05"
+      ],
+      "low": [
+        "01",
+        "04"
+      ],
+      "high_front": [
+        "03"
+      ],
+      "high_back": [
+        "06"
+      ]
+    },
+    "main_view": "high (replicates 03 + 06)",
+    "aggregation": "tiles -> image mean -> swatch mean over the selected views -> z-score across 18 swatches -> mean per strict group",
+    "silhouette": "cosine distance on group-level features",
+    "exact_permutations": {
+      "cotton": 11440,
+      "stratified_by_construction": "4200 (woven 4/10, knit 3/6)",
+      "knit_woven": 8008,
+      "excl_filament_B19_B20": 3432,
+      "woven_only": 210,
+      "knit_only": 20,
+      "p_definition": "share of all assignments with silhouette >= observed (observed included)"
+    },
+    "controls": {
+      "colour_removal": "linear regression of group features on the top-3 PCs of the colour baseline (same views); exact p",
+      "random_covariate_control": "same regression on 3 random N(0,1) covariates, 200 draws; mean and 5-95% range reported, to separate colour effects from loss of degrees of freedom",
+      "brightness_regression": "linear regression of group features on group mean brightness (1 covariate); exact p",
+      "within_construction": "cotton silhouette within woven groups (4 vs 6) and within knit groups (3 vs 3; min attainable p 0.05)",
+      "excl_filament": "groups containing documented filament-yarn swatches B19, B20 removed (14 groups)",
+      "jackknife": "leave-one-group-out silhouette range",
+      "finish_pairs": "high view: percentile of the B05-B07 (optical brightener) and B12-B15 (mercerised) distances among all 153 swatch pairs, per feature set",
+      "mantel_vs_colour": "Spearman correlation of group distance matrices; 999 permutations (high view), 199 (other views)",
+      "exposure_correlation": "Spearman correlation of group PC1 with group mean brightness"
+    },
+    "random_seed": 0,
+    "random_seed_used_for": [
+      "Mantel permutations",
+      "random-covariate control draws"
+    ],
+    "multiple_comparisons": "not corrected; p values are descriptive",
+    "software": {
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "matplotlib": "3.11.2",
+      "numpy": "2.5.5",
+      "pandas": "3.1.1"
+    },
+    "outputs": [
+      "model_feature_summary.csv",
+      "group_level_results.csv",
+      "swatch_texture_features.csv",
+      "analysis_results.json",
+      "pca_cnn_high_mag.png",
+      "pca_handcrafted_high_mag.png",
+      "magnification_comparison.png",
+      "group_level_silhouettes.png"
+    ]
+  }
+}

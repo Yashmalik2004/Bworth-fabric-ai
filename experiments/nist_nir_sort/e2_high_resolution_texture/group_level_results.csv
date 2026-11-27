@@ -1,0 +1,177 @@
+feature_set,label,group,members,cotton,construction,group_silhouette_cotton
+resnet50_rgb,ResNet-50 · RGB,SINGLE-B01,B01,cotton,knit,0.1806
+resnet50_rgb,ResNet-50 · RGB,SINGLE-B02,B02,no cotton,knit,-0.151
+resnet50_rgb,ResNet-50 · RGB,SINGLE-B03,B03,no cotton,knit,0.1466
+resnet50_rgb,ResNet-50 · RGB,SINGLE-B04,B04,cotton,knit,0.1665
+resnet50_rgb,ResNet-50 · RGB,TF-CAT-7409,"B05,B07",cotton,woven,0.1992
+resnet50_rgb,ResNet-50 · RGB,SINGLE-B06,B06,cotton,woven,0.2406
+resnet50_rgb,ResNet-50 · RGB,SINGLE-B08,B08,cotton,knit,0.2727
+resnet50_rgb,ResNet-50 · RGB,SINGLE-B09,B09,no cotton,woven,0.2387
+resnet50_rgb,ResNet-50 · RGB,SINGLE-B10,B10,no cotton,woven,0.1117
+resnet50_rgb,ResNet-50 · RGB,TF-CAT-400M,"B12,B15",cotton,woven,0.3
+resnet50_rgb,ResNet-50 · RGB,SINGLE-B13,B13,no cotton,woven,-0.0686
+resnet50_rgb,ResNet-50 · RGB,SINGLE-B14,B14,cotton,woven,0.2807
+resnet50_rgb,ResNet-50 · RGB,TF-CAT-365,B16,no cotton,woven,0.0482
+resnet50_rgb,ResNet-50 · RGB,TF-CAT-266,B17,no cotton,woven,0.031
+resnet50_rgb,ResNet-50 · RGB,SINGLE-B19,B19,no cotton,knit,0.2523
+resnet50_rgb,ResNet-50 · RGB,SINGLE-B20,B20,no cotton,woven,0.1275
+resnet50_grey,ResNet-50 · grey,SINGLE-B01,B01,cotton,knit,0.128
+resnet50_grey,ResNet-50 · grey,SINGLE-B02,B02,no cotton,knit,-0.1884
+resnet50_grey,ResNet-50 · grey,SINGLE-B03,B03,no cotton,knit,0.114
+resnet50_grey,ResNet-50 · grey,SINGLE-B04,B04,cotton,knit,0.125
+resnet50_grey,ResNet-50 · grey,TF-CAT-7409,"B05,B07",cotton,woven,0.2295
+resnet50_grey,ResNet-50 · grey,SINGLE-B06,B06,cotton,woven,0.1869
+resnet50_grey,ResNet-50 · grey,SINGLE-B08,B08,cotton,knit,0.2296
+resnet50_grey,ResNet-50 · grey,SINGLE-B09,B09,no cotton,woven,0.1921
+resnet50_grey,ResNet-50 · grey,SINGLE-B10,B10,no cotton,woven,0.0808
+resnet50_grey,ResNet-50 · grey,TF-CAT-400M,"B12,B15",cotton,woven,0.2442
+resnet50_grey,ResNet-50 · grey,SINGLE-B13,B13,no cotton,woven,-0.0853
+resnet50_grey,ResNet-50 · grey,SINGLE-B14,B14,cotton,woven,0.2438
+resnet50_grey,ResNet-50 · grey,TF-CAT-365,B16,no cotton,woven,0.0758
+resnet50_grey,ResNet-50 · grey,TF-CAT-266,B17,no cotton,woven,-0.009
+resnet50_grey,ResNet-50 · grey,SINGLE-B19,B19,no cotton,knit,0.2257
+resnet50_grey,ResNet-50 · grey,SINGLE-B20,B20,no cotton,woven,0.0917
+resnet50_cnorm,ResNet-50 · colour-norm,SINGLE-B01,B01,cotton,knit,0.0029
+resnet50_cnorm,ResNet-50 · colour-norm,SINGLE-B02,B02,no cotton,knit,-0.0478
+resnet50_cnorm,ResNet-50 · colour-norm,SINGLE-B03,B03,no cotton,knit,0.2137
+resnet50_cnorm,ResNet-50 · colour-norm,SINGLE-B04,B04,cotton,knit,0.0405
+resnet50_cnorm,ResNet-50 · colour-norm,TF-CAT-7409,"B05,B07",cotton,woven,0.2613
+resnet50_cnorm,ResNet-50 · colour-norm,SINGLE-B06,B06,cotton,woven,0.2993
+resnet50_cnorm,ResNet-50 · colour-norm,SINGLE-B08,B08,cotton,knit,0.1494
+resnet50_cnorm,ResNet-50 · colour-norm,SINGLE-B09,B09,no cotton,woven,0.2231
+resnet50_cnorm,ResNet-50 · colour-norm,SINGLE-B10,B10,no cotton,woven,0.0022
+resnet50_cnorm,ResNet-50 · colour-norm,TF-CAT-400M,"B12,B15",cotton,woven,0.2768
+resnet50_cnorm,ResNet-50 · colour-norm,SINGLE-B13,B13,no cotton,woven,-0.0828
+resnet50_cnorm,ResNet-50 · colour-norm,SINGLE-B14,B14,cotton,woven,0.3252
+resnet50_cnorm,ResNet-50 · colour-norm,TF-CAT-365,B16,no cotton,woven,0.1667
+resnet50_cnorm,ResNet-50 · colour-norm,TF-CAT-266,B17,no cotton,woven,-0.0972
+resnet50_cnorm,ResNet-50 · colour-norm,SINGLE-B19,B19,no cotton,knit,0.2099
+resnet50_cnorm,ResNet-50 · colour-norm,SINGLE-B20,B20,no cotton,woven,0.1587
+efficientnet_b0_rgb,EffNet-B0 · RGB,SINGLE-B01,B01,cotton,knit,0.2407
+efficientnet_b0_rgb,EffNet-B0 · RGB,SINGLE-B02,B02,no cotton,knit,-0.1219
+efficientnet_b0_rgb,EffNet-B0 · RGB,SINGLE-B03,B03,no cotton,knit,0.1648
+efficientnet_b0_rgb,EffNet-B0 · RGB,SINGLE-B04,B04,cotton,knit,0.1973
+efficientnet_b0_rgb,EffNet-B0 · RGB,TF-CAT-7409,"B05,B07",cotton,woven,0.1815
+efficientnet_b0_rgb,EffNet-B0 · RGB,SINGLE-B06,B06,cotton,woven,0.2669
+efficientnet_b0_rgb,EffNet-B0 · RGB,SINGLE-B08,B08,cotton,knit,0.259
+efficientnet_b0_rgb,EffNet-B0 · RGB,SINGLE-B09,B09,no cotton,woven,0.1811
+efficientnet_b0_rgb,EffNet-B0 · RGB,SINGLE-B10,B10,no cotton,woven,0.0166
+efficientnet_b0_rgb,EffNet-B0 · RGB,TF-CAT-400M,"B12,B15",cotton,woven,0.156
+efficientnet_b0_rgb,EffNet-B0 · RGB,SINGLE-B13,B13,no cotton,woven,0.0313
+efficientnet_b0_rgb,EffNet-B0 · RGB,SINGLE-B14,B14,cotton,woven,0.2044
+efficientnet_b0_rgb,EffNet-B0 · RGB,TF-CAT-365,B16,no cotton,woven,0.0633
+efficientnet_b0_rgb,EffNet-B0 · RGB,TF-CAT-266,B17,no cotton,woven,-0.0629
+efficientnet_b0_rgb,EffNet-B0 · RGB,SINGLE-B19,B19,no cotton,knit,0.1869
+efficientnet_b0_rgb,EffNet-B0 · RGB,SINGLE-B20,B20,no cotton,woven,0.1271
+efficientnet_b0_grey,EffNet-B0 · grey,SINGLE-B01,B01,cotton,knit,0.145
+efficientnet_b0_grey,EffNet-B0 · grey,SINGLE-B02,B02,no cotton,knit,-0.0594
+efficientnet_b0_grey,EffNet-B0 · grey,SINGLE-B03,B03,no cotton,knit,0.1806
+efficientnet_b0_grey,EffNet-B0 · grey,SINGLE-B04,B04,cotton,knit,0.0356
+efficientnet_b0_grey,EffNet-B0 · grey,TF-CAT-7409,"B05,B07",cotton,woven,0.2609
+efficientnet_b0_grey,EffNet-B0 · grey,SINGLE-B06,B06,cotton,woven,0.2395
+efficientnet_b0_grey,EffNet-B0 · grey,SINGLE-B08,B08,cotton,knit,0.1176
+efficientnet_b0_grey,EffNet-B0 · grey,SINGLE-B09,B09,no cotton,woven,0.1628
+efficientnet_b0_grey,EffNet-B0 · grey,SINGLE-B10,B10,no cotton,woven,-0.0754
+efficientnet_b0_grey,EffNet-B0 · grey,TF-CAT-400M,"B12,B15",cotton,woven,0.228
+efficientnet_b0_grey,EffNet-B0 · grey,SINGLE-B13,B13,no cotton,woven,0.0632
+efficientnet_b0_grey,EffNet-B0 · grey,SINGLE-B14,B14,cotton,woven,0.2234
+efficientnet_b0_grey,EffNet-B0 · grey,TF-CAT-365,B16,no cotton,woven,0.1152
+efficientnet_b0_grey,EffNet-B0 · grey,TF-CAT-266,B17,no cotton,woven,-0.1824
+efficientnet_b0_grey,EffNet-B0 · grey,SINGLE-B19,B19,no cotton,knit,0.2663
+efficientnet_b0_grey,EffNet-B0 · grey,SINGLE-B20,B20,no cotton,woven,0.1223
+efficientnet_b0_cnorm,EffNet-B0 · colour-norm,SINGLE-B01,B01,cotton,knit,0.2344
+efficientnet_b0_cnorm,EffNet-B0 · colour-norm,SINGLE-B02,B02,no cotton,knit,-0.297
+efficientnet_b0_cnorm,EffNet-B0 · colour-norm,SINGLE-B03,B03,no cotton,knit,0.1263
+efficientnet_b0_cnorm,EffNet-B0 · colour-norm,SINGLE-B04,B04,cotton,knit,-0.0078
+efficientnet_b0_cnorm,EffNet-B0 · colour-norm,TF-CAT-7409,"B05,B07",cotton,woven,0.2574
+efficientnet_b0_cnorm,EffNet-B0 · colour-norm,SINGLE-B06,B06,cotton,woven,0.2475
+efficientnet_b0_cnorm,EffNet-B0 · colour-norm,SINGLE-B08,B08,cotton,knit,0.3494
+efficientnet_b0_cnorm,EffNet-B0 · colour-norm,SINGLE-B09,B09,no cotton,woven,0.081
+efficientnet_b0_cnorm,EffNet-B0 · colour-norm,SINGLE-B10,B10,no cotton,woven,0.0453
+efficientnet_b0_cnorm,EffNet-B0 · colour-norm,TF-CAT-400M,"B12,B15",cotton,woven,0.319
+efficientnet_b0_cnorm,EffNet-B0 · colour-norm,SINGLE-B13,B13,no cotton,woven,-0.1037
+efficientnet_b0_cnorm,EffNet-B0 · colour-norm,SINGLE-B14,B14,cotton,woven,0.309
+efficientnet_b0_cnorm,EffNet-B0 · colour-norm,TF-CAT-365,B16,no cotton,woven,0.144
+efficientnet_b0_cnorm,EffNet-B0 · colour-norm,TF-CAT-266,B17,no cotton,woven,-0.1359
+efficientnet_b0_cnorm,EffNet-B0 · colour-norm,SINGLE-B19,B19,no cotton,knit,0.1337
+efficientnet_b0_cnorm,EffNet-B0 · colour-norm,SINGLE-B20,B20,no cotton,woven,0.0285
+gabor_grey,Gabor · grey,SINGLE-B01,B01,cotton,knit,0.342
+gabor_grey,Gabor · grey,SINGLE-B02,B02,no cotton,knit,0.1204
+gabor_grey,Gabor · grey,SINGLE-B03,B03,no cotton,knit,-0.3914
+gabor_grey,Gabor · grey,SINGLE-B04,B04,cotton,knit,0.3611
+gabor_grey,Gabor · grey,TF-CAT-7409,"B05,B07",cotton,woven,-0.3216
+gabor_grey,Gabor · grey,SINGLE-B06,B06,cotton,woven,-0.1114
+gabor_grey,Gabor · grey,SINGLE-B08,B08,cotton,knit,0.3684
+gabor_grey,Gabor · grey,SINGLE-B09,B09,no cotton,woven,-0.082
+gabor_grey,Gabor · grey,SINGLE-B10,B10,no cotton,woven,0.2907
+gabor_grey,Gabor · grey,TF-CAT-400M,"B12,B15",cotton,woven,0.0951
+gabor_grey,Gabor · grey,SINGLE-B13,B13,no cotton,woven,0.0531
+gabor_grey,Gabor · grey,SINGLE-B14,B14,cotton,woven,0.355
+gabor_grey,Gabor · grey,TF-CAT-365,B16,no cotton,woven,-0.4596
+gabor_grey,Gabor · grey,TF-CAT-266,B17,no cotton,woven,0.0464
+gabor_grey,Gabor · grey,SINGLE-B19,B19,no cotton,knit,0.252
+gabor_grey,Gabor · grey,SINGLE-B20,B20,no cotton,woven,0.1059
+gabor_greynorm,Gabor · grey-norm,SINGLE-B01,B01,cotton,knit,0.0233
+gabor_greynorm,Gabor · grey-norm,SINGLE-B02,B02,no cotton,knit,-0.1489
+gabor_greynorm,Gabor · grey-norm,SINGLE-B03,B03,no cotton,knit,-0.0944
+gabor_greynorm,Gabor · grey-norm,SINGLE-B04,B04,cotton,knit,0.1032
+gabor_greynorm,Gabor · grey-norm,TF-CAT-7409,"B05,B07",cotton,woven,-0.289
+gabor_greynorm,Gabor · grey-norm,SINGLE-B06,B06,cotton,woven,0.2137
+gabor_greynorm,Gabor · grey-norm,SINGLE-B08,B08,cotton,knit,0.2429
+gabor_greynorm,Gabor · grey-norm,SINGLE-B09,B09,no cotton,woven,0.3148
+gabor_greynorm,Gabor · grey-norm,SINGLE-B10,B10,no cotton,woven,0.2821
+gabor_greynorm,Gabor · grey-norm,TF-CAT-400M,"B12,B15",cotton,woven,-0.1129
+gabor_greynorm,Gabor · grey-norm,SINGLE-B13,B13,no cotton,woven,0.1647
+gabor_greynorm,Gabor · grey-norm,SINGLE-B14,B14,cotton,woven,0.0822
+gabor_greynorm,Gabor · grey-norm,TF-CAT-365,B16,no cotton,woven,0.2307
+gabor_greynorm,Gabor · grey-norm,TF-CAT-266,B17,no cotton,woven,-0.0817
+gabor_greynorm,Gabor · grey-norm,SINGLE-B19,B19,no cotton,knit,-0.2415
+gabor_greynorm,Gabor · grey-norm,SINGLE-B20,B20,no cotton,woven,0.0265
+glcm_grey,GLCM · grey,SINGLE-B01,B01,cotton,knit,-0.0921
+glcm_grey,GLCM · grey,SINGLE-B02,B02,no cotton,knit,0.2338
+glcm_grey,GLCM · grey,SINGLE-B03,B03,no cotton,knit,-0.1116
+glcm_grey,GLCM · grey,SINGLE-B04,B04,cotton,knit,-0.0161
+glcm_grey,GLCM · grey,TF-CAT-7409,"B05,B07",cotton,woven,-0.1469
+glcm_grey,GLCM · grey,SINGLE-B06,B06,cotton,woven,0.1313
+glcm_grey,GLCM · grey,SINGLE-B08,B08,cotton,knit,0.0485
+glcm_grey,GLCM · grey,SINGLE-B09,B09,no cotton,woven,-0.0023
+glcm_grey,GLCM · grey,SINGLE-B10,B10,no cotton,woven,0.1539
+glcm_grey,GLCM · grey,TF-CAT-400M,"B12,B15",cotton,woven,0.0682
+glcm_grey,GLCM · grey,SINGLE-B13,B13,no cotton,woven,-0.011
+glcm_grey,GLCM · grey,SINGLE-B14,B14,cotton,woven,0.2804
+glcm_grey,GLCM · grey,TF-CAT-365,B16,no cotton,woven,-0.1304
+glcm_grey,GLCM · grey,TF-CAT-266,B17,no cotton,woven,-0.2895
+glcm_grey,GLCM · grey,SINGLE-B19,B19,no cotton,knit,0.1279
+glcm_grey,GLCM · grey,SINGLE-B20,B20,no cotton,woven,-0.0016
+glcm_greynorm,GLCM · grey-norm,SINGLE-B01,B01,cotton,knit,0.0389
+glcm_greynorm,GLCM · grey-norm,SINGLE-B02,B02,no cotton,knit,0.0229
+glcm_greynorm,GLCM · grey-norm,SINGLE-B03,B03,no cotton,knit,0.3882
+glcm_greynorm,GLCM · grey-norm,SINGLE-B04,B04,cotton,knit,-0.0151
+glcm_greynorm,GLCM · grey-norm,TF-CAT-7409,"B05,B07",cotton,woven,0.2587
+glcm_greynorm,GLCM · grey-norm,SINGLE-B06,B06,cotton,woven,0.3732
+glcm_greynorm,GLCM · grey-norm,SINGLE-B08,B08,cotton,knit,-0.3376
+glcm_greynorm,GLCM · grey-norm,SINGLE-B09,B09,no cotton,woven,0.394
+glcm_greynorm,GLCM · grey-norm,SINGLE-B10,B10,no cotton,woven,0.1376
+glcm_greynorm,GLCM · grey-norm,TF-CAT-400M,"B12,B15",cotton,woven,0.3773
+glcm_greynorm,GLCM · grey-norm,SINGLE-B13,B13,no cotton,woven,0.1593
+glcm_greynorm,GLCM · grey-norm,SINGLE-B14,B14,cotton,woven,0.2395
+glcm_greynorm,GLCM · grey-norm,TF-CAT-365,B16,no cotton,woven,0.2986
+glcm_greynorm,GLCM · grey-norm,TF-CAT-266,B17,no cotton,woven,0.0115
+glcm_greynorm,GLCM · grey-norm,SINGLE-B19,B19,no cotton,knit,0.2408
+glcm_greynorm,GLCM · grey-norm,SINGLE-B20,B20,no cotton,woven,-0.4422
+colour_rgb,Colour-only baseline,SINGLE-B01,B01,cotton,knit,0.1841
+colour_rgb,Colour-only baseline,SINGLE-B02,B02,no cotton,knit,-0.4521
+colour_rgb,Colour-only baseline,SINGLE-B03,B03,no cotton,knit,-0.3157
+colour_rgb,Colour-only baseline,SINGLE-B04,B04,cotton,knit,0.1528
+colour_rgb,Colour-only baseline,TF-CAT-7409,"B05,B07",cotton,woven,0.2994
+colour_rgb,Colour-only baseline,SINGLE-B06,B06,cotton,woven,0.3493
+colour_rgb,Colour-only baseline,SINGLE-B08,B08,cotton,knit,0.1782
+colour_rgb,Colour-only baseline,SINGLE-B09,B09,no cotton,woven,0.3478
+colour_rgb,Colour-only baseline,SINGLE-B10,B10,no cotton,woven,0.3052
+colour_rgb,Colour-only baseline,TF-CAT-400M,"B12,B15",cotton,woven,0.0812
+colour_rgb,Colour-only baseline,SINGLE-B13,B13,no cotton,woven,0.2866
+colour_rgb,Colour-only baseline,SINGLE-B14,B14,cotton,woven,0.4661
+colour_rgb,Colour-only baseline,TF-CAT-365,B16,no cotton,woven,-0.0392
+colour_rgb,Colour-only baseline,TF-CAT-266,B17,no cotton,woven,0.2039
+colour_rgb,Colour-only baseline,SINGLE-B19,B19,no cotton,knit,0.1615
+colour_rgb,Colour-only baseline,SINGLE-B20,B20,no cotton,woven,0.386

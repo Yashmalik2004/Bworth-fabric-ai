@@ -1,0 +1,427 @@
+{
+ "tile_qc": {
+  "tiles_total": 9720,
+  "tiles_included": 9695,
+  "excluded_by_reason": {
+   "highlight_clipping": 25
+  },
+  "excluded_by_swatch_view": [
+   {
+    "replicate": "03",
+    "n": 1,
+    "swatch": "B16"
+   },
+   {
+    "replicate": "02",
+    "n": 7,
+    "swatch": "B19"
+   },
+   {
+    "replicate": "03",
+    "n": 8,
+    "swatch": "B19"
+   },
+   {
+    "replicate": "05",
+    "n": 3,
+    "swatch": "B19"
+   },
+   {
+    "replicate": "06",
+    "n": 6,
+    "swatch": "B19"
+   }
+  ],
+  "included_per_magnification": {
+   "high": 3225,
+   "low": 3240,
+   "medium": 3230
+  }
+ },
+ "controls_by_swatch": [
+  {
+   "short": "B01",
+   "cotton": "cotton",
+   "cotton_percentage": "92",
+   "construction": "knit",
+   "finish": "unknown",
+   "optical_brightener": "not stated",
+   "yarn_documented": "not stated",
+   "cp_light_source": "General",
+   "cp_gain": "NA",
+   "cp_balance_ratio": "2.18",
+   "group_strict": "SINGLE-B01"
+  },
+  {
+   "short": "B02",
+   "cotton": "no cotton",
+   "cotton_percentage": "0",
+   "construction": "knit",
+   "finish": "unknown",
+   "optical_brightener": "not stated",
+   "yarn_documented": "not stated",
+   "cp_light_source": "General",
+   "cp_gain": "NA",
+   "cp_balance_ratio": "2.19",
+   "group_strict": "SINGLE-B02"
+  },
+  {
+   "short": "B03",
+   "cotton": "no cotton",
+   "cotton_percentage": "0",
+   "construction": "knit",
+   "finish": "unknown",
+   "optical_brightener": "not stated",
+   "yarn_documented": "not stated",
+   "cp_light_source": "General",
+   "cp_gain": "NA",
+   "cp_balance_ratio": "2.19",
+   "group_strict": "SINGLE-B03"
+  },
+  {
+   "short": "B04",
+   "cotton": "cotton",
+   "cotton_percentage": "50",
+   "construction": "knit",
+   "finish": "Bleach with optical brightener",
+   "optical_brightener": "with",
+   "yarn_documented": "not stated",
+   "cp_light_source": "General",
+   "cp_gain": "NA",
+   "cp_balance_ratio": "2.19",
+   "group_strict": "SINGLE-B04"
+  },
+  {
+   "short": "B05",
+   "cotton": "cotton",
+   "cotton_percentage": "35",
+   "construction": "woven",
+   "finish": "Bleach with optical brightener",
+   "optical_brightener": "with",
+   "yarn_documented": "not stated",
+   "cp_light_source": "General",
+   "cp_gain": "NA",
+   "cp_balance_ratio": "2.19",
+   "group_strict": "TF-CAT-7409"
+  },
+  {
+   "short": "B06",
+   "cotton": "cotton",
+   "cotton_percentage": "50",
+   "construction": "woven",
+   "finish": "unknown",
+   "optical_brightener": "not stated",
+   "yarn_documented": "not stated",
+   "cp_light_source": "General",
+   "cp_gain": "NA",
+   "cp_balance_ratio": "2.19",
+   "group_strict": "SINGLE-B06"
+  },
+  {
+   "short": "B07",
+   "cotton": "cotton",
+   "cotton_percentage": "35",
+   "construction": "woven",
+   "finish": "Bleach without optical brightener",
+   "optical_brightener": "without",
+   "yarn_documented": "not stated",
+   "cp_light_source": "General",
+   "cp_gain": "NA",
+   "cp_balance_ratio": "2.19",
+   "group_strict": "TF-CAT-7409"
+  },
+  {
+   "short": "B08",
+   "cotton": "cotton",
+   "cotton_percentage": "50",
+   "construction": "knit",
+   "finish": "unknown",
+   "optical_brightener": "not stated",
+   "yarn_documented": "not stated",
+   "cp_light_source": "General",
+   "cp_gain": "NA",
+   "cp_balance_ratio": "2.19",
+   "group_strict": "SINGLE-B08"
+  },
+  {
+   "short": "B09",
+   "cotton": "no cotton",
+   "cotton_percentage": "0",
+   "construction": "woven",
+   "finish": "with optical brightener",
+   "optical_brightener": "with",
+   "yarn_documented": "not stated",
+   "cp_light_source": "General",
+   "cp_gain": "NA",
+   "cp_balance_ratio": "2.19",
+   "group_strict": "SINGLE-B09"
+  },
+  {
+   "short": "B10",
+   "cotton": "no cotton",
+   "cotton_percentage": "0",
+   "construction": "woven",
+   "finish": "without optical brightener",
+   "optical_brightener": "without",
+   "yarn_documented": "not stated",
+   "cp_light_source": "General",
+   "cp_gain": "NA",
+   "cp_balance_ratio": "2.19",
+   "group_strict": "SINGLE-B10"
+  },
+  {
+   "short": "B12",
+   "cotton": "cotton",
+   "cotton_percentage": "100",
+   "construction": "woven",
+   "finish": "Bleached Desized",
+   "optical_brightener": "not stated",
+   "yarn_documented": "not stated",
+   "cp_light_source": "General",
+   "cp_gain": "NA",
+   "cp_balance_ratio": "2.19",
+   "group_strict": "TF-CAT-400M"
+  },
+  {
+   "short": "B13",
+   "cotton": "no cotton",
+   "cotton_percentage": "0",
+   "construction": "woven",
+   "finish": "unknown",
+   "optical_brightener": "not stated",
+   "yarn_documented": "not stated",
+   "cp_light_source": "General",
+   "cp_gain": "NA",
+   "cp_balance_ratio": "2.19",
+   "group_strict": "SINGLE-B13"
+  },
+  {
+   "short": "B14",
+   "cotton": "cotton",
+   "cotton_percentage": "100",
+   "construction": "woven",
+   "finish": "Bleached",
+   "optical_brightener": "not stated",
+   "yarn_documented": "not stated",
+   "cp_light_source": "General",
+   "cp_gain": "NA",
+   "cp_balance_ratio": "2.19",
+   "group_strict": "SINGLE-B14"
+  },
+  {
+   "short": "B15",
+   "cotton": "cotton",
+   "cotton_percentage": "100",
+   "construction": "woven",
+   "finish": "Bleached Desized Mercerized",
+   "optical_brightener": "not stated",
+   "yarn_documented": "not stated",
+   "cp_light_source": "General",
+   "cp_gain": "NA",
+   "cp_balance_ratio": "2.19",
+   "group_strict": "TF-CAT-400M"
+  },
+  {
+   "short": "B16",
+   "cotton": "no cotton",
+   "cotton_percentage": "0",
+   "construction": "woven",
+   "finish": "Texturized",
+   "optical_brightener": "not stated",
+   "yarn_documented": "spun",
+   "cp_light_source": "General",
+   "cp_gain": "NA",
+   "cp_balance_ratio": "2.19",
+   "group_strict": "TF-CAT-365"
+  },
+  {
+   "short": "B17",
+   "cotton": "no cotton",
+   "cotton_percentage": "0",
+   "construction": "woven",
+   "finish": "none",
+   "optical_brightener": "not stated",
+   "yarn_documented": "spun",
+   "cp_light_source": "General",
+   "cp_gain": "NA",
+   "cp_balance_ratio": "2.19",
+   "group_strict": "TF-CAT-266"
+  },
+  {
+   "short": "B19",
+   "cotton": "no cotton",
+   "cotton_percentage": "0",
+   "construction": "knit",
+   "finish": "none",
+   "optical_brightener": "not stated",
+   "yarn_documented": "filament",
+   "cp_light_source": "General",
+   "cp_gain": "NA",
+   "cp_balance_ratio": "2.19",
+   "group_strict": "SINGLE-B19"
+  },
+  {
+   "short": "B20",
+   "cotton": "no cotton",
+   "cotton_percentage": "0",
+   "construction": "woven",
+   "finish": "scoured, heat set",
+   "optical_brightener": "not stated",
+   "yarn_documented": "filament",
+   "cp_light_source": "General",
+   "cp_gain": "NA",
+   "cp_balance_ratio": "2.19",
+   "group_strict": "SINGLE-B20"
+  }
+ ],
+ "finish_pair_distance_percentile_high_mag": {
+  "resnet50_rgb": {
+   "B05-B07": 3.3,
+   "B12-B15": 5.9
+  },
+  "resnet50_grey": {
+   "B05-B07": 2.6,
+   "B12-B15": 9.2
+  },
+  "resnet50_cnorm": {
+   "B05-B07": 2.6,
+   "B12-B15": 18.3
+  },
+  "efficientnet_b0_rgb": {
+   "B05-B07": 0.0,
+   "B12-B15": 3.9
+  },
+  "efficientnet_b0_grey": {
+   "B05-B07": 0.0,
+   "B12-B15": 5.2
+  },
+  "efficientnet_b0_cnorm": {
+   "B05-B07": 2.6,
+   "B12-B15": 3.9
+  },
+  "gabor_grey": {
+   "B05-B07": 8.5,
+   "B12-B15": 26.8
+  },
+  "gabor_greynorm": {
+   "B05-B07": 0.0,
+   "B12-B15": 5.9
+  },
+  "glcm_grey": {
+   "B05-B07": 2.6,
+   "B12-B15": 17.6
+  },
+  "glcm_greynorm": {
+   "B05-B07": 0.0,
+   "B12-B15": 14.4
+  },
+  "colour_rgb": {
+   "B05-B07": 38.6,
+   "B12-B15": 51.6
+  }
+ },
+ "groups": [
+  {
+   "group": "SINGLE-B01",
+   "members": "B01",
+   "cotton": "cotton",
+   "construction": "knit"
+  },
+  {
+   "group": "SINGLE-B02",
+   "members": "B02",
+   "cotton": "no cotton",
+   "construction": "knit"
+  },
+  {
+   "group": "SINGLE-B03",
+   "members": "B03",
+   "cotton": "no cotton",
+   "construction": "knit"
+  },
+  {
+   "group": "SINGLE-B04",
+   "members": "B04",
+   "cotton": "cotton",
+   "construction": "knit"
+  },
+  {
+   "group": "TF-CAT-7409",
+   "members": "B05,B07",
+   "cotton": "cotton",
+   "construction": "woven"
+  },
+  {
+   "group": "SINGLE-B06",
+   "members": "B06",
+   "cotton": "cotton",
+   "construction": "woven"
+  },
+  {
+   "group": "SINGLE-B08",
+   "members": "B08",
+   "cotton": "cotton",
+   "construction": "knit"
+  },
+  {
+   "group": "SINGLE-B09",
+   "members": "B09",
+   "cotton": "no cotton",
+   "construction": "woven"
+  },
+  {
+   "group": "SINGLE-B10",
+   "members": "B10",
+   "cotton": "no cotton",
+   "construction": "woven"
+  },
+  {
+   "group": "TF-CAT-400M",
+   "members": "B12,B15",
+   "cotton": "cotton",
+   "construction": "woven"
+  },
+  {
+   "group": "SINGLE-B13",
+   "members": "B13",
+   "cotton": "no cotton",
+   "construction": "woven"
+  },
+  {
+   "group": "SINGLE-B14",
+   "members": "B14",
+   "cotton": "cotton",
+   "construction": "woven"
+  },
+  {
+   "group": "TF-CAT-365",
+   "members": "B16",
+   "cotton": "no cotton",
+   "construction": "woven"
+  },
+  {
+   "group": "TF-CAT-266",
+   "members": "B17",
+   "cotton": "no cotton",
+   "construction": "woven"
+  },
+  {
+   "group": "SINGLE-B19",
+   "members": "B19",
+   "cotton": "no cotton",
+   "construction": "knit"
+  },
+  {
+   "group": "SINGLE-B20",
+   "members": "B20",
+   "cotton": "no cotton",
+   "construction": "woven"
+  }
+ ],
+ "permutation": "exact enumeration; p = share of assignments with silhouette >= observed",
+ "random_seed": 0,
+ "random_seed_used_for": [
+  "Mantel permutations",
+  "random-covariate control draws"
+ ]
+}

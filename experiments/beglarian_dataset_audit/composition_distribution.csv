@@ -1,0 +1,51 @@
+table,key,n_fabrics,n_images,sample_ids
+bworth_band,very_high,11,53,bf-17183e3c9b bf-17af53dbc5 bf-35bc8c7f29 bf-38fa8cd269 bf-3c08b178ee bf-4aa7d7d3c7 bf-713435bf7b bf-717157c724 bf-77b4be096f bf-8a1a290020 bf-a4333db05f
+bworth_band,high,5,22,bf-1ec8215afd bf-23b41adefa bf-3661fd4650 bf-3a0256a69f bf-fedc8142ed
+bworth_band,medium,1,5,bf-c787992ecd
+bworth_band,low,2,10,bf-a44c991e89 bf-d2d0cf44fe
+bworth_band,out_of_band_below_30,4,21,bf-1c43f51ccc bf-44e9ed9983 bf-81ffe08731 bf-f95ec0f58b
+bworth_band,out_of_band_gap_40_50,1,4,bf-f153bc5f40
+bworth_band,out_of_band_gap_66_80,2,10,bf-6f503dae35 bf-7e94d7ce28
+bworth_band,out_of_band_gap_95_98,2,9,bf-5e7bcfde36 bf-802cbe6bbe
+bworth_band,no_cotton,72,352,bf-00b0a9aa45 bf-01120d9f0f bf-07e70cf4ff bf-0b013434f3 bf-0e5db3efa6 bf-0eeeb1701b bf-123622167e bf-164f068629 bf-167d94a7b9 bf-228baac649 bf-22aa68eb37 bf-27a4e354bb bf-35b13200fe bf-37c2f0e89c bf-38ddea8255 bf-3ebed10021 bf-3f9a94cdbc bf-3ff02c0d8d bf-40b22cf757 bf-41d0183260 bf-43bd236911 bf-4530e422bb bf-49669b6ccc bf-4ac8a2e1a6 bf-4bad509a23 bf-53044f6995 bf-548f53a4cb bf-55919498e3 bf-568a65f16a bf-56af579b68 bf-58e9a6d9e3 bf-59e149e67b bf-5acf923520 bf-627709ce9d bf-6394cccc6b bf-6467dd58d5 bf-64de18dc36 bf-68998d89c9 bf-6b8c6ebaff bf-6df28b55a1 bf-72b3ee219e bf-76050328d5 bf-7647311790 bf-79ad02ff25 bf-806968eaab bf-824a0beaf4 bf-8946a309c2 bf-8c99c01c1a bf-9249b91e85 bf-93277416e8 bf-942754f5cc bf-951da06a4a bf-97a6fb95d0 bf-a96b3f9ab6 bf-ac5584a94e bf-ac571f38ce bf-af84187065 bf-ba3b523c34 bf-ba6d65fa89 bf-bb72542d80 bf-bffa9d39d8 bf-c5b8d83a40 bf-cf105c6cb8 bf-d0880e9a18 bf-d2f138bb6c bf-d545119921 bf-d8f4a9275f bf-dd8c225e53 bf-e8d1377405 bf-ed1276c119 bf-ed1e442094 bf-fd77aa1a46
+composition_category,no cotton (other fibres),67,327,bf-00b0a9aa45 bf-01120d9f0f bf-07e70cf4ff bf-0b013434f3 bf-0e5db3efa6 bf-0eeeb1701b bf-164f068629 bf-167d94a7b9 bf-228baac649 bf-22aa68eb37 bf-27a4e354bb bf-35b13200fe bf-38ddea8255 bf-3ebed10021 bf-3f9a94cdbc bf-3ff02c0d8d bf-40b22cf757 bf-41d0183260 bf-43bd236911 bf-4530e422bb bf-49669b6ccc bf-4ac8a2e1a6 bf-4bad509a23 bf-548f53a4cb bf-55919498e3 bf-568a65f16a bf-56af579b68 bf-58e9a6d9e3 bf-59e149e67b bf-5acf923520 bf-627709ce9d bf-6394cccc6b bf-6467dd58d5 bf-64de18dc36 bf-6b8c6ebaff bf-6df28b55a1 bf-72b3ee219e bf-76050328d5 bf-7647311790 bf-79ad02ff25 bf-806968eaab bf-824a0beaf4 bf-8c99c01c1a bf-9249b91e85 bf-93277416e8 bf-942754f5cc bf-951da06a4a bf-97a6fb95d0 bf-a96b3f9ab6 bf-ac5584a94e bf-ac571f38ce bf-af84187065 bf-ba3b523c34 bf-ba6d65fa89 bf-bb72542d80 bf-bffa9d39d8 bf-c5b8d83a40 bf-cf105c6cb8 bf-d0880e9a18 bf-d2f138bb6c bf-d545119921 bf-d8f4a9275f bf-dd8c225e53 bf-e8d1377405 bf-ed1276c119 bf-ed1e442094 bf-fd77aa1a46
+composition_category,cotton + other fibres,12,60,bf-1c43f51ccc bf-23b41adefa bf-3661fd4650 bf-38fa8cd269 bf-44e9ed9983 bf-7e94d7ce28 bf-81ffe08731 bf-a44c991e89 bf-c787992ecd bf-d2d0cf44fe bf-f153bc5f40 bf-f95ec0f58b
+composition_category,cotton + elastane/polyurethane only,8,35,bf-1ec8215afd bf-3a0256a69f bf-4aa7d7d3c7 bf-5e7bcfde36 bf-713435bf7b bf-717157c724 bf-802cbe6bbe bf-fedc8142ed
+composition_category,100% cotton,7,34,bf-17183e3c9b bf-17af53dbc5 bf-35bc8c7f29 bf-3c08b178ee bf-77b4be096f bf-8a1a290020 bf-a4333db05f
+composition_category,100% polyester,5,25,bf-123622167e bf-37c2f0e89c bf-53044f6995 bf-68998d89c9 bf-8946a309c2
+composition_category,cotton-polyester blend,1,5,bf-6f503dae35
+cotton_pct_value,0,72,352,bf-00b0a9aa45 bf-01120d9f0f bf-07e70cf4ff bf-0b013434f3 bf-0e5db3efa6 bf-0eeeb1701b bf-123622167e bf-164f068629 bf-167d94a7b9 bf-228baac649 bf-22aa68eb37 bf-27a4e354bb bf-35b13200fe bf-37c2f0e89c bf-38ddea8255 bf-3ebed10021 bf-3f9a94cdbc bf-3ff02c0d8d bf-40b22cf757 bf-41d0183260 bf-43bd236911 bf-4530e422bb bf-49669b6ccc bf-4ac8a2e1a6 bf-4bad509a23 bf-53044f6995 bf-548f53a4cb bf-55919498e3 bf-568a65f16a bf-56af579b68 bf-58e9a6d9e3 bf-59e149e67b bf-5acf923520 bf-627709ce9d bf-6394cccc6b bf-6467dd58d5 bf-64de18dc36 bf-68998d89c9 bf-6b8c6ebaff bf-6df28b55a1 bf-72b3ee219e bf-76050328d5 bf-7647311790 bf-79ad02ff25 bf-806968eaab bf-824a0beaf4 bf-8946a309c2 bf-8c99c01c1a bf-9249b91e85 bf-93277416e8 bf-942754f5cc bf-951da06a4a bf-97a6fb95d0 bf-a96b3f9ab6 bf-ac5584a94e bf-ac571f38ce bf-af84187065 bf-ba3b523c34 bf-ba6d65fa89 bf-bb72542d80 bf-bffa9d39d8 bf-c5b8d83a40 bf-cf105c6cb8 bf-d0880e9a18 bf-d2f138bb6c bf-d545119921 bf-d8f4a9275f bf-dd8c225e53 bf-e8d1377405 bf-ed1276c119 bf-ed1e442094 bf-fd77aa1a46
+cotton_pct_value,10,1,5,bf-81ffe08731
+cotton_pct_value,15,1,6,bf-f95ec0f58b
+cotton_pct_value,22,1,4,bf-1c43f51ccc
+cotton_pct_value,25,1,6,bf-44e9ed9983
+cotton_pct_value,30,1,5,bf-a44c991e89
+cotton_pct_value,35,1,5,bf-d2d0cf44fe
+cotton_pct_value,43,1,4,bf-f153bc5f40
+cotton_pct_value,50,1,5,bf-c787992ecd
+cotton_pct_value,70,1,5,bf-6f503dae35
+cotton_pct_value,75,1,5,bf-7e94d7ce28
+cotton_pct_value,80,3,11,bf-23b41adefa bf-3a0256a69f bf-fedc8142ed
+cotton_pct_value,82,1,5,bf-3661fd4650
+cotton_pct_value,93,1,6,bf-1ec8215afd
+cotton_pct_value,96,1,5,bf-5e7bcfde36
+cotton_pct_value,97,1,4,bf-802cbe6bbe
+cotton_pct_value,98,2,10,bf-4aa7d7d3c7 bf-713435bf7b
+cotton_pct_value,99,2,9,bf-38fa8cd269 bf-717157c724
+cotton_pct_value,100,7,34,bf-17183e3c9b bf-17af53dbc5 bf-35bc8c7f29 bf-3c08b178ee bf-77b4be096f bf-8a1a290020 bf-a4333db05f
+fibre_present_in_fabric,Polyamide/Nylon,32,,
+fibre_present_in_fabric,Viscose (Rayon),28,,
+fibre_present_in_fabric,Cotton,28,,
+fibre_present_in_fabric,Elastane,21,,
+fibre_present_in_fabric,Polyester,21,,
+fibre_present_in_fabric,Silk,16,,
+fibre_present_in_fabric,Wool,16,,
+fibre_present_in_fabric,Lurex,12,,
+fibre_present_in_fabric,Acrylic,4,,
+fibre_present_in_fabric,Linen,4,,
+fibre_present_in_fabric,Polyurethane,3,,
+fibre_present_in_fabric,Acetate,2,,
+fibre_present_in_fabric,Modacrylic,2,,
+fibre_present_in_fabric,Other Fibres,1,,
+fibre_present_in_fabric,Tencel (Lyocell),1,,
+fibre_present_in_fabric,Cashmere,1,,

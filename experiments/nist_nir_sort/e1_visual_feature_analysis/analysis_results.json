@@ -1,0 +1,1721 @@
+{
+ "subsets": {
+  "A_all_94": {
+   "n_swatches": 94,
+   "n_strict_groups": 69,
+   "swatches_by_cotton": {
+    "cotton": 59,
+    "no cotton": 35
+   },
+   "groups_by_cotton": {
+    "cotton": 44,
+    "no cotton": 25
+   },
+   "swatch_ids": [
+    "A01",
+    "A02",
+    "A03",
+    "A04",
+    "A05",
+    "A07",
+    "A08",
+    "A09",
+    "A10",
+    "A11",
+    "A12",
+    "A13",
+    "A14",
+    "A15",
+    "A16",
+    "A17",
+    "A18",
+    "A19",
+    "A20",
+    "A21",
+    "A22",
+    "A23",
+    "A24",
+    "A25",
+    "A26",
+    "A27",
+    "A28",
+    "A29",
+    "A30",
+    "A31",
+    "A32",
+    "A33",
+    "A35",
+    "A36",
+    "A37",
+    "A38",
+    "A39",
+    "A40",
+    "A41",
+    "A42",
+    "A43",
+    "A44",
+    "A45",
+    "A46",
+    "A47",
+    "A48",
+    "A49",
+    "A50",
+    "A51",
+    "A52",
+    "A53",
+    "B01",
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B07",
+    "B08",
+    "B09",
+    "B10",
+    "B11",
+    "B12",
+    "B13",
+    "B14",
+    "B15",
+    "B16",
+    "B17",
+    "B18",
+    "B19",
+    "B20",
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07",
+    "C08",
+    "C09",
+    "C10",
+    "C11",
+    "D01",
+    "D02",
+    "D03",
+    "D04",
+    "D05",
+    "D06",
+    "D07",
+    "D08",
+    "D09",
+    "D10",
+    "D11",
+    "D12"
+   ],
+   "features": {
+    "resnet50": {
+     "silhouette_cotton": {
+      "silhouette": 0.0354,
+      "p_perm": 0.002,
+      "null_mean": -0.0002,
+      "n_groups": 69,
+      "class_groups": {
+       "cotton": 44,
+       "no cotton": 25
+      },
+      "dropped_groups_by_label": {}
+     },
+     "silhouette_source": {
+      "silhouette": 0.0812,
+      "p_perm": 0.001,
+      "null_mean": -0.0322,
+      "n_groups": 65,
+      "class_groups": {
+       "A": 29,
+       "B": 13,
+       "C": 11,
+       "D": 12
+      },
+      "dropped_groups_by_label": {
+       "__mixed__": 4
+      }
+     },
+     "silhouette_dye_class": {
+      "silhouette": 0.0978,
+      "p_perm": 0.001,
+      "null_mean": -0.056,
+      "n_groups": 41,
+      "class_groups": {
+       "acid / metal-complex": 5,
+       "cellulosic dyes": 19,
+       "disperse": 4,
+       "undyed": 13
+      },
+      "dropped_groups_by_label": {
+       "__mixed__": 4,
+       "other": 1,
+       "unknown (C/D)": 23
+      }
+     },
+     "silhouette_construction": {
+      "silhouette": 0.1108,
+      "p_perm": 0.001,
+      "null_mean": -0.0001,
+      "n_groups": 69,
+      "class_groups": {
+       "knit": 30,
+       "woven": 39
+      },
+      "dropped_groups_by_label": {}
+     },
+     "pca_explained_variance_ratio_top5": [
+      0.1737,
+      0.0631,
+      0.0545,
+      0.0535,
+      0.0477
+     ],
+     "mantel_vs_colour": {
+      "spearman_r": 0.1856,
+      "p_perm": 0.001,
+      "n": 69
+     },
+     "silhouette_cotton_after_removing_top5_colour_PCs": {
+      "silhouette": 0.0296,
+      "p_perm": 0.004,
+      "null_mean": 0.0001,
+      "n_groups": 69,
+      "class_groups": {
+       "cotton": 44,
+       "no cotton": 25
+      },
+      "dropped_groups_by_label": {}
+     }
+    },
+    "efficientnet_b0": {
+     "silhouette_cotton": {
+      "silhouette": 0.0708,
+      "p_perm": 0.001,
+      "null_mean": -0.0,
+      "n_groups": 69,
+      "class_groups": {
+       "cotton": 44,
+       "no cotton": 25
+      },
+      "dropped_groups_by_label": {}
+     },
+     "silhouette_source": {
+      "silhouette": 0.1017,
+      "p_perm": 0.001,
+      "null_mean": -0.0439,
+      "n_groups": 65,
+      "class_groups": {
+       "A": 29,
+       "B": 13,
+       "C": 11,
+       "D": 12
+      },
+      "dropped_groups_by_label": {
+       "__mixed__": 4
+      }
+     },
+     "silhouette_dye_class": {
+      "silhouette": 0.2088,
+      "p_perm": 0.001,
+      "null_mean": -0.0768,
+      "n_groups": 41,
+      "class_groups": {
+       "acid / metal-complex": 5,
+       "cellulosic dyes": 19,
+       "disperse": 4,
+       "undyed": 13
+      },
+      "dropped_groups_by_label": {
+       "__mixed__": 4,
+       "other": 1,
+       "unknown (C/D)": 23
+      }
+     },
+     "silhouette_construction": {
+      "silhouette": 0.1521,
+      "p_perm": 0.001,
+      "null_mean": 0.0002,
+      "n_groups": 69,
+      "class_groups": {
+       "knit": 30,
+       "woven": 39
+      },
+      "dropped_groups_by_label": {}
+     },
+     "pca_explained_variance_ratio_top5": [
+      0.1324,
+      0.0872,
+      0.0686,
+      0.0504,
+      0.0475
+     ],
+     "mantel_vs_colour": {
+      "spearman_r": 0.2949,
+      "p_perm": 0.001,
+      "n": 69
+     },
+     "silhouette_cotton_after_removing_top5_colour_PCs": {
+      "silhouette": 0.0773,
+      "p_perm": 0.001,
+      "null_mean": 0.0001,
+      "n_groups": 69,
+      "class_groups": {
+       "cotton": 44,
+       "no cotton": 25
+      },
+      "dropped_groups_by_label": {}
+     }
+    },
+    "colour": {
+     "silhouette_cotton": {
+      "silhouette": 0.0035,
+      "p_perm": 0.323,
+      "null_mean": 0.0002,
+      "n_groups": 69,
+      "class_groups": {
+       "cotton": 44,
+       "no cotton": 25
+      },
+      "dropped_groups_by_label": {}
+     },
+     "silhouette_source": {
+      "silhouette": 0.0457,
+      "p_perm": 0.001,
+      "null_mean": -0.0743,
+      "n_groups": 65,
+      "class_groups": {
+       "A": 29,
+       "B": 13,
+       "C": 11,
+       "D": 12
+      },
+      "dropped_groups_by_label": {
+       "__mixed__": 4
+      }
+     },
+     "silhouette_dye_class": {
+      "silhouette": 0.1081,
+      "p_perm": 0.001,
+      "null_mean": -0.1177,
+      "n_groups": 41,
+      "class_groups": {
+       "acid / metal-complex": 5,
+       "cellulosic dyes": 19,
+       "disperse": 4,
+       "undyed": 13
+      },
+      "dropped_groups_by_label": {
+       "__mixed__": 4,
+       "other": 1,
+       "unknown (C/D)": 23
+      }
+     },
+     "silhouette_construction": {
+      "silhouette": 0.014,
+      "p_perm": 0.12,
+      "null_mean": -0.0006,
+      "n_groups": 69,
+      "class_groups": {
+       "knit": 30,
+       "woven": 39
+      },
+      "dropped_groups_by_label": {}
+     },
+     "pca_explained_variance_ratio_top5": [
+      0.2342,
+      0.18,
+      0.0938,
+      0.0664,
+      0.0659
+     ]
+    }
+   },
+   "mantel_resnet_vs_efficientnet": {
+    "spearman_r": 0.6802,
+    "p_perm": 0.001,
+    "n": 69
+   }
+  },
+  "B_supplier_documented": {
+   "n_swatches": 71,
+   "n_strict_groups": 46,
+   "swatches_by_cotton": {
+    "cotton": 41,
+    "no cotton": 30
+   },
+   "groups_by_cotton": {
+    "cotton": 26,
+    "no cotton": 20
+   },
+   "swatch_ids": [
+    "A01",
+    "A02",
+    "A03",
+    "A04",
+    "A05",
+    "A07",
+    "A08",
+    "A09",
+    "A10",
+    "A11",
+    "A12",
+    "A13",
+    "A14",
+    "A15",
+    "A16",
+    "A17",
+    "A18",
+    "A19",
+    "A20",
+    "A21",
+    "A22",
+    "A23",
+    "A24",
+    "A25",
+    "A26",
+    "A27",
+    "A28",
+    "A29",
+    "A30",
+    "A31",
+    "A32",
+    "A33",
+    "A35",
+    "A36",
+    "A37",
+    "A38",
+    "A39",
+    "A40",
+    "A41",
+    "A42",
+    "A43",
+    "A44",
+    "A45",
+    "A46",
+    "A47",
+    "A48",
+    "A49",
+    "A50",
+    "A51",
+    "A52",
+    "A53",
+    "B01",
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B07",
+    "B08",
+    "B09",
+    "B10",
+    "B11",
+    "B12",
+    "B13",
+    "B14",
+    "B15",
+    "B16",
+    "B17",
+    "B18",
+    "B19",
+    "B20"
+   ],
+   "features": {
+    "resnet50": {
+     "silhouette_cotton": {
+      "silhouette": 0.083,
+      "p_perm": 0.001,
+      "null_mean": 0.0006,
+      "n_groups": 46,
+      "class_groups": {
+       "cotton": 26,
+       "no cotton": 20
+      },
+      "dropped_groups_by_label": {}
+     },
+     "silhouette_source": {
+      "silhouette": 0.0938,
+      "p_perm": 0.001,
+      "null_mean": 0.0001,
+      "n_groups": 42,
+      "class_groups": {
+       "A": 29,
+       "B": 13
+      },
+      "dropped_groups_by_label": {
+       "__mixed__": 4
+      }
+     },
+     "silhouette_dye_class": {
+      "silhouette": 0.0687,
+      "p_perm": 0.001,
+      "null_mean": -0.0427,
+      "n_groups": 41,
+      "class_groups": {
+       "acid / metal-complex": 5,
+       "cellulosic dyes": 19,
+       "disperse": 4,
+       "undyed": 13
+      },
+      "dropped_groups_by_label": {
+       "__mixed__": 4,
+       "other": 1
+      }
+     },
+     "silhouette_construction": {
+      "silhouette": 0.0543,
+      "p_perm": 0.013,
+      "null_mean": -0.0001,
+      "n_groups": 46,
+      "class_groups": {
+       "knit": 7,
+       "woven": 39
+      },
+      "dropped_groups_by_label": {}
+     },
+     "pca_explained_variance_ratio_top5": [
+      0.1815,
+      0.0845,
+      0.0655,
+      0.0513,
+      0.0467
+     ],
+     "mantel_vs_colour": {
+      "spearman_r": 0.3038,
+      "p_perm": 0.001,
+      "n": 46
+     },
+     "silhouette_cotton_after_removing_top5_colour_PCs": {
+      "silhouette": 0.0696,
+      "p_perm": 0.001,
+      "null_mean": -0.0,
+      "n_groups": 46,
+      "class_groups": {
+       "cotton": 26,
+       "no cotton": 20
+      },
+      "dropped_groups_by_label": {}
+     }
+    },
+    "efficientnet_b0": {
+     "silhouette_cotton": {
+      "silhouette": 0.1372,
+      "p_perm": 0.001,
+      "null_mean": 0.0007,
+      "n_groups": 46,
+      "class_groups": {
+       "cotton": 26,
+       "no cotton": 20
+      },
+      "dropped_groups_by_label": {}
+     },
+     "silhouette_source": {
+      "silhouette": 0.172,
+      "p_perm": 0.001,
+      "null_mean": -0.0,
+      "n_groups": 42,
+      "class_groups": {
+       "A": 29,
+       "B": 13
+      },
+      "dropped_groups_by_label": {
+       "__mixed__": 4
+      }
+     },
+     "silhouette_dye_class": {
+      "silhouette": 0.1875,
+      "p_perm": 0.001,
+      "null_mean": -0.0734,
+      "n_groups": 41,
+      "class_groups": {
+       "acid / metal-complex": 5,
+       "cellulosic dyes": 19,
+       "disperse": 4,
+       "undyed": 13
+      },
+      "dropped_groups_by_label": {
+       "__mixed__": 4,
+       "other": 1
+      }
+     },
+     "silhouette_construction": {
+      "silhouette": 0.0826,
+      "p_perm": 0.001,
+      "null_mean": -0.0009,
+      "n_groups": 46,
+      "class_groups": {
+       "knit": 7,
+       "woven": 39
+      },
+      "dropped_groups_by_label": {}
+     },
+     "pca_explained_variance_ratio_top5": [
+      0.1229,
+      0.1081,
+      0.0868,
+      0.0561,
+      0.0542
+     ],
+     "mantel_vs_colour": {
+      "spearman_r": 0.4148,
+      "p_perm": 0.001,
+      "n": 46
+     },
+     "silhouette_cotton_after_removing_top5_colour_PCs": {
+      "silhouette": 0.137,
+      "p_perm": 0.001,
+      "null_mean": -0.0001,
+      "n_groups": 46,
+      "class_groups": {
+       "cotton": 26,
+       "no cotton": 20
+      },
+      "dropped_groups_by_label": {}
+     }
+    },
+    "colour": {
+     "silhouette_cotton": {
+      "silhouette": 0.002,
+      "p_perm": 0.378,
+      "null_mean": 0.0003,
+      "n_groups": 46,
+      "class_groups": {
+       "cotton": 26,
+       "no cotton": 20
+      },
+      "dropped_groups_by_label": {}
+     },
+     "silhouette_source": {
+      "silhouette": 0.346,
+      "p_perm": 0.001,
+      "null_mean": -0.0007,
+      "n_groups": 42,
+      "class_groups": {
+       "A": 29,
+       "B": 13
+      },
+      "dropped_groups_by_label": {
+       "__mixed__": 4
+      }
+     },
+     "silhouette_dye_class": {
+      "silhouette": 0.1043,
+      "p_perm": 0.001,
+      "null_mean": -0.115,
+      "n_groups": 41,
+      "class_groups": {
+       "acid / metal-complex": 5,
+       "cellulosic dyes": 19,
+       "disperse": 4,
+       "undyed": 13
+      },
+      "dropped_groups_by_label": {
+       "__mixed__": 4,
+       "other": 1
+      }
+     },
+     "silhouette_construction": {
+      "silhouette": 0.0685,
+      "p_perm": 0.004,
+      "null_mean": -0.0046,
+      "n_groups": 46,
+      "class_groups": {
+       "knit": 7,
+       "woven": 39
+      },
+      "dropped_groups_by_label": {}
+     },
+     "pca_explained_variance_ratio_top5": [
+      0.2484,
+      0.1808,
+      0.1098,
+      0.0731,
+      0.0611
+     ]
+    }
+   },
+   "mantel_resnet_vs_efficientnet": {
+    "spearman_r": 0.6258,
+    "p_perm": 0.001,
+    "n": 46
+   }
+  },
+  "C_source_B": {
+   "n_swatches": 20,
+   "n_strict_groups": 17,
+   "swatches_by_cotton": {
+    "cotton": 10,
+    "no cotton": 10
+   },
+   "groups_by_cotton": {
+    "cotton": 7,
+    "no cotton": 10
+   },
+   "swatch_ids": [
+    "B01",
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B07",
+    "B08",
+    "B09",
+    "B10",
+    "B11",
+    "B12",
+    "B13",
+    "B14",
+    "B15",
+    "B16",
+    "B17",
+    "B18",
+    "B19",
+    "B20"
+   ],
+   "features": {
+    "resnet50": {
+     "silhouette_cotton": {
+      "silhouette": 0.1022,
+      "p_perm": 0.004,
+      "null_mean": -0.0001,
+      "n_groups": 17,
+      "class_groups": {
+       "cotton": 7,
+       "no cotton": 10
+      },
+      "dropped_groups_by_label": {}
+     },
+     "silhouette_source": {
+      "silhouette": null,
+      "p_perm": null,
+      "n_groups": 17,
+      "class_groups": {
+       "B": 17
+      },
+      "dropped_groups_by_label": {},
+      "note": "fewer than 2 classes with >=2 groups"
+     },
+     "silhouette_dye_class": {
+      "silhouette": null,
+      "p_perm": null,
+      "n_groups": 17,
+      "class_groups": {
+       "undyed": 17
+      },
+      "dropped_groups_by_label": {},
+      "note": "fewer than 2 classes with >=2 groups"
+     },
+     "silhouette_construction": {
+      "silhouette": 0.0551,
+      "p_perm": 0.043,
+      "null_mean": -0.0008,
+      "n_groups": 17,
+      "class_groups": {
+       "knit": 6,
+       "woven": 11
+      },
+      "dropped_groups_by_label": {}
+     },
+     "pca_explained_variance_ratio_top5": [
+      0.2647,
+      0.1297,
+      0.0982,
+      0.0765,
+      0.062
+     ],
+     "mantel_vs_colour": {
+      "spearman_r": 0.4154,
+      "p_perm": 0.001,
+      "n": 17
+     },
+     "silhouette_cotton_after_removing_top5_colour_PCs": {
+      "silhouette": -0.085,
+      "p_perm": 1.0,
+      "null_mean": 0.0,
+      "n_groups": 17,
+      "class_groups": {
+       "cotton": 7,
+       "no cotton": 10
+      },
+      "dropped_groups_by_label": {}
+     }
+    },
+    "efficientnet_b0": {
+     "silhouette_cotton": {
+      "silhouette": 0.0734,
+      "p_perm": 0.044,
+      "null_mean": 0.0009,
+      "n_groups": 17,
+      "class_groups": {
+       "cotton": 7,
+       "no cotton": 10
+      },
+      "dropped_groups_by_label": {}
+     },
+     "silhouette_source": {
+      "silhouette": null,
+      "p_perm": null,
+      "n_groups": 17,
+      "class_groups": {
+       "B": 17
+      },
+      "dropped_groups_by_label": {},
+      "note": "fewer than 2 classes with >=2 groups"
+     },
+     "silhouette_dye_class": {
+      "silhouette": null,
+      "p_perm": null,
+      "n_groups": 17,
+      "class_groups": {
+       "undyed": 17
+      },
+      "dropped_groups_by_label": {},
+      "note": "fewer than 2 classes with >=2 groups"
+     },
+     "silhouette_construction": {
+      "silhouette": 0.1477,
+      "p_perm": 0.006,
+      "null_mean": 0.0007,
+      "n_groups": 17,
+      "class_groups": {
+       "knit": 6,
+       "woven": 11
+      },
+      "dropped_groups_by_label": {}
+     },
+     "pca_explained_variance_ratio_top5": [
+      0.223,
+      0.1197,
+      0.1126,
+      0.0943,
+      0.0776
+     ],
+     "mantel_vs_colour": {
+      "spearman_r": 0.4673,
+      "p_perm": 0.001,
+      "n": 17
+     },
+     "silhouette_cotton_after_removing_top5_colour_PCs": {
+      "silhouette": -0.097,
+      "p_perm": 1.0,
+      "null_mean": -0.0022,
+      "n_groups": 17,
+      "class_groups": {
+       "cotton": 7,
+       "no cotton": 10
+      },
+      "dropped_groups_by_label": {}
+     }
+    },
+    "colour": {
+     "silhouette_cotton": {
+      "silhouette": 0.1538,
+      "p_perm": 0.035,
+      "null_mean": 0.003,
+      "n_groups": 17,
+      "class_groups": {
+       "cotton": 7,
+       "no cotton": 10
+      },
+      "dropped_groups_by_label": {}
+     },
+     "silhouette_source": {
+      "silhouette": null,
+      "p_perm": null,
+      "n_groups": 17,
+      "class_groups": {
+       "B": 17
+      },
+      "dropped_groups_by_label": {},
+      "note": "fewer than 2 classes with >=2 groups"
+     },
+     "silhouette_dye_class": {
+      "silhouette": null,
+      "p_perm": null,
+      "n_groups": 17,
+      "class_groups": {
+       "undyed": 17
+      },
+      "dropped_groups_by_label": {},
+      "note": "fewer than 2 classes with >=2 groups"
+     },
+     "silhouette_construction": {
+      "silhouette": 0.1821,
+      "p_perm": 0.018,
+      "null_mean": -0.0022,
+      "n_groups": 17,
+      "class_groups": {
+       "knit": 6,
+       "woven": 11
+      },
+      "dropped_groups_by_label": {}
+     },
+     "pca_explained_variance_ratio_top5": [
+      0.5288,
+      0.186,
+      0.1173,
+      0.0564,
+      0.0386
+     ]
+    }
+   },
+   "mantel_resnet_vs_efficientnet": {
+    "spearman_r": 0.6568,
+    "p_perm": 0.001,
+    "n": 17
+   }
+  },
+  "D_source_B_undyed_white": {
+   "n_swatches": 18,
+   "n_strict_groups": 16,
+   "swatches_by_cotton": {
+    "cotton": 9,
+    "no cotton": 9
+   },
+   "groups_by_cotton": {
+    "cotton": 7,
+    "no cotton": 9
+   },
+   "swatch_ids": [
+    "B01",
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B07",
+    "B08",
+    "B09",
+    "B10",
+    "B12",
+    "B13",
+    "B14",
+    "B15",
+    "B16",
+    "B17",
+    "B19",
+    "B20"
+   ],
+   "features": {
+    "resnet50": {
+     "silhouette_cotton": {
+      "silhouette": 0.1023,
+      "p_perm": 0.007,
+      "null_mean": -0.0003,
+      "n_groups": 16,
+      "class_groups": {
+       "cotton": 7,
+       "no cotton": 9
+      },
+      "dropped_groups_by_label": {}
+     },
+     "silhouette_source": {
+      "silhouette": null,
+      "p_perm": null,
+      "n_groups": 16,
+      "class_groups": {
+       "B": 16
+      },
+      "dropped_groups_by_label": {},
+      "note": "fewer than 2 classes with >=2 groups"
+     },
+     "silhouette_dye_class": {
+      "silhouette": null,
+      "p_perm": null,
+      "n_groups": 16,
+      "class_groups": {
+       "undyed": 16
+      },
+      "dropped_groups_by_label": {},
+      "note": "fewer than 2 classes with >=2 groups"
+     },
+     "silhouette_construction": {
+      "silhouette": 0.0739,
+      "p_perm": 0.026,
+      "null_mean": 0.0001,
+      "n_groups": 16,
+      "class_groups": {
+       "knit": 6,
+       "woven": 10
+      },
+      "dropped_groups_by_label": {}
+     },
+     "pca_explained_variance_ratio_top5": [
+      0.2944,
+      0.1321,
+      0.1032,
+      0.0753,
+      0.0653
+     ],
+     "mantel_vs_colour": {
+      "spearman_r": 0.3506,
+      "p_perm": 0.002,
+      "n": 16
+     },
+     "silhouette_cotton_after_removing_top5_colour_PCs": {
+      "silhouette": -0.0877,
+      "p_perm": 0.996,
+      "null_mean": 0.0023,
+      "n_groups": 16,
+      "class_groups": {
+       "cotton": 7,
+       "no cotton": 9
+      },
+      "dropped_groups_by_label": {}
+     }
+    },
+    "efficientnet_b0": {
+     "silhouette_cotton": {
+      "silhouette": 0.0716,
+      "p_perm": 0.056,
+      "null_mean": 0.0009,
+      "n_groups": 16,
+      "class_groups": {
+       "cotton": 7,
+       "no cotton": 9
+      },
+      "dropped_groups_by_label": {}
+     },
+     "silhouette_source": {
+      "silhouette": null,
+      "p_perm": null,
+      "n_groups": 16,
+      "class_groups": {
+       "B": 16
+      },
+      "dropped_groups_by_label": {},
+      "note": "fewer than 2 classes with >=2 groups"
+     },
+     "silhouette_dye_class": {
+      "silhouette": null,
+      "p_perm": null,
+      "n_groups": 16,
+      "class_groups": {
+       "undyed": 16
+      },
+      "dropped_groups_by_label": {},
+      "note": "fewer than 2 classes with >=2 groups"
+     },
+     "silhouette_construction": {
+      "silhouette": 0.1833,
+      "p_perm": 0.003,
+      "null_mean": -0.0015,
+      "n_groups": 16,
+      "class_groups": {
+       "knit": 6,
+       "woven": 10
+      },
+      "dropped_groups_by_label": {}
+     },
+     "pca_explained_variance_ratio_top5": [
+      0.2163,
+      0.1336,
+      0.1259,
+      0.0996,
+      0.0787
+     ],
+     "mantel_vs_colour": {
+      "spearman_r": 0.3908,
+      "p_perm": 0.004,
+      "n": 16
+     },
+     "silhouette_cotton_after_removing_top5_colour_PCs": {
+      "silhouette": -0.0989,
+      "p_perm": 0.997,
+      "null_mean": 0.0013,
+      "n_groups": 16,
+      "class_groups": {
+       "cotton": 7,
+       "no cotton": 9
+      },
+      "dropped_groups_by_label": {}
+     }
+    },
+    "colour": {
+     "silhouette_cotton": {
+      "silhouette": 0.2564,
+      "p_perm": 0.011,
+      "null_mean": 0.0036,
+      "n_groups": 16,
+      "class_groups": {
+       "cotton": 7,
+       "no cotton": 9
+      },
+      "dropped_groups_by_label": {}
+     },
+     "silhouette_source": {
+      "silhouette": null,
+      "p_perm": null,
+      "n_groups": 16,
+      "class_groups": {
+       "B": 16
+      },
+      "dropped_groups_by_label": {},
+      "note": "fewer than 2 classes with >=2 groups"
+     },
+     "silhouette_dye_class": {
+      "silhouette": null,
+      "p_perm": null,
+      "n_groups": 16,
+      "class_groups": {
+       "undyed": 16
+      },
+      "dropped_groups_by_label": {},
+      "note": "fewer than 2 classes with >=2 groups"
+     },
+     "silhouette_construction": {
+      "silhouette": 0.2175,
+      "p_perm": 0.011,
+      "null_mean": 0.003,
+      "n_groups": 16,
+      "class_groups": {
+       "knit": 6,
+       "woven": 10
+      },
+      "dropped_groups_by_label": {}
+     },
+     "pca_explained_variance_ratio_top5": [
+      0.5787,
+      0.1448,
+      0.1343,
+      0.0698,
+      0.0333
+     ]
+    }
+   },
+   "mantel_resnet_vs_efficientnet": {
+    "spearman_r": 0.6435,
+    "p_perm": 0.001,
+    "n": 16
+   }
+  },
+  "E_source_A_only (dye confound check)": {
+   "n_swatches": 51,
+   "n_strict_groups": 33,
+   "swatches_by_cotton": {
+    "cotton": 31,
+    "no cotton": 20
+   },
+   "groups_by_cotton": {
+    "cotton": 20,
+    "no cotton": 13
+   },
+   "swatch_ids": [
+    "A01",
+    "A02",
+    "A03",
+    "A04",
+    "A05",
+    "A07",
+    "A08",
+    "A09",
+    "A10",
+    "A11",
+    "A12",
+    "A13",
+    "A14",
+    "A15",
+    "A16",
+    "A17",
+    "A18",
+    "A19",
+    "A20",
+    "A21",
+    "A22",
+    "A23",
+    "A24",
+    "A25",
+    "A26",
+    "A27",
+    "A28",
+    "A29",
+    "A30",
+    "A31",
+    "A32",
+    "A33",
+    "A35",
+    "A36",
+    "A37",
+    "A38",
+    "A39",
+    "A40",
+    "A41",
+    "A42",
+    "A43",
+    "A44",
+    "A45",
+    "A46",
+    "A47",
+    "A48",
+    "A49",
+    "A50",
+    "A51",
+    "A52",
+    "A53"
+   ],
+   "features": {
+    "resnet50": {
+     "silhouette_cotton": {
+      "silhouette": 0.1103,
+      "p_perm": 0.001,
+      "null_mean": -0.0003,
+      "n_groups": 33,
+      "class_groups": {
+       "cotton": 20,
+       "no cotton": 13
+      },
+      "dropped_groups_by_label": {}
+     },
+     "silhouette_source": {
+      "silhouette": null,
+      "p_perm": null,
+      "n_groups": 33,
+      "class_groups": {
+       "A": 33
+      },
+      "dropped_groups_by_label": {},
+      "note": "fewer than 2 classes with >=2 groups"
+     },
+     "silhouette_dye_class": {
+      "silhouette": 0.0825,
+      "p_perm": 0.001,
+      "null_mean": -0.0356,
+      "n_groups": 32,
+      "class_groups": {
+       "acid / metal-complex": 7,
+       "cellulosic dyes": 21,
+       "disperse": 4
+      },
+      "dropped_groups_by_label": {
+       "other": 1
+      }
+     },
+     "silhouette_construction": {
+      "silhouette": null,
+      "p_perm": null,
+      "n_groups": 32,
+      "class_groups": {
+       "woven": 32
+      },
+      "dropped_groups_by_label": {
+       "knit": 1
+      },
+      "note": "fewer than 2 classes with >=2 groups"
+     },
+     "pca_explained_variance_ratio_top5": [
+      0.2382,
+      0.0985,
+      0.0694,
+      0.0638,
+      0.049
+     ],
+     "mantel_vs_colour": {
+      "spearman_r": 0.2928,
+      "p_perm": 0.001,
+      "n": 33
+     },
+     "silhouette_cotton_after_removing_top5_colour_PCs": {
+      "silhouette": 0.0492,
+      "p_perm": 0.008,
+      "null_mean": -0.0,
+      "n_groups": 33,
+      "class_groups": {
+       "cotton": 20,
+       "no cotton": 13
+      },
+      "dropped_groups_by_label": {}
+     }
+    },
+    "efficientnet_b0": {
+     "silhouette_cotton": {
+      "silhouette": 0.2038,
+      "p_perm": 0.001,
+      "null_mean": 0.0003,
+      "n_groups": 33,
+      "class_groups": {
+       "cotton": 20,
+       "no cotton": 13
+      },
+      "dropped_groups_by_label": {}
+     },
+     "silhouette_source": {
+      "silhouette": null,
+      "p_perm": null,
+      "n_groups": 33,
+      "class_groups": {
+       "A": 33
+      },
+      "dropped_groups_by_label": {},
+      "note": "fewer than 2 classes with >=2 groups"
+     },
+     "silhouette_dye_class": {
+      "silhouette": 0.1543,
+      "p_perm": 0.001,
+      "null_mean": -0.0529,
+      "n_groups": 32,
+      "class_groups": {
+       "acid / metal-complex": 7,
+       "cellulosic dyes": 21,
+       "disperse": 4
+      },
+      "dropped_groups_by_label": {
+       "other": 1
+      }
+     },
+     "silhouette_construction": {
+      "silhouette": null,
+      "p_perm": null,
+      "n_groups": 32,
+      "class_groups": {
+       "woven": 32
+      },
+      "dropped_groups_by_label": {
+       "knit": 1
+      },
+      "note": "fewer than 2 classes with >=2 groups"
+     },
+     "pca_explained_variance_ratio_top5": [
+      0.1419,
+      0.1201,
+      0.0911,
+      0.0722,
+      0.0607
+     ],
+     "mantel_vs_colour": {
+      "spearman_r": 0.5195,
+      "p_perm": 0.001,
+      "n": 33
+     },
+     "silhouette_cotton_after_removing_top5_colour_PCs": {
+      "silhouette": 0.1148,
+      "p_perm": 0.001,
+      "null_mean": -0.0005,
+      "n_groups": 33,
+      "class_groups": {
+       "cotton": 20,
+       "no cotton": 13
+      },
+      "dropped_groups_by_label": {}
+     }
+    },
+    "colour": {
+     "silhouette_cotton": {
+      "silhouette": 0.0734,
+      "p_perm": 0.016,
+      "null_mean": 0.0001,
+      "n_groups": 33,
+      "class_groups": {
+       "cotton": 20,
+       "no cotton": 13
+      },
+      "dropped_groups_by_label": {}
+     },
+     "silhouette_source": {
+      "silhouette": null,
+      "p_perm": null,
+      "n_groups": 33,
+      "class_groups": {
+       "A": 33
+      },
+      "dropped_groups_by_label": {},
+      "note": "fewer than 2 classes with >=2 groups"
+     },
+     "silhouette_dye_class": {
+      "silhouette": -0.0365,
+      "p_perm": 0.09,
+      "null_mean": -0.0714,
+      "n_groups": 32,
+      "class_groups": {
+       "acid / metal-complex": 7,
+       "cellulosic dyes": 21,
+       "disperse": 4
+      },
+      "dropped_groups_by_label": {
+       "other": 1
+      }
+     },
+     "silhouette_construction": {
+      "silhouette": null,
+      "p_perm": null,
+      "n_groups": 32,
+      "class_groups": {
+       "woven": 32
+      },
+      "dropped_groups_by_label": {
+       "knit": 1
+      },
+      "note": "fewer than 2 classes with >=2 groups"
+     },
+     "pca_explained_variance_ratio_top5": [
+      0.2264,
+      0.2045,
+      0.1102,
+      0.0811,
+      0.0715
+     ]
+    }
+   },
+   "mantel_resnet_vs_efficientnet": {
+    "spearman_r": 0.6571,
+    "p_perm": 0.001,
+    "n": 33
+   }
+  }
+ },
+ "label_definitions": {
+  "cotton": "cotton_percentage > 0 (documented label; supplier spec for A/B, care label for C/D)",
+  "dye_class": "from SampleInformation 'Dye Type': cellulosic dyes (reactive/direct/vat/sulphur/azoic), disperse, acid/metal-complex, undyed (none), other (acrylic trichromatic), unknown (C/D)",
+  "unit_of_statistics": "strict provenance group mean (groups with mixed labels excluded for that label)",
+  "permutations": 999
+ },
+ "dye_vs_fibre_crosstab_source_A": {
+  "cotton": {
+   "acid / metal-complex": 0,
+   "cellulosic dyes": 31,
+   "disperse": 0,
+   "other": 0
+  },
+  "no cotton": {
+   "acid / metal-complex": 12,
+   "cellulosic dyes": 3,
+   "disperse": 4,
+   "other": 1
+  }
+ },
+ "magnification": {
+  "resnet50": {
+   "variance_fraction_between_swatches": 0.3575,
+   "variance_fraction_between_views": 0.0161,
+   "mean_cos_sim_same_swatch_diff_view": 0.329,
+   "mean_cos_sim_diff_swatch_same_view": 0.0401,
+   "mean_cos_sim_diff_swatch_diff_view": 0.0164,
+   "mean_cos_sim_same_swatch_front_vs_back_same_mag": 0.5657,
+   "mean_cos_sim_same_swatch_same_side_diff_mag": 0.2935,
+   "within_swatch_cross_view_similarity": {
+    "front low": {
+     "front low": null,
+     "front med": 0.4258,
+     "front high": 0.1356,
+     "back low": 0.5688,
+     "back med": 0.3585,
+     "back high": 0.123
+    },
+    "front med": {
+     "front low": 0.4258,
+     "front med": null,
+     "front high": 0.2974,
+     "back low": 0.3602,
+     "back med": 0.59,
+     "back high": 0.2707
+    },
+    "front high": {
+     "front low": 0.1356,
+     "front med": 0.2974,
+     "front high": null,
+     "back low": 0.1072,
+     "back med": 0.2576,
+     "back high": 0.5383
+    },
+    "back low": {
+     "front low": 0.5688,
+     "front med": 0.3602,
+     "front high": 0.1072,
+     "back low": null,
+     "back med": 0.449,
+     "back high": 0.133
+    },
+    "back med": {
+     "front low": 0.3585,
+     "front med": 0.59,
+     "front high": 0.2576,
+     "back low": 0.449,
+     "back med": null,
+     "back high": 0.3201
+    },
+    "back high": {
+     "front low": 0.123,
+     "front med": 0.2707,
+     "front high": 0.5383,
+     "back low": 0.133,
+     "back med": 0.3201,
+     "back high": null
+    }
+   },
+   "between_view_mantel_spearman": {
+    "front low": {
+     "front low": 1.0,
+     "front med": 0.6233,
+     "front high": 0.4226,
+     "back low": 0.643,
+     "back med": 0.5221,
+     "back high": 0.3725
+    },
+    "front med": {
+     "front low": 0.6233,
+     "front med": 1.0,
+     "front high": 0.5086,
+     "back low": 0.5934,
+     "back med": 0.7273,
+     "back high": 0.4856
+    },
+    "front high": {
+     "front low": 0.4226,
+     "front med": 0.5086,
+     "front high": 1.0,
+     "back low": 0.3623,
+     "back med": 0.4601,
+     "back high": 0.7115
+    },
+    "back low": {
+     "front low": 0.643,
+     "front med": 0.5934,
+     "front high": 0.3623,
+     "back low": 1.0,
+     "back med": 0.7468,
+     "back high": 0.4476
+    },
+    "back med": {
+     "front low": 0.5221,
+     "front med": 0.7273,
+     "front high": 0.4601,
+     "back low": 0.7468,
+     "back med": 1.0,
+     "back high": 0.5734
+    },
+    "back high": {
+     "front low": 0.3725,
+     "front med": 0.4856,
+     "front high": 0.7115,
+     "back low": 0.4476,
+     "back med": 0.5734,
+     "back high": 1.0
+    }
+   },
+   "image_level_silhouette_by_swatch": 0.0549,
+   "image_level_silhouette_by_view": -0.0183
+  },
+  "efficientnet_b0": {
+   "variance_fraction_between_swatches": 0.5144,
+   "variance_fraction_between_views": 0.0421,
+   "mean_cos_sim_same_swatch_diff_view": 0.4356,
+   "mean_cos_sim_diff_swatch_same_view": 0.043,
+   "mean_cos_sim_diff_swatch_diff_view": -0.0105,
+   "mean_cos_sim_same_swatch_front_vs_back_same_mag": 0.736,
+   "mean_cos_sim_same_swatch_same_side_diff_mag": 0.3894,
+   "within_swatch_cross_view_similarity": {
+    "front low": {
+     "front low": null,
+     "front med": 0.6108,
+     "front high": 0.1271,
+     "back low": 0.7355,
+     "back med": 0.531,
+     "back high": 0.1166
+    },
+    "front med": {
+     "front low": 0.6108,
+     "front med": null,
+     "front high": 0.3887,
+     "back low": 0.5423,
+     "back med": 0.7453,
+     "back high": 0.3596
+    },
+    "front high": {
+     "front low": 0.1271,
+     "front med": 0.3887,
+     "front high": null,
+     "back low": 0.1016,
+     "back med": 0.338,
+     "back high": 0.7273
+    },
+    "back low": {
+     "front low": 0.7355,
+     "front med": 0.5423,
+     "front high": 0.1016,
+     "back low": null,
+     "back med": 0.6578,
+     "back high": 0.1383
+    },
+    "back med": {
+     "front low": 0.531,
+     "front med": 0.7453,
+     "front high": 0.338,
+     "back low": 0.6578,
+     "back med": null,
+     "back high": 0.4135
+    },
+    "back high": {
+     "front low": 0.1166,
+     "front med": 0.3596,
+     "front high": 0.7273,
+     "back low": 0.1383,
+     "back med": 0.4135,
+     "back high": null
+    }
+   },
+   "between_view_mantel_spearman": {
+    "front low": {
+     "front low": 1.0,
+     "front med": 0.7836,
+     "front high": 0.4872,
+     "back low": 0.8102,
+     "back med": 0.7068,
+     "back high": 0.4498
+    },
+    "front med": {
+     "front low": 0.7836,
+     "front med": 1.0,
+     "front high": 0.7097,
+     "back low": 0.7286,
+     "back med": 0.8477,
+     "back high": 0.6729
+    },
+    "front high": {
+     "front low": 0.4872,
+     "front med": 0.7097,
+     "front high": 1.0,
+     "back low": 0.4816,
+     "back med": 0.6576,
+     "back high": 0.8437
+    },
+    "back low": {
+     "front low": 0.8102,
+     "front med": 0.7286,
+     "front high": 0.4816,
+     "back low": 1.0,
+     "back med": 0.8231,
+     "back high": 0.5259
+    },
+    "back med": {
+     "front low": 0.7068,
+     "front med": 0.8477,
+     "front high": 0.6576,
+     "back low": 0.8231,
+     "back med": 1.0,
+     "back high": 0.7193
+    },
+    "back high": {
+     "front low": 0.4498,
+     "front med": 0.6729,
+     "front high": 0.8437,
+     "back low": 0.5259,
+     "back med": 0.7193,
+     "back high": 1.0
+    }
+   },
+   "image_level_silhouette_by_swatch": 0.068,
+   "image_level_silhouette_by_view": -0.0305
+  },
+  "colour": {
+   "variance_fraction_between_swatches": 0.9206,
+   "variance_fraction_between_views": 0.0027,
+   "mean_cos_sim_same_swatch_diff_view": 0.9196,
+   "mean_cos_sim_diff_swatch_same_view": -0.0053,
+   "mean_cos_sim_diff_swatch_diff_view": -0.0072,
+   "mean_cos_sim_same_swatch_front_vs_back_same_mag": 0.9246,
+   "mean_cos_sim_same_swatch_same_side_diff_mag": 0.934,
+   "within_swatch_cross_view_similarity": {
+    "front low": {
+     "front low": null,
+     "front med": 0.9236,
+     "front high": 0.889,
+     "back low": 0.8978,
+     "back med": 0.8946,
+     "back high": 0.8731
+    },
+    "front med": {
+     "front low": 0.9236,
+     "front med": null,
+     "front high": 0.9255,
+     "back low": 0.9378,
+     "back med": 0.938,
+     "back high": 0.907
+    },
+    "front high": {
+     "front low": 0.889,
+     "front med": 0.9255,
+     "front high": null,
+     "back low": 0.8977,
+     "back med": 0.9063,
+     "back high": 0.9379
+    },
+    "back low": {
+     "front low": 0.8978,
+     "front med": 0.9378,
+     "front high": 0.8977,
+     "back low": null,
+     "back med": 0.9772,
+     "back high": 0.9388
+    },
+    "back med": {
+     "front low": 0.8946,
+     "front med": 0.938,
+     "front high": 0.9063,
+     "back low": 0.9772,
+     "back med": null,
+     "back high": 0.9497
+    },
+    "back high": {
+     "front low": 0.8731,
+     "front med": 0.907,
+     "front high": 0.9379,
+     "back low": 0.9388,
+     "back med": 0.9497,
+     "back high": null
+    }
+   },
+   "between_view_mantel_spearman": {
+    "front low": {
+     "front low": 1.0,
+     "front med": 0.9125,
+     "front high": 0.8896,
+     "back low": 0.8867,
+     "back med": 0.8815,
+     "back high": 0.8761
+    },
+    "front med": {
+     "front low": 0.9125,
+     "front med": 1.0,
+     "front high": 0.9443,
+     "back low": 0.9318,
+     "back med": 0.9289,
+     "back high": 0.9176
+    },
+    "front high": {
+     "front low": 0.8896,
+     "front med": 0.9443,
+     "front high": 1.0,
+     "back low": 0.8972,
+     "back med": 0.9077,
+     "back high": 0.9299
+    },
+    "back low": {
+     "front low": 0.8867,
+     "front med": 0.9318,
+     "front high": 0.8972,
+     "back low": 1.0,
+     "back med": 0.9796,
+     "back high": 0.9555
+    },
+    "back med": {
+     "front low": 0.8815,
+     "front med": 0.9289,
+     "front high": 0.9077,
+     "back low": 0.9796,
+     "back med": 1.0,
+     "back high": 0.9662
+    },
+    "back high": {
+     "front low": 0.8761,
+     "front med": 0.9176,
+     "front high": 0.9299,
+     "back low": 0.9555,
+     "back med": 0.9662,
+     "back high": 1.0
+    }
+   },
+   "image_level_silhouette_by_swatch": 0.4462,
+   "image_level_silhouette_by_view": -0.0231
+  }
+ }
+}

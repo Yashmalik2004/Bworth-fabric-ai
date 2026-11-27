@@ -1,0 +1,94 @@
+{
+  "experiment": "NIST E1 visual feature analysis (exploratory; no classifier, no fine-tuning)",
+  "run_utc": "2026-11-27T07:46:51Z",
+  "runtime_s": 130.5,
+  "device": "cuda",
+  "device_name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "device_note": null,
+  "batch_size": 8,
+  "cuda_visible_devices_env": "0",
+  "software": {
+    "python": "3.12.5",
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "cuda_runtime": "12.8",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1",
+    "pillow": "13.0.0",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "input": {
+    "images": 564,
+    "format": "TIFF RGBA 8-bit, 2448x2048, alpha constant 255 (asserted per image)",
+    "conversion": "PIL Image.convert('RGB') (alpha dropped); RGB colour preserved"
+  },
+  "models": {
+    "resnet50": {
+      "torchvision_builder": "resnet50",
+      "weights_enum": "ResNet50_Weights.IMAGENET1K_V2",
+      "weights_url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+      "weights_file": "resnet50-11ad3fa6.pth",
+      "weights_location": "torch hub cache (checkpoints/)",
+      "weights_file_sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca",
+      "weights_file_bytes": 102540417,
+      "imagenet_acc@1": 80.858,
+      "head_removed": "fc -> Identity",
+      "preprocessing": "ImageClassification(\n    crop_size=[224]\n    resize_size=[232]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)",
+      "fine_tuned": false,
+      "embedding_dim": 2048
+    },
+    "efficientnet_b0": {
+      "torchvision_builder": "efficientnet_b0",
+      "weights_enum": "EfficientNet_B0_Weights.IMAGENET1K_V1",
+      "weights_url": "https://download.pytorch.org/models/efficientnet_b0_rwightman-7f5810bc.pth",
+      "weights_file": "efficientnet_b0_rwightman-7f5810bc.pth",
+      "weights_location": "torch hub cache (checkpoints/)",
+      "weights_file_sha256": "7f5810bc96def8f7552d5b7e68d53c4786f81167d28291b21c0d90e1fca14934",
+      "weights_file_bytes": 21444401,
+      "imagenet_acc@1": 77.692,
+      "head_removed": "classifier (Dropout+Linear) -> Identity",
+      "preprocessing": "ImageClassification(\n    crop_size=[224]\n    resize_size=[256]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BICUBIC\n)",
+      "fine_tuned": false,
+      "embedding_dim": 1280
+    }
+  },
+  "colour_features": {
+    "computed_at": "1/4 resolution (PIL reduce(4) -> 612x512)",
+    "n_features": 95,
+    "contents": "mean/std RGB; 16-bin RGB histograms; HSV histograms (H18, S8, V8); brightness, value, saturation stats; highlight/shadow clipping fractions"
+  },
+  "swatch_aggregation": "arithmetic mean of the 6 per-image vectors (raw, un-normalised)",
+  "validation": {
+    "tiff_files": 564,
+    "parsed_images": 564,
+    "swatches_with_images": 94,
+    "inventory_rows": 94,
+    "images_per_swatch": {
+      "6": 94
+    },
+    "strict_groups": 69,
+    "problems": [],
+    "missing_metadata_fields": {
+      "source": 0,
+      "cotton_percentage": 0,
+      "other_fibre_composition": 0,
+      "evidence_category": 0,
+      "bworth_band": 0,
+      "group_strict": 0
+    }
+  },
+  "dataset_root": "datasets\\external\\NIST_NIR_SORT\\raw_download\\NIST_SORT_DATA",
+  "inventory": "experiments\\nist_nir_sort\\nist_composition_inventory.csv",
+  "analysis": {
+    "script": "analyse_e1.py",
+    "results_file": "analysis_results.json",
+    "pca": "StandardScaler then PCA, fit per subset",
+    "silhouette": "cosine, on standardised features averaged per strict provenance group",
+    "permutations": 999,
+    "random_seed": 0,
+    "colour_residualisation": "linear regression of group-level CNN features on top-5 colour PCs",
+    "scipy_used_for": "Spearman correlation"
+  }
+}

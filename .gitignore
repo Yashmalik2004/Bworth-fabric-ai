@@ -86,6 +86,8 @@ experiments/phase3_recovered_data/audit/review_sheet_*.jpg
 # dataset-thumbnail contact sheets are not committed (dataset licence for derivatives unconfirmed)
 experiments/**/contact_sheets/
 experiments/phase3_recovered_data/audit/*.jpg
+# NIST E1: large regenerable per-image embedding tables (swatch-level CSVs, plots and report stay trackable)
+experiments/nist_nir_sort/e1_visual_feature_analysis/*_image_embeddings.csv
 
 # Local experiment backups (contain model checkpoints; never commit to ordinary GitHub)
 backups/
